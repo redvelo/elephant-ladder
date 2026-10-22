@@ -18,7 +18,36 @@ permissions:
   contents: read
 
 jobs:
+  preflight:
+    runs-on: ubuntu-24.04
+    outputs:
+      navigator-ref: ${{ steps.navigator.outputs.ref }}
+    steps:
+      - uses: actions/checkout@v5
+      - name: Check the tag matches the configured version
+        if: github.event_name == 'push'
+        run: |
+          package=$(node -p "require('./package.json').version")
+          conf=$(node -p "require('./src-tauri/tauri.conf.json').version")
+          test "$GITHUB_REF_NAME" = "v$package"
+          test "$GITHUB_REF_NAME" = "v$conf"
+      - name: Resolve pinned navigator commit
+        id: navigator
+        run: echo "ref=$(cat NAVIGATOR_REF)" >> "$GITHUB_OUTPUT"
+      - name: Check the pinned navigator commit is green on its CI
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NAVIGATOR_REF: ${{ steps.navigator.outputs.ref }}
+        run: |
+          runs=$(gh api "repos/redvelo/epub-navigator/commits/$NAVIGATOR_REF/check-runs")
+          total=$(jq '.total_count' <<<"$runs")
+          not_green=$(jq '[.check_runs[] | select(.conclusion != "success")] | length' <<<"$runs")
+          echo "navigator $NAVIGATOR_REF: $total check runs, $not_green not green"
+          test "$total" -gt 0
+          test "$not_green" -eq 0
+
   linux-flatpak:
+    needs: preflight
     runs-on: ubuntu-24.04
     defaults:
       run:
@@ -27,13 +56,10 @@ jobs:
       - uses: actions/checkout@v5
         with:
           path: elephant-ladder
-      - name: Resolve pinned navigator commit
-        id: navigator
-        run: echo "ref=$(cat NAVIGATOR_REF)" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v5
         with:
           repository: redvelo/epub-navigator
-          ref: ${{ steps.navigator.outputs.ref }}
+          ref: ${{ needs.preflight.outputs.navigator-ref }}
           path: navigator
       - uses: pnpm/action-setup@v6
         with:
@@ -45,13 +71,6 @@ jobs:
           cache-dependency-path: |
             elephant-ladder/pnpm-lock.yaml
             navigator/pnpm-lock.yaml
-      - name: Check the tag matches the configured version
-        if: github.event_name == 'push'
-        run: |
-          package=$(node -p "require('./package.json').version")
-          conf=$(node -p "require('./src-tauri/tauri.conf.json').version")
-          test "$GITHUB_REF_NAME" = "v$package"
-          test "$GITHUB_REF_NAME" = "v$conf"
       - run: rustup toolchain install
       - run: rustup toolchain install
         working-directory: navigator
@@ -90,6 +109,7 @@ jobs:
           if-no-files-found: error
 
   android-apk:
+    needs: preflight
     runs-on: ubuntu-24.04
     defaults:
       run:
@@ -98,13 +118,10 @@ jobs:
       - uses: actions/checkout@v5
         with:
           path: elephant-ladder
-      - name: Resolve pinned navigator commit
-        id: navigator
-        run: echo "ref=$(cat NAVIGATOR_REF)" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v5
         with:
           repository: redvelo/epub-navigator
-          ref: ${{ steps.navigator.outputs.ref }}
+          ref: ${{ needs.preflight.outputs.navigator-ref }}
           path: navigator
       - uses: pnpm/action-setup@v6
         with:
@@ -116,13 +133,6 @@ jobs:
           cache-dependency-path: |
             elephant-ladder/pnpm-lock.yaml
             navigator/pnpm-lock.yaml
-      - name: Check the tag matches the configured version
-        if: github.event_name == 'push'
-        run: |
-          package=$(node -p "require('./package.json').version")
-          conf=$(node -p "require('./src-tauri/tauri.conf.json').version")
-          test "$GITHUB_REF_NAME" = "v$package"
-          test "$GITHUB_REF_NAME" = "v$conf"
       - run: rustup toolchain install
       - run: rustup toolchain install
         working-directory: navigator
@@ -146,33 +156,32 @@ jobs:
         with:
           path: elephant-ladder/src-tauri/target/tauri-cli-3.0.0-alpha.4
           key: tauri-cli-3.0.0-alpha.4-android
-      - name: Write the release keystore
-        env:
-          ANDROID_KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_B64 }}
-          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
-          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
-          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
-        run: |
-          cd src-tauri/gen/android
-          printf '%s' "$ANDROID_KEYSTORE_B64" | base64 -d > elephant-ladder-release.jks
-          cat > keystore.properties <<EOF
-          storeFile=elephant-ladder-release.jks
-          storePassword=$ANDROID_KEYSTORE_PASSWORD
-          keyAlias=$ANDROID_KEY_ALIAS
-          keyPassword=$ANDROID_KEY_PASSWORD
-          EOF
       - run: pnpm install --frozen-lockfile
         working-directory: navigator
       - run: pnpm install --frozen-lockfile
       - name: Build the release APK
         run: node scripts/tauri-pinned.mjs android build --apk --target aarch64 --ci
-      - name: Collect and verify the signed APK
+      # Signing happens after the build so the key is never on disk while npm
+      # postinstall scripts, cargo build scripts, and Gradle run. A raw PKCS8
+      # key and certificate replace a keystore: the key material is the secret,
+      # so there is no password and nothing interactive anywhere.
+      - name: Sign the release APK
+        env:
+          ANDROID_SIGNING_KEY_B64: ${{ secrets.ANDROID_SIGNING_KEY_B64 }}
+          ANDROID_SIGNING_CERT_B64: ${{ secrets.ANDROID_SIGNING_CERT_B64 }}
         run: |
           version=$(node -p "require('./src-tauri/tauri.conf.json').version")
-          apk=$(find src-tauri/gen/android/app/build/outputs/apk -path '*/release/*-release.apk' -not -name '*unsigned*')
-          test -n "$apk"
-          mv "$apk" "elephant-ladder-${version}-aarch64.apk"
+          unsigned=$(find src-tauri/gen/android/app/build/outputs/apk -name '*-release-unsigned.apk')
+          test -n "$unsigned"
           tools="$ANDROID_HOME/build-tools/$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -1)"
+          printf '%s' "$ANDROID_SIGNING_KEY_B64" | base64 -d > release.pk8
+          printf '%s' "$ANDROID_SIGNING_CERT_B64" | base64 -d > release.x509.pem
+          "$tools/apksigner" sign \
+            --key release.pk8 \
+            --cert release.x509.pem \
+            --out "elephant-ladder-${version}-aarch64.apk" \
+            "$unsigned"
+          rm release.pk8 release.x509.pem
           "$tools/apksigner" verify --print-certs "elephant-ladder-${version}-aarch64.apk"
       - uses: actions/upload-artifact@v7
         with:
