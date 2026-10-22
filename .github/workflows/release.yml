@@ -92,6 +92,7 @@ jobs:
         with:
           tool: wasm-pack@0.15.0
       - run: sudo apt-get update && sudo apt-get install -y nasm flatpak flatpak-builder
+          libgtk-4-dev libglib2.0-dev libwayland-dev
       - uses: Swatinem/rust-cache@v2
         with:
           workspaces: elephant-ladder/src-tauri
