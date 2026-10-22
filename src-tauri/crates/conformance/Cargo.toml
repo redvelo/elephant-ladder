@@ -1,6 +1,6 @@
 [package]
 name = "elephant-ladder-conformance"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2024"
 description = "Fixture runner and conformance evidence for Elephant Ladder"
 authors.workspace = true

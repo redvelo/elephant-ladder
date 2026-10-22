@@ -42,6 +42,12 @@ lerna-debug.log*
 *.apk
 *.aab
 
+# Flatpak packaging output
+.flatpak-builder/
+flatpak-build/
+flatpak-repo/
+*.flatpak
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

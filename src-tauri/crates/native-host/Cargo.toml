@@ -1,6 +1,6 @@
 [package]
 name = "elephant-ladder-native-host"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2024"
 description = "The Elephant Ladder native host: storage, mounting, policy, and authenticated routes"
 authors.workspace = true

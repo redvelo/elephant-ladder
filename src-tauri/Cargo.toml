@@ -1,6 +1,6 @@
 [package]
 name = "elephant-ladder"
-version = "0.1.0"
+version = "0.0.1"
 description = "A native EPUB reader for Linux and Android"
 authors.workspace = true
 repository.workspace = true

@@ -1,0 +1,202 @@
+name: Release
+
+# Builds the beta artifacts: a Linux x86_64 Flatpak bundle and a release-signed
+# Android APK. A `v*` tag builds both and publishes a GitHub pre-release;
+# workflow_dispatch is a dry run that only uploads the artifacts.
+#
+# The navigator sibling checkout is pinned by NAVIGATOR_REF, so a release tag
+# reproduces the exact navigator it shipped with. The Flatpak job must run on a
+# host whose glibc is not newer than the freedesktop 26.08 runtime's, which
+# ubuntu-24.04 satisfies.
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  linux-flatpak:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: elephant-ladder
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          path: elephant-ladder
+      - name: Resolve pinned navigator commit
+        id: navigator
+        run: echo "ref=$(cat NAVIGATOR_REF)" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v5
+        with:
+          repository: redvelo/epub-navigator
+          ref: ${{ steps.navigator.outputs.ref }}
+          path: navigator
+      - uses: pnpm/action-setup@v6
+        with:
+          package_json_file: elephant-ladder/package.json
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: elephant-ladder/.node-version
+          cache: pnpm
+          cache-dependency-path: |
+            elephant-ladder/pnpm-lock.yaml
+            navigator/pnpm-lock.yaml
+      - name: Check the tag matches the configured version
+        if: github.event_name == 'push'
+        run: |
+          package=$(node -p "require('./package.json').version")
+          conf=$(node -p "require('./src-tauri/tauri.conf.json').version")
+          test "$GITHUB_REF_NAME" = "v$package"
+          test "$GITHUB_REF_NAME" = "v$conf"
+      - run: rustup toolchain install
+      - run: rustup toolchain install
+        working-directory: navigator
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: wasm-pack@0.15.0
+      - run: sudo apt-get update && sudo apt-get install -y nasm flatpak flatpak-builder
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: elephant-ladder/src-tauri
+      # Declared after rust-cache so its save (post steps run in reverse order)
+      # happens before rust-cache prunes the target directory.
+      - uses: actions/cache@v4
+        with:
+          path: elephant-ladder/src-tauri/target/tauri-cli-3.0.0-alpha.4
+          key: tauri-cli-3.0.0-alpha.4-linux
+      # The CEF distribution is ~1.8 GB and downloaded at build time. The lock
+      # hash keys the cache to the pinned CEF version; restore-keys lets an
+      # upgrade start from the previous download instead of nothing.
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/tauri-cef
+          key: cef-${{ hashFiles('elephant-ladder/src-tauri/Cargo.lock') }}
+          restore-keys: cef-
+      - run: pnpm install --frozen-lockfile
+        working-directory: navigator
+      - run: pnpm install --frozen-lockfile
+      - name: Build the release binary with CEF
+        run: node scripts/tauri-pinned.mjs build --no-bundle
+      - run: df -h /
+      - run: scripts/flatpak-bundle.sh
+      - uses: actions/upload-artifact@v7
+        with:
+          name: flatpak
+          path: elephant-ladder/*.flatpak
+          if-no-files-found: error
+
+  android-apk:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: elephant-ladder
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          path: elephant-ladder
+      - name: Resolve pinned navigator commit
+        id: navigator
+        run: echo "ref=$(cat NAVIGATOR_REF)" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v5
+        with:
+          repository: redvelo/epub-navigator
+          ref: ${{ steps.navigator.outputs.ref }}
+          path: navigator
+      - uses: pnpm/action-setup@v6
+        with:
+          package_json_file: elephant-ladder/package.json
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: elephant-ladder/.node-version
+          cache: pnpm
+          cache-dependency-path: |
+            elephant-ladder/pnpm-lock.yaml
+            navigator/pnpm-lock.yaml
+      - name: Check the tag matches the configured version
+        if: github.event_name == 'push'
+        run: |
+          package=$(node -p "require('./package.json').version")
+          conf=$(node -p "require('./src-tauri/tauri.conf.json').version")
+          test "$GITHUB_REF_NAME" = "v$package"
+          test "$GITHUB_REF_NAME" = "v$conf"
+      - run: rustup toolchain install
+      - run: rustup toolchain install
+        working-directory: navigator
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: wasm-pack@0.15.0
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Install the pinned NDK
+        run: |
+          ndk=$(sed -n 's/.*ndkVersion = "\(.*\)"/\1/p' src-tauri/gen/android/app/build.gradle.kts)
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --install "ndk;$ndk"
+      - uses: gradle/actions/setup-gradle@v4
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: elephant-ladder/src-tauri
+          key: android
+      - uses: actions/cache@v4
+        with:
+          path: elephant-ladder/src-tauri/target/tauri-cli-3.0.0-alpha.4
+          key: tauri-cli-3.0.0-alpha.4-android
+      - name: Write the release keystore
+        env:
+          ANDROID_KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_B64 }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          cd src-tauri/gen/android
+          printf '%s' "$ANDROID_KEYSTORE_B64" | base64 -d > elephant-ladder-release.jks
+          cat > keystore.properties <<EOF
+          storeFile=elephant-ladder-release.jks
+          storePassword=$ANDROID_KEYSTORE_PASSWORD
+          keyAlias=$ANDROID_KEY_ALIAS
+          keyPassword=$ANDROID_KEY_PASSWORD
+          EOF
+      - run: pnpm install --frozen-lockfile
+        working-directory: navigator
+      - run: pnpm install --frozen-lockfile
+      - name: Build the release APK
+        run: node scripts/tauri-pinned.mjs android build --apk --target aarch64 --ci
+      - name: Collect and verify the signed APK
+        run: |
+          version=$(node -p "require('./src-tauri/tauri.conf.json').version")
+          apk=$(find src-tauri/gen/android/app/build/outputs/apk -path '*/release/*-release.apk' -not -name '*unsigned*')
+          test -n "$apk"
+          mv "$apk" "elephant-ladder-${version}-aarch64.apk"
+          tools="$ANDROID_HOME/build-tools/$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -1)"
+          "$tools/apksigner" verify --print-certs "elephant-ladder-${version}-aarch64.apk"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: apk
+          path: elephant-ladder/*.apk
+          if-no-files-found: error
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: [linux-flatpak, android-apk]
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v6
+        with:
+          merge-multiple: true
+      - name: Publish the pre-release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            --repo "$GITHUB_REPOSITORY" \
+            --prerelease \
+            --title "$GITHUB_REF_NAME (beta)" \
+            --generate-notes \
+            *.flatpak *.apk

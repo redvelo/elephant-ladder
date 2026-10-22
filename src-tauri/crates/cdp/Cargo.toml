@@ -1,6 +1,6 @@
 [package]
 name = "elephant-ladder-cdp"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2024"
 description = "Chrome DevTools Protocol observation for the Elephant Ladder host"
 authors.workspace = true
