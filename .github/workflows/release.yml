@@ -21,7 +21,8 @@ jobs:
   preflight:
     runs-on: ubuntu-24.04
     outputs:
-      navigator-ref: ${{ steps.navigator.outputs.ref }}
+      navigator-ref: ${{ steps.refs.outputs.navigator }}
+      dictionary-ref: ${{ steps.refs.outputs.dictionary }}
     steps:
       - uses: actions/checkout@v5
       - name: Check the tag matches the configured version
@@ -31,20 +32,28 @@ jobs:
           conf=$(node -p "require('./src-tauri/tauri.conf.json').version")
           test "$GITHUB_REF_NAME" = "v$package"
           test "$GITHUB_REF_NAME" = "v$conf"
-      - name: Resolve pinned navigator commit
-        id: navigator
-        run: echo "ref=$(cat NAVIGATOR_REF)" >> "$GITHUB_OUTPUT"
-      - name: Check the pinned navigator commit is green on its CI
+      - name: Resolve pinned sibling commits
+        id: refs
+        run: |
+          echo "navigator=$(cat NAVIGATOR_REF)" >> "$GITHUB_OUTPUT"
+          echo "dictionary=$(cat DICTIONARY_REF)" >> "$GITHUB_OUTPUT"
+      - name: Check the pinned sibling commits are green on their CI
         env:
           GH_TOKEN: ${{ github.token }}
-          NAVIGATOR_REF: ${{ steps.navigator.outputs.ref }}
+          NAVIGATOR_REF: ${{ steps.refs.outputs.navigator }}
+          DICTIONARY_REF: ${{ steps.refs.outputs.dictionary }}
         run: |
-          runs=$(gh api "repos/redvelo/epub-navigator/commits/$NAVIGATOR_REF/check-runs")
-          total=$(jq '.total_count' <<<"$runs")
-          not_green=$(jq '[.check_runs[] | select(.conclusion != "success")] | length' <<<"$runs")
-          echo "navigator $NAVIGATOR_REF: $total check runs, $not_green not green"
-          test "$total" -gt 0
-          test "$not_green" -eq 0
+          check() {
+            local repo=$1 ref=$2
+            local runs total not_green
+            runs=$(gh api "repos/redvelo/$repo/commits/$ref/check-runs")
+            total=$(jq '.total_count' <<<"$runs")
+            not_green=$(jq '[.check_runs[] | select(.conclusion != "success")] | length' <<<"$runs")
+            echo "$repo $ref: $total check runs, $not_green not green"
+            test "$total" -gt 0 && test "$not_green" -eq 0
+          }
+          check epub-navigator "$NAVIGATOR_REF"
+          check elephant-ladder-dictionary "$DICTIONARY_REF"
 
   linux-flatpak:
     needs: preflight
@@ -61,6 +70,11 @@ jobs:
           repository: redvelo/epub-navigator
           ref: ${{ needs.preflight.outputs.navigator-ref }}
           path: navigator
+      - uses: actions/checkout@v5
+        with:
+          repository: redvelo/elephant-ladder-dictionary
+          ref: ${{ needs.preflight.outputs.dictionary-ref }}
+          path: dictionary
       - uses: pnpm/action-setup@v6
         with:
           package_json_file: elephant-ladder/package.json
@@ -123,6 +137,11 @@ jobs:
           repository: redvelo/epub-navigator
           ref: ${{ needs.preflight.outputs.navigator-ref }}
           path: navigator
+      - uses: actions/checkout@v5
+        with:
+          repository: redvelo/elephant-ladder-dictionary
+          ref: ${{ needs.preflight.outputs.dictionary-ref }}
+          path: dictionary
       - uses: pnpm/action-setup@v6
         with:
           package_json_file: elephant-ladder/package.json

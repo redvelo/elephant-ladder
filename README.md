@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="branding/wordmark-dark.svg">
-  <img src="branding/wordmark.svg" alt="Elephant Ladder" width="400">
+  <source media="(prefers-color-scheme: dark)" srcset="art/wordmark-dark.svg">
+  <img src="art/wordmark.svg" alt="Elephant Ladder" width="400">
 </picture>
 
 **Every word within reach.**
@@ -102,7 +102,7 @@ src/          the application frontend: library, import, settings, dictionaries
 src-tauri/    the Tauri shell and the native host crates
 tests/        unit, native-browser, and fixture tests, with the test publications
 demos/        demonstration publications
-branding/     marks and wordmarks
+art/          wordmarks
 ```
 
 ## License
