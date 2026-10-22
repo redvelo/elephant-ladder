@@ -2,9 +2,12 @@
 # `node scripts/tauri-pinned.mjs build --no-bundle` first. The host toolchain's glibc must
 # not be newer than the runtime's.
 id: com.redvelo.ElephantLadder
-runtime: org.freedesktop.Platform
-runtime-version: '26.08'
-sdk: org.freedesktop.Sdk
+# The GNOME runtime rather than plain freedesktop: the window shell links
+# GTK4, which freedesktop does not ship. GNOME 51 is built on freedesktop
+# 26.08, so the glibc constraint below is unchanged.
+runtime: org.gnome.Platform
+runtime-version: '51'
+sdk: org.gnome.Sdk
 command: elephant-ladder
 finish-args:
   - --share=ipc
