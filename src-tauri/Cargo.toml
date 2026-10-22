@@ -1,0 +1,172 @@
+[package]
+name = "elephant-ladder"
+version = "0.1.0"
+description = "A native EPUB reader for Linux and Android"
+authors.workspace = true
+repository.workspace = true
+edition = "2024"
+license.workspace = true
+
+[workspace]
+members = ["crates/cdp", "crates/conformance", "crates/native-host"]
+default-members = [".", "crates/cdp", "crates/conformance", "crates/native-host"]
+
+[workspace.package]
+license = "Apache-2.0 OR MIT"
+authors = ["D. Joseph"]
+repository = "https://github.com/redvelo/elephant-ladder"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "elephant_ladder_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "3.0.0-alpha.3", features = [] }
+
+[features]
+diagnostic-trace = []
+fixture-runner = ["dep:jni", "dep:elephant-ladder-conformance"]
+
+[dependencies]
+tauri = { version = "3.0.0-alpha.4", features = [] }
+elephant-ladder-cdp = { path = "crates/cdp" }
+elephant-ladder-conformance = { path = "crates/conformance", optional = true }
+elephant-ladder-native-host = { path = "crates/native-host" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["fmt", "json"] }
+
+# Every desktop platform runs the same CEF runtime and the same desktop features; the
+# single-instance socket in `instance::socket` is Linux-only, but nothing here depends on it.
+[target.'cfg(any(target_os = "linux", target_os = "macos", target_os = "windows"))'.dependencies]
+dirs = "6"
+open = "5"
+url = "2"
+rfd = { version = "0.15", default-features = false, features = ["tokio"] }
+tauri-runtime-cef = "3.0.0-alpha.5"
+
+# The portal is how a sandboxed Linux build shows a native file dialog.
+[target.'cfg(target_os = "linux")'.dependencies]
+rfd = { version = "0.15", default-features = false, features = ["xdg-portal", "tokio"] }
+
+[target.'cfg(target_os = "android")'.dependencies]
+jni = { version = "0.21.1", optional = true }
+tauri-runtime-wry = "3.0.0-alpha.4"
+
+
+[profile.dev.package.opus]
+opt-level = 3
+
+[profile.dev.package.rubato]
+opt-level = 3
+
+[profile.dev.package.symphonia-codec-aac]
+opt-level = 3
+
+[profile.dev.package.symphonia-format-isomp4]
+opt-level = 3
+
+# A page image or a narration clip is decoded and re-encoded on the reading device, and the
+# Android qualification collectors can only build a debug APK, so every crate that carries
+# that work is optimized even in a debug build. The list has to name the whole decode path:
+# an unoptimized crate in the middle of it dominates the measurement.
+[profile.dev.package.rav1d]
+opt-level = 3
+
+[profile.dev.package.avif-parse]
+opt-level = 3
+
+[profile.dev.package.jxl-bitstream]
+opt-level = 3
+
+[profile.dev.package.jxl-coding]
+opt-level = 3
+
+[profile.dev.package.jxl-image]
+opt-level = 3
+
+[profile.dev.package.jxl-modular]
+opt-level = 3
+
+[profile.dev.package.jxl-oxide-common]
+opt-level = 3
+
+[profile.dev.package.jxl-threadpool]
+opt-level = 3
+
+[profile.dev.package.jxl-vardct]
+opt-level = 3
+
+[profile.dev.package.symphonia-core]
+opt-level = 3
+
+[profile.dev.package.yuv]
+opt-level = 3
+
+[profile.dev.package.avif-decode]
+opt-level = 3
+
+[profile.dev.package.jxl-oxide]
+opt-level = 3
+
+[profile.dev.package.jxl-render]
+opt-level = 3
+
+[profile.dev.package.jxl-frame]
+opt-level = 3
+
+[profile.dev.package.jxl-grid]
+opt-level = 3
+
+[profile.dev.package.jxl-color]
+opt-level = 3
+
+[profile.dev.package.png]
+opt-level = 3
+
+[profile.dev.package.fdeflate]
+opt-level = 3
+
+[profile.dev.package.mp3lame-sys]
+opt-level = 3
+
+[profile.dev.package.opusic-sys]
+opt-level = 3
+
+[profile.dev.package.blake3]
+opt-level = 3
+
+[profile.dev.package.zlib-rs]
+opt-level = 3
+
+# Read the optimization guideline for more details: https://tauri.app/concept/size/#cargo-configuration
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+panic = "abort"
+strip = true
+
+[dev-dependencies]
+# An integration test sees only this crate and its dev-dependencies, so the
+# siblings it names have to be repeated here.
+epub-navigator = { path = "../../navigator/crates/epub-navigator" }
+epub-stack = { version = "0.3.0", features = ["serde"] }
+rusqlite = { version = "0.37", features = ["bundled"] }
+tempfile = "3"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+axum = "0.8"
+blake3 = { version = "1", features = ["neon"] }
+sha2 = "0.10"
+http-body-util = "0.1"
+tower = "0.5"
+zip = "6"
+
+[patch.crates-io]
+tauri-runtime-cef = { git = "https://github.com/redvelo/tauri", branch = "test/cef-fullscreen-alpha5" }

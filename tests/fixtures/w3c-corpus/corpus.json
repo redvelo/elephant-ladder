@@ -1,0 +1,4010 @@
+{
+  "schema": "elephant-w3c-corpus-v1",
+  "upstream": {
+    "repository": "https://github.com/w3c/epub-tests",
+    "commit": "54092b4233253e9aac80e93ec4782b380b4b3403",
+    "license": "W3C Software and Document License",
+    "licenseUrl": "https://www.w3.org/Consortium/Legal/copyright-software"
+  },
+  "archive": {
+    "mtime": "2026-01-01T00:00:00.000Z",
+    "packer": "fflate zipSync, mimetype stored first"
+  },
+  "tests": [
+    {
+      "id": "cnt-css-fonts_ot",
+      "identifier": "cnt-css-fonts_ot",
+      "title": "cnt-css-fonts_ot",
+      "description": "Using a font resource in OpenType format via a CSS @font-face.",
+      "coverage": "Content Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-css-rs-fonts"
+      ],
+      "modified": "2025-05-28T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 35704,
+      "sha256": "3f5282b7416c71b3c8edbdf0330b8ca507a7c4c3d7bf70f3ed576bea5dbf7a67"
+    },
+    {
+      "id": "cnt-css-fonts_tt",
+      "identifier": "cnt-css-fonts_tt",
+      "title": "cnt-css-fonts_tt",
+      "description": "Using a font resource in TrueType format via a CSS @font-face.",
+      "coverage": "Content Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-css-rs-fonts"
+      ],
+      "modified": "2025-05-28T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 45796,
+      "sha256": "9a8cbf82f7319ad94c4ffe8bd21590ad49b3478a634b544d9ef0a439da4e68be"
+    },
+    {
+      "id": "cnt-css-fonts_woff",
+      "identifier": "cnt-css-fonts_woff",
+      "title": "cnt-css-fonts_woff",
+      "description": "Using a font resource in WOFF format via a CSS @font-face.",
+      "coverage": "Content Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-css-rs-fonts"
+      ],
+      "modified": "2025-05-28T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 39087,
+      "sha256": "586f5669ccf17f06b0fd21eae525e0dba282aeacf1c24a3c613bc5ca5c9d4a3a"
+    },
+    {
+      "id": "cnt-css-fonts_woff2",
+      "identifier": "cnt-css-fonts_woff2",
+      "title": "cnt-css-fonts_woff2",
+      "description": "Using a font resource in WOFF2 format via a CSS @font-face.",
+      "coverage": "Content Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-css-rs-fonts"
+      ],
+      "modified": "2025-05-28T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 13589,
+      "sha256": "b5f597abeec037dccd5ce2c1958fa432776e3a1d166049d720e2b3ee3b7b7fcc"
+    },
+    {
+      "id": "cnt-mathml-support",
+      "identifier": "cnt-mathml-support",
+      "title": "cnt-mathml-support",
+      "description": "A Presentation MathML equation is displayed as part of the XHTML content.",
+      "coverage": "Content Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-mathml-rs-behavior",
+        "https://www.w3.org/TR/epub-rs/#confreq-mathml-rs-render"
+      ],
+      "modified": "2021-05-26T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1931,
+      "sha256": "e6935a6905d49609fab12abddc845449db2adf700e2912397586d63690bf1ce3"
+    },
+    {
+      "id": "cnt-svg-css",
+      "identifier": "cnt-svg-css",
+      "title": "cnt-svg-css",
+      "description": "CSS styling is applied to an SVG content document.",
+      "coverage": "Content Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-svg-rs-css"
+      ],
+      "modified": "2022-09-14T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2965,
+      "sha256": "a2df62da06cb32198020aeef34708d3cbd41844a813211cbbd096509cc9783ad"
+    },
+    {
+      "id": "cnt-svg-css-inclusion",
+      "identifier": "cnt-svg-css-inclusion",
+      "title": "cnt-svg-css-inclusion",
+      "description": "CSS changes the color of an SVG image that is embedded in the XHTML content by inclusion.",
+      "coverage": "Content Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-svg-rs-css-embed-inc",
+        "https://www.w3.org/TR/epub-rs/#confreq-svg-rs-css-embedded"
+      ],
+      "modified": "2022-09-14T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 3071,
+      "sha256": "1b55e5bff80ad124caaf8f51bd6ef73f517602585ee1fedad0979ff03553bcc2"
+    },
+    {
+      "id": "cnt-svg-css-reference",
+      "identifier": "cnt-svg-css-reference",
+      "title": "cnt-svg-css-reference",
+      "description": "CSS does not change the color of an SVG image that is embedded in the XHTML content by reference.",
+      "coverage": "Content Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-css-embed-ref",
+        "https://www.w3.org/TR/epub-rs/#confreq-svg-rs-css-embedded"
+      ],
+      "modified": "2021-05-25T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 3475,
+      "sha256": "d1f20e76c3eb3d9f91cd5906cfcd030960cb4a0b009b907b42f87e722586ea62"
+    },
+    {
+      "id": "cnt-svg-embedded",
+      "identifier": "cnt-svg-embedded",
+      "title": "cnt-svg-embedded",
+      "description": "An SVG image is embedded in the XHTML content (as inline SVG).",
+      "coverage": "Content Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-svg-rs-embed"
+      ],
+      "modified": "2022-08-02T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2926,
+      "sha256": "05fffcbb3201ce54118055e00427afc2dab5deb1c2adadefd1a1675a49551efa"
+    },
+    {
+      "id": "cnt-svg-support",
+      "identifier": "cnt-svg-support",
+      "title": "cnt-svg-support",
+      "description": "An SVG image is displayed as a content document (not as part of an XHTML file).",
+      "coverage": "Content Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-svg",
+        "https://www.w3.org/TR/epub-rs/#confreq-svg-rs-behavior"
+      ],
+      "modified": "2022-09-22T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2857,
+      "sha256": "80c1d9c4f5f5b251445c4b5308a4ce9b65dbe66799732c9a4f9716093349fc2a"
+    },
+    {
+      "id": "cnt-xhtml-support",
+      "identifier": "cnt-xhtml-support",
+      "title": "cnt-xhtml-support",
+      "description": "An XHTML file is displayed as a content document.",
+      "coverage": "Content Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-xhtml"
+      ],
+      "modified": "2022-08-02T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1705,
+      "sha256": "3f91ee5d351fc3e9f30f21e7a05bdbbde9dbf79f2a49b093240430a853329318"
+    },
+    {
+      "id": "css-epub-hyphens",
+      "identifier": "css-epub-hyphens",
+      "title": "css-epub-hyphens",
+      "description": "Tests for the prefixed CSS property -epub-hyphens",
+      "coverage": "Content Documents",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub/#sec-css-prefixed-text-epub-hyphens",
+        "https://www.w3.org/TR/epub-rs/#confreq-css-rs-prefixed"
+      ],
+      "modified": "2023-01-10T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2728,
+      "sha256": "4f29c165445544e64deb37fdeb460e872afc30becb897c5b8e7bb3e0dc7dab65"
+    },
+    {
+      "id": "css-epub-line-break",
+      "identifier": "css-epub-line-break",
+      "title": "css-epub-line-break",
+      "description": "Tests for the prefixed CSS property -epub-line-break",
+      "coverage": "Content Documents",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub/#sec-css-prefixed-text-epub-line-break",
+        "https://www.w3.org/TR/epub-rs/#confreq-css-rs-prefixed"
+      ],
+      "modified": "2023-01-10T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2437,
+      "sha256": "492489edd0518d547aabe7ba0d037d739a15f08d31cc609df327d571b6834c01"
+    },
+    {
+      "id": "css-epub-text-align-last",
+      "identifier": "css-epub-text-align-last",
+      "title": "css-epub-text-align-last",
+      "description": "Tests for the prefixed CSS property -epub-text-align-last",
+      "coverage": "Content Documents",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub/#sec-css-prefixed-text-epub-text-align-last",
+        "https://www.w3.org/TR/epub-rs/#confreq-css-rs-prefixed"
+      ],
+      "modified": "2023-01-10T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 3266,
+      "sha256": "e9b342f679c06e0bedc2c50ed23f156eddc72914e14c3c65729e415330cc0864"
+    },
+    {
+      "id": "css-epub-text-combine-horizontal",
+      "identifier": "css-epub-text-combine-horizontal",
+      "title": "css-epub-text-combine-horizontal",
+      "description": "Tests for the prefixed CSS property -epub-text-combine-horizontal",
+      "coverage": "Content Documents",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub/#sec-css-prefixed-writing-modes-text-combine",
+        "https://www.w3.org/TR/epub-rs/#confreq-css-rs-prefixed"
+      ],
+      "modified": "2023-01-10T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2211,
+      "sha256": "5fa643929d818d1535b422c72f79a2f1f0b84f33fa3e27f8b90c49071988ae88"
+    },
+    {
+      "id": "css-epub-text-emphasis",
+      "identifier": "css-epub-text-emphasis",
+      "title": "css-epub-text-emphasis",
+      "description": "Tests for the prefixed CSS properties -epub-text-emphasis-color, -position, and -style",
+      "coverage": "Content Documents",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub/#sec-css-prefixed-text-epub-text-emphasis-color",
+        "https://www.w3.org/TR/epub/#sec-css-prefixed-text-epub-text-emphasis-position",
+        "https://www.w3.org/TR/epub/#sec-css-prefixed-text-epub-text-emphasis-style",
+        "https://www.w3.org/TR/epub-rs/#confreq-css-rs-prefixed"
+      ],
+      "modified": "2023-01-11T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 6930,
+      "sha256": "bd8d2ee2bd531b86438baad50b030e0dda69a9c9af7e0b96ef7cd5473f4011e2"
+    },
+    {
+      "id": "css-epub-text-orientation",
+      "identifier": "css-epub-text-orientation",
+      "title": "css-epub-text-orientation",
+      "description": "Tests for the prefixed CSS property -epub-text-orientation",
+      "coverage": "Content Documents",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub/#sec-css-prefixed-writing-modes-text-orientation",
+        "https://www.w3.org/TR/epub-rs/#confreq-css-rs-prefixed"
+      ],
+      "modified": "2023-01-10T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 2574,
+      "sha256": "c80e02b1d987e1008fecd1b216dc340015be00ca20d45df36c94759285f5071a"
+    },
+    {
+      "id": "css-epub-text-transform",
+      "identifier": "css-epub-text-transform",
+      "title": "css-epub-text-transform",
+      "description": "Tests for the prefixed CSS value -epub-fullwidth",
+      "coverage": "Content Documents",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub/#sec-css-prefixed-text-text-transform",
+        "https://www.w3.org/TR/epub-rs/#confreq-css-rs-prefixed"
+      ],
+      "modified": "2023-01-10T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1990,
+      "sha256": "9f63834648dae9427b4642ee4fd29b3e8262d4b11fe2e7a076edc76634da5baa"
+    },
+    {
+      "id": "css-epub-text-underline-position",
+      "identifier": "css-epub-text-underline-position",
+      "title": "css-epub-text-underline-position",
+      "description": "Tests for the prefixed CSS properties -epub-text-underline-position",
+      "coverage": "Content Documents",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub/#sec-css-prefixed-text-epub-text-underline-position",
+        "https://www.w3.org/TR/epub-rs/#confreq-css-rs-prefixed"
+      ],
+      "modified": "2023-01-10T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 5,
+      "template": false,
+      "bytes": 3818,
+      "sha256": "b24a17d309257687ee500a6a6c004d1479751db27670e9ca277b29288a82fbbf"
+    },
+    {
+      "id": "css-epub-word-break",
+      "identifier": "css-epub-word-break",
+      "title": "css-epub-word-break",
+      "description": "Tests for the prefixed CSS property -epub-word-break",
+      "coverage": "Content Documents",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub/#sec-css-prefixed-text-epub-word-break",
+        "https://www.w3.org/TR/epub-rs/#confreq-css-rs-prefixed"
+      ],
+      "modified": "2023-01-10T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2630,
+      "sha256": "c358403bd42c8aea06559b29fceb4f4cc79aac76a99e82e054d9665f1fb1405e"
+    },
+    {
+      "id": "css-epub-writing-mode",
+      "identifier": "css-epub-writing-mode",
+      "title": "css-epub-writing-mode",
+      "description": "Tests for the prefixed CSS property -epub-writing-mode",
+      "coverage": "Content Documents",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub/#sec-css-prefixed-writing-modes-writing-mode",
+        "https://www.w3.org/TR/epub-rs/#confreq-css-rs-prefixed"
+      ],
+      "modified": "2023-01-10T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 3,
+      "template": false,
+      "bytes": 2796,
+      "sha256": "93311e5d4cdb80d2e61c726af6d5572ba11b9b67a15646016588b7c006b7596a"
+    },
+    {
+      "id": "fxl-layout-duplication",
+      "identifier": "fxl-layout-duplication",
+      "title": "fxl-layout-duplication",
+      "description": "When rendition:layout is duplicated, EPUBCheck must return an error.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-33/#fxl-layout-duplication"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 230830,
+      "sha256": "82bdfc389c7830d5a0ed58f136cb1c0274aa8592f6304a781eea907fe3f953d0"
+    },
+    {
+      "id": "fxl-page-spread-break",
+      "identifier": "fxl-page-spread-break",
+      "title": "fxl-page-spread-break",
+      "description": "For a fixed-layout book, page-spread properties must take precedence over CSS page-break-before",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#page-break-precedence"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 231247,
+      "sha256": "a6b28d9321afc654c07c2c25398e6c653d5b4235253be36d35a58c83037b4a7e"
+    },
+    {
+      "id": "fxl-page-spread-center",
+      "identifier": "fxl-page-spread-center",
+      "title": "fxl-page-spread-center",
+      "description": "When rendition:page-spread-center is applied to a spine item, the document should be displayed in the center of the screen and not in a synthetic spread.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#page-spread-center"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 230873,
+      "sha256": "0dc1e2468aae5745e7b7e51a3429ece0cf382ddc298bf0b136bddd9935d49484"
+    },
+    {
+      "id": "fxl-spine-overrides_behave-as-global",
+      "identifier": "fxl-spine-overrides_behave-as-global",
+      "title": "fxl-spine-overrides_behave-as-global",
+      "description": "Pre-paginated document, with a spine item overriding the global setting to use reflowable layout.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#confreq-rs-pkg-spine-override"
+      ],
+      "modified": "2026-02-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 184062,
+      "sha256": "c451557cfc671ffdfe9211217b9ebcf961582838befc637b95b3a774a26d35b3"
+    },
+    {
+      "id": "fxl-spine-overrides_behave-as-global-bis",
+      "identifier": "fxl-spine-overrides_behave-as-global-bis",
+      "title": "fxl-spine-overrides_behave-as-global-bis",
+      "description": "Reflowable document, with a spine item overriding the global setting to use pre-paginated layout.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#confreq-rs-pkg-spine-override"
+      ],
+      "modified": "2026-02-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 3,
+      "template": false,
+      "bytes": 187189,
+      "sha256": "0eda0ee89bd5f346a2d39e733a8eb9e73292ca929a188a113585acf6439319d5"
+    },
+    {
+      "id": "fxl-spine-overrides_duplicate",
+      "identifier": "fxl-spine-overrides_duplicate",
+      "title": "fxl-spine-overrides_duplicate",
+      "description": "Pre-paginated document, with a spine item overriding the global setting to use reflowable layout, but repeating the override property value back to pre-paginated. The second setting must be ignored.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#confreq-rs-pkg-spine-override-first"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 184111,
+      "sha256": "218ffaa1380d3803961dc12e5b97df7c4fb113e9c10756346fcb4fbef2946740"
+    },
+    {
+      "id": "lay-fxl-layout-default",
+      "identifier": "lay-fxl-layout-default",
+      "title": "lay-fxl-layout-default",
+      "description": "The default value for pagination must be 'reflowable'.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#layout-default"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 3704,
+      "sha256": "a303f81d0ab8b358f38a4954913d9ae525d96909446182c33f96270fed549711"
+    },
+    {
+      "id": "lay-fxl-layout-pre-paginated",
+      "identifier": "lay-fxl-layout-pre-paginated",
+      "title": "lay-fxl-layout-pre-paginated",
+      "description": "When rendition:layout is pre-paginated, reading systems must display one page per spine item.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#def-layout-pre-paginated"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 230893,
+      "sha256": "c8254f9a4624b7c49697f90457a0b4ec370ea6fa7862aa0c60c15927ec99d2b4"
+    },
+    {
+      "id": "lay-fxl-layout-pre-paginated-spreads",
+      "identifier": "lay-fxl-layout-pre-paginated-spreads",
+      "title": "lay-fxl-layout-pre-paginated-spreads",
+      "description": "When the layout is pre-paginated, pages are displayed with no gaps when in synthetic spreads.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#confreq-rs-fxl-prepaginated-spreads"
+      ],
+      "modified": "2023-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 231066,
+      "sha256": "2901d67a9c88e1b90add8569ad725c46b8a93b10a8dfa121cab12e606b0e0cf3"
+    },
+    {
+      "id": "lay-fxl-orientation-default",
+      "identifier": "lay-fxl-orientation-default",
+      "title": "lay-fxl-orientation-default",
+      "description": "rendition:orientation is not specified. Therefore, it has the value \"auto\" and reading systems should display the EPUB in the orientation of the device.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#orientation",
+        "https://www.w3.org/TR/epub-33/#orientation"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 230928,
+      "sha256": "ebae990969ae8e98a831a068a836e841b2dc7f38038bf323cd6d9742b66619b2"
+    },
+    {
+      "id": "lay-fxl-orientation-landscape",
+      "identifier": "lay-fxl-orientation-landscape",
+      "title": "lay-fxl-orientation-landscape",
+      "description": "rendition:orientation is landscape, Reading Systems should either display the content in landscape or inform the user it should be.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#orientation"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 230951,
+      "sha256": "f4f96053bb613ba96d0b487062ffc6740b78ae668356d6cd572cf4e07df4923f"
+    },
+    {
+      "id": "lay-fxl-page-spread-combined",
+      "identifier": "lay-fxl-page-spread-combined",
+      "title": "lay-fxl-page-spread-combined",
+      "description": "When rendition:page-spread-right and -left are applied to adjacent spine items, they should be displayed in a synthetic spread.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#fxl-page-spread"
+      ],
+      "modified": "2026-02-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 230942,
+      "sha256": "61ce4a202708b9954950fc13e3896d996930d72256348fbef3986b3e3c6687d5"
+    },
+    {
+      "id": "lay-fxl-page-spread-left",
+      "identifier": "lay-fxl-page-spread-left",
+      "title": "lay-fxl-page-spread-left",
+      "description": "When rendition:page-spread-left is applied to a spine item, it should be displayed on the left side of the synthetic spread.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#page-spread-left"
+      ],
+      "modified": "2023-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 230879,
+      "sha256": "8c4feebc49beb55299e7e0f35ff66f06a2681f5e098bab86355787db60a614d4"
+    },
+    {
+      "id": "lay-fxl-page-spread-right",
+      "identifier": "lay-fxl-page-spread-right",
+      "title": "lay-fxl-page-spread-right",
+      "description": "When rendition:page-spread-right is applied to a spine item, it should be displayed on the right side of the synthetic spread.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-34/#page-spread-right"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 230877,
+      "sha256": "dc9bba8b2ff5bc82ec5d8ffbde1008eaa2d07fa50ddebd21b3108957f51a9368"
+    },
+    {
+      "id": "lay-fxl-spread-auto",
+      "identifier": "lay-fxl-spread-auto",
+      "title": "lay-fxl-spread-auto",
+      "description": "When rendition:spread is \"auto\", the reading system can choose to display spine items in a synthetic spread.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#def-spread-auto"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 230977,
+      "sha256": "640d12ad7d38ed7c3e1daeeb2afc41407b2c14ec9d0e39c4e7823ea00c12cda3"
+    },
+    {
+      "id": "lay-fxl-spread-both",
+      "identifier": "lay-fxl-spread-both",
+      "title": "lay-fxl-spread-both",
+      "description": "When rendition:spread is \"both\", the content should appear in a synthetic spread regardless of reading system orientation.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#def-spread-both"
+      ],
+      "modified": "2026-02-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 230921,
+      "sha256": "9aa9c1c8beea573e1f59662f5e828828753cffc0cb0f47f34085e5d7eff67502"
+    },
+    {
+      "id": "lay-fxl-spread-default",
+      "identifier": "lay-fxl-spread-default",
+      "title": "lay-fxl-spread-default",
+      "description": "The default value for rendition:spread should be \"auto\" if not specified. When rendition:spread is \"auto\", the reading system can choose to display spine items in a synthetic spread.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#fxl-spread-default"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 231015,
+      "sha256": "d55aee63b92fd01dff663c55b2f9918ea68ceecc6c0f463a77e96e8f4ae8eab3"
+    },
+    {
+      "id": "lay-fxl-spread-landscape",
+      "identifier": "lay-fxl-spread-landscape",
+      "title": "lay-fxl-spread-landscape",
+      "description": "If rendition:spread is \"landscape\", synthetic spreads should be rendered only when the reading system is in landscape orientation.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#def-spread-landscape"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 231013,
+      "sha256": "667a74db17449586313e93009a3494c210379feb6acdde30e526691225e1fe49"
+    },
+    {
+      "id": "lay-fxl-spread-none",
+      "identifier": "lay-fxl-spread-none",
+      "title": "lay-fxl-spread-none",
+      "description": "When rendition:spead is \"none\", spine items must not appear in synthetic spreads.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#confreq-rs-epub3-fxl",
+        "https://www.w3.org/TR/epub-rs-33/#def-spread-none"
+      ],
+      "modified": "2023-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 230883,
+      "sha256": "1a6d5fced65b02e14b7b348d397f60704d247f97bfe126661dd8a4defe03ef0a"
+    },
+    {
+      "id": "lay-fxl-svg-icb_multi",
+      "identifier": "lay-fxl-svg-icb_multi",
+      "title": "lay-fxl-svg-icb_multi",
+      "description": "The same SVG content outside the initial containing block (ICB) is clipped but the effect is different because the two pages have a different viewport setting.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-33/#sec-fxl-icb-svg",
+        "https://www.w3.org/TR/epub-rs-33/#confreq-fxl-rs-svg"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 3,
+      "template": false,
+      "bytes": 182004,
+      "sha256": "84022dcc6fc6c13d2f5034d6420138ccf03f639f050ee3d490e7082b57cc362b"
+    },
+    {
+      "id": "lay-fxl-xhtml-icb",
+      "identifier": "lay-fxl-xhtml-icb",
+      "title": "lay-fxl-xhtml-icb",
+      "description": "XHTML content outside the initial containing block (ICB) is clipped.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-33/#sec-fxl-icb-html",
+        "https://www.w3.org/TR/epub-rs-33/#confreq-fxl-rs-xhtml-icb"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 182330,
+      "sha256": "44443d76151fbf7fbde741f676f54e60a383e6383c5b143181ca20b40b54f857"
+    },
+    {
+      "id": "lay-fxl-xhtml-icb_device_sizes",
+      "identifier": "lay-fxl-xhtml-icb_device_sizes",
+      "title": "lay-fxl-xhtml-icb_device_sizes",
+      "description": "The viewport can be set to device-width, resp. device-height, to fill the full display area.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub/#sec-fxl-icb-html"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 181192,
+      "sha256": "735e79ab4905bd4421ce61d8b1867556ffc49d9e7a78b35e35fe4b6b7b75a241"
+    },
+    {
+      "id": "lay-fxl-xhtml-icb_invalid_meta",
+      "identifier": "lay-fxl-xhtml-icb_invalid_meta",
+      "title": "lay-fxl-xhtml-icb_invalid_meta",
+      "description": "Reading systems SHOULD attempt to extract 'width' and 'height' values even if the tag's syntax is invalid.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#confreq-fxl-rs-xhtml-icb_invalid_meta"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 181755,
+      "sha256": "5aa4495d3df31b1969fc804c3633536e13e522b35e386fbf77947db80907b4e5"
+    },
+    {
+      "id": "lay-fxl-xhtml-icb_multi",
+      "identifier": "lay-fxl-xhtml-icb_multi",
+      "title": "lay-fxl-xhtml-icb_multi",
+      "description": "The same XHTML content outside the initial containing block (ICB) is clipped but the effect is different because the two pages have a different viewport setting.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-33/#sec-fxl-icb-html",
+        "https://www.w3.org/TR/epub-rs-33/#confreq-fxl-rs-xhtml-icb"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 181692,
+      "sha256": "b0673db36b0704a708bbe50e42f503b1f04f5971b622f6bb01e616d8843d56f6"
+    },
+    {
+      "id": "lay-fxl-xhtml-icb_multi_declarations",
+      "identifier": "lay-fxl-xhtml-icb_multi_declarations",
+      "title": "lay-fxl-xhtml-icb_multi_declarations",
+      "description": "Only the first of multiple viewport meta tags is retained, the second is ignored.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#confreq-fxl-rs-xhtml-multiple-icb-def"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 181614,
+      "sha256": "e378c80fcffcc30183570aa030759337b93bf802215ca9d96efc769ee20e9a4d"
+    },
+    {
+      "id": "lay-fxl-xhtml-icb_repeated-in-meta",
+      "identifier": "lay-fxl-xhtml-icb_repeated-in-meta",
+      "title": "lay-fxl-xhtml-icb_repeated-in-meta",
+      "description": "Reading system should use the first declaration of a 'width' or 'height' (i.e., ignore repeated declarations).",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#confreq-fxl-rs-xhtml-icb_repeated-in-meta"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 181784,
+      "sha256": "9b21e9b957b365b614ba729256f475ff5ec0b527b1f015074bed5091977b8185"
+    },
+    {
+      "id": "lay-fxl-xhtml-icb_units",
+      "identifier": "lay-fxl-xhtml-icb_units",
+      "title": "lay-fxl-xhtml-icb_units",
+      "description": "Units of lengths in an ICB declaration are ignored, values are in pixels.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "deprecated"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs-33/#confreq-fxl-rs-xhtml-icb-units"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 181630,
+      "sha256": "7eb23dacbf14691aa1dbae9fbd8855282bc1cd4ef8f2a1ceb76c54ffb0bcb961"
+    },
+    {
+      "id": "lay-page-layout-both",
+      "identifier": "lay-page-layout-both",
+      "title": "lay-page-layout-both",
+      "description": "If a reflowable spine item follows a pre-paginated one, it should appear on the next page.",
+      "coverage": "Fixed Layout",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub/#property-layout-local",
+        "https://www.w3.org/TR/epub-rs/#page-layout-both"
+      ],
+      "modified": "2022-09-21T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 232688,
+      "sha256": "23deee71dbfc07fc13662616e9a4047cc7428655ceb09965716fa94f498df01d"
+    },
+    {
+      "id": "lay-page-layout-both-spread",
+      "identifier": "lay-page-layout-both-spread",
+      "title": "lay-page-layout-both-spread",
+      "description": "If a reflowable spine item has a page-spread-* value, it must be honored.",
+      "coverage": "Fixed Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#property-layout-local",
+        "https://www.w3.org/TR/epub-rs/#page-spread-both",
+        "https://www.w3.org/TR/epub-rs/#page-spread-both-pre-pag"
+      ],
+      "modified": "2022-09-21T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 5,
+      "template": false,
+      "bytes": 233196,
+      "sha256": "5018d25f355a0779ee2820052428b137b4d3bfd821c876fd04a3662991e32a9b"
+    },
+    {
+      "id": "lay-pkg-flow-paginated",
+      "identifier": "lay-pkg-flow-paginated",
+      "title": "lay-pkg-flow-paginated",
+      "description": "Tests on handling overflow content with the \"rendition:flow\" property set to \"paginated\". The content should be dynamically paginated (i.e., not scrolled) by the reading system.",
+      "coverage": "Fixed Layout",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub/#paginated",
+        "https://www.w3.org/TR/epub-rs/#paginated"
+      ],
+      "modified": "2022-12-07T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 27786,
+      "sha256": "869f6493a19c40e138a265e2b9f63a744343f07ca45e79caf17ef896f2bcb8ea"
+    },
+    {
+      "id": "lay-pkg-flow-scrolled-continuous",
+      "identifier": "lay-pkg-flow-scrolled-continuous",
+      "title": "lay-pkg-flow-scrolled-continuous",
+      "description": "Tests on handling overflow content with the \"rendition:flow\" property set to \"scrolled-continuous\". The content should be presented as one continuous scrolling document (i.e., not paginated).",
+      "coverage": "Fixed Layout",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub/#scrolled-continuous",
+        "https://www.w3.org/TR/epub-rs/#scrolled-continuous"
+      ],
+      "modified": "2022-12-07T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 27790,
+      "sha256": "d1806ca556185a4adffbf9655155b068599440ab3ee5e5b761475fc8259cbc2a"
+    },
+    {
+      "id": "lay-pkg-flow-scrolled-doc",
+      "identifier": "lay-pkg-flow-scrolled-doc",
+      "title": "lay-pkg-flow-scrolled-doc",
+      "description": "Tests on handling overflow content with the \"rendition:flow\" property set to \"scrolled-doc\". Each of the chapters in this publication should be vertically scrollable, and swiping horizontally should moves from one to the next.",
+      "coverage": "Fixed Layout",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub/#scrolled-doc",
+        "https://www.w3.org/TR/epub-rs/#scrolled-doc"
+      ],
+      "modified": "2022-12-07T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 27792,
+      "sha256": "66494777cfa153261fec4ad4af9932b966ba06561854bfb1bfd95976371730c7"
+    },
+    {
+      "id": "lay-pp-embedded-images",
+      "identifier": "lay-pp-embedded-images",
+      "title": "A Apple Pie — embedded images",
+      "description": "Pre-paginated publication with images embedded in XHTML.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-fxl"
+      ],
+      "modified": "2026-01-15T20:32:01Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 10,
+      "template": false,
+      "bytes": 27430666,
+      "sha256": "9486bb842f02df7fbc213f63d87885ffa98d7910eca8c53a88392373c6fd6b64"
+    },
+    {
+      "id": "lay-pp-embedded-images-svg",
+      "identifier": "lay-pp-embedded-images-svg",
+      "title": "A Apple Pie — embedded images in SVG",
+      "description": "Pre-paginated publication with images embedded in XHTML.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-fxl"
+      ],
+      "modified": "2026-01-31T20:32:01Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 9,
+      "template": false,
+      "bytes": 27429739,
+      "sha256": "653673a548e58cbe74cdaa10197b3c774c2943e7608838c940fdb89e218d4a11"
+    },
+    {
+      "id": "lay-pp-images-in-spine",
+      "identifier": "lay-pp-images-in-spine",
+      "title": "A Apple Pie — images in the spine",
+      "description": "Pre-paginated publication with images in the spine with fallbacks.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-fxl",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-manifest-fallback"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 9,
+      "template": false,
+      "bytes": 27740780,
+      "sha256": "36241215416cc2bb78d51ff8ed41f361ea82d906d02137aea7bf80b5f86ffa7e"
+    },
+    {
+      "id": "lay-pp-images-mixed",
+      "identifier": "lay-pp-images-mixed",
+      "title": "A Apple Pie — embedded images except for two in the spine",
+      "description": "Pre-paginated publication with mixed embedded and spine images.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-fxl",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-manifest-fallback"
+      ],
+      "modified": "2026-01-15T20:32:01Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 10,
+      "template": false,
+      "bytes": 30444881,
+      "sha256": "d58021f08d9e8866ab95b237ed05d9090381a3a704508b6ef7858d7c209a46af"
+    },
+    {
+      "id": "lay-pp-layout-default",
+      "identifier": "lay-pp-layout-default",
+      "title": "lay-pp-layout-default",
+      "description": "The default value for pagination must be 'reflowable'.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#layout-default"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 3676,
+      "sha256": "c05eb54a541e71e3f1e5e90915fb71f0f69ae9ae7a8f3920b0ae9b28e2f3645d"
+    },
+    {
+      "id": "lay-pp-layout-duplication",
+      "identifier": "lay-pp-layout-duplication",
+      "title": "lay-pp-layout-duplication",
+      "description": "When rendition:layout is duplicated, EPUBCheck must return an error.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#fxl-layout-duplication"
+      ],
+      "modified": "2023-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 230806,
+      "sha256": "5e4daf021bbe3b1a427854167b242837d3a609328c38103d4aefef8b50067c46"
+    },
+    {
+      "id": "lay-pp-layout-pre-paginated",
+      "identifier": "lay-pp-layout-pre-paginated",
+      "title": "lay-pp-layout-pre-paginated",
+      "description": "When rendition:layout is pre-paginated, reading systems must display one page per spine item.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#def-layout-pre-paginated"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 230865,
+      "sha256": "c00fa7bda5c10927a02ed8c42d003b0f9931f4b4f04810c50dc5f850100963b4"
+    },
+    {
+      "id": "lay-pp-layout-pre-paginated-spreads",
+      "identifier": "lay-pp-layout-pre-paginated-spreads",
+      "title": "lay-pp-layout-pre-paginated-spreads",
+      "description": "When the layout is pre-paginated, pages are displayed with no gaps when in synthetic spreads.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-fxl-prepaginated-spreads"
+      ],
+      "modified": "2023-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 231039,
+      "sha256": "0db14ba99c2a6023d07188a08dfc145fb13cad88b530b0db9cd037218acf5b4d"
+    },
+    {
+      "id": "lay-pp-page-spread-combined",
+      "identifier": "lay-pp-page-spread-combined",
+      "title": "lay-pp-page-spread-combined",
+      "description": "When rendition:page-spread-right and -left are applied to adjacent spine items, they should be displayed in a synthetic spread.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#fxl-page-spread-combined"
+      ],
+      "modified": "2026-02-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 230936,
+      "sha256": "c7d10a4b97af439b069feee819f27db7a0c1a1e86ac59d2112635307d49783fb"
+    },
+    {
+      "id": "lay-pp-page-spread-left",
+      "identifier": "lay-pp-page-spread-left",
+      "title": "lay-pp-page-spread-left",
+      "description": "When rendition:page-spread-left is applied to a spine item, it should be displayed on the left side of the synthetic spread.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#page-spread-left"
+      ],
+      "modified": "2023-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 230870,
+      "sha256": "c46f8be48fae1a1559cebf66e47126aeb9ef9b49cbe98a9aa41eb8e2c3759fb3"
+    },
+    {
+      "id": "lay-pp-page-spread-right",
+      "identifier": "lay-pp-page-spread-right",
+      "title": "lay-pp-page-spread-right",
+      "description": "When rendition:page-spread-right is applied to a spine item, it should be displayed on the right side of the synthetic spread.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#page-spread-right"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 230867,
+      "sha256": "05f75770a00cf7d9f425237123d37d156f67379b76d78d71e98465ba1a878f75"
+    },
+    {
+      "id": "lay-pp-spine-overrides_behave-as-global",
+      "identifier": "lay-pp-spine-overrides_behave-as-global",
+      "title": "lay-pp-spine-overrides_behave-as-global",
+      "description": "Pre-paginated document, with a spine item overriding the global setting to use reflowable layout.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-spine-override",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-spine-override-first"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 184076,
+      "sha256": "69f5a30e735618a4330a12e41b710d8777c4f1e5aaa2f825948086cfdff9cf70"
+    },
+    {
+      "id": "lay-pp-spine-overrides_behave-as-global-bis",
+      "identifier": "lay-pp-spine-overrides_behave-as-global-bis",
+      "title": "lay-pp-spine-overrides_behave-as-global-bis",
+      "description": "Reflowable document, with a spine item overriding the global setting to use pre-paginated layout.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-spine-override"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 3,
+      "template": false,
+      "bytes": 187233,
+      "sha256": "d75786952ba8be1af31edbff7aab918960960935ebe6f369c027cecbff1cfb29"
+    },
+    {
+      "id": "lay-pp-spine-overrides_image-only-pp",
+      "identifier": "lay-pp-spine-overrides_image-only-pp",
+      "title": "lay-pp-spine-overrides_image-only-pp",
+      "description": "Pre-paginated document, with a spine item overriding the global setting to use reflowable layout, all pre-paginated pages are image-only.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-spine-override",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-spine-override-first"
+      ],
+      "modified": "2026-06-25T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 193731,
+      "sha256": "af9daa87762d6335b8d228538ab4d0521a25a800c9f91548fe52bb8a4d7ea48b"
+    },
+    {
+      "id": "lay-pp-spine-overrides_image-only-reflow",
+      "identifier": "lay-pp-spine-overrides_image-only-reflow",
+      "title": "lay-pp-spine-overrides_image-only-reflow",
+      "description": "Reflowable document, with a spine item overriding the global setting to use pre-paginated layout, the pre-paginated page is image-only.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-spine-override"
+      ],
+      "modified": "2026-06-25T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 3,
+      "template": false,
+      "bytes": 192875,
+      "sha256": "9e6ee15a1d84e84b3db9b1062cb667098806f4674b47f1166805a9d10fcfa7cb"
+    },
+    {
+      "id": "lay-pp-spine-overrides_image-spine-pp",
+      "identifier": "lay-pp-spine-overrides_image-spine-pp",
+      "title": "lay-pp-spine-overrides_image-spine-pp",
+      "description": "Pre-paginated document, with a spine item overriding the global setting to use reflowable layout, all pre-paginated pages are images in the spine with fallbacks.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-spine-override",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-spine-override-first"
+      ],
+      "modified": "2026-06-25T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 193746,
+      "sha256": "27312ade1b9972d4acf8c04330b159d41bb3146baf1f887ee25a000972d0591d"
+    },
+    {
+      "id": "lay-pp-spine-overrides_image-spine-reflow",
+      "identifier": "lay-pp-spine-overrides_image-spine-reflow",
+      "title": "lay-pp-spine-overrides_image-spine-reflow",
+      "description": "Reflowable document, with a spine item overriding the global setting to use pre-paginated layout, the pre-paginated page is image in spine with fallback.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-spine-override"
+      ],
+      "modified": "2026-06-25T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 3,
+      "template": false,
+      "bytes": 192902,
+      "sha256": "51b906177aa3c379ba80c9815511280879f45ed65970809bc2f893574dc967bd"
+    },
+    {
+      "id": "lay-pp-spread-none",
+      "identifier": "lay-pp-spread-none",
+      "title": "lay-pp-spread-none",
+      "description": "When rendition:spead is \"none\", spine items must not appear in synthetic spreads.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-fxl",
+        "https://www.w3.org/TR/epub-rs/#def-spread-none"
+      ],
+      "modified": "2023-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 230855,
+      "sha256": "88498f0316d55a62a30131fc371456181b3c5b63598281bbeea1fc1b2439408d"
+    },
+    {
+      "id": "lay-pp-svg-icb_multi",
+      "identifier": "lay-fxl-svg-icb_multi",
+      "title": "lay-fxl-svg-icb_multi",
+      "description": "The same SVG content outside the initial containing block (ICB) is clipped but the effect is different because the two pages have a different viewport setting.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#sec-fxl-icb-svg",
+        "https://www.w3.org/TR/epub-rs/#confreq-fxl-rs-svg"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 3,
+      "template": false,
+      "bytes": 181977,
+      "sha256": "b51fb15dad88749704b13010acd05fdb7011732da9eef44f458d864d41d7f342"
+    },
+    {
+      "id": "lay-pp-xhtml-icb",
+      "identifier": "lay-pp-xhtml-icb",
+      "title": "lay-pp-xhtml-icb",
+      "description": "XHTML content outside the initial containing block (ICB) is clipped.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#sec-fxl-icb-html",
+        "https://www.w3.org/TR/epub-rs/#confreq-fxl-rs-xhtml-icb"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 182301,
+      "sha256": "40a7ee8a371d916b2dfa4a08a215e72d35ecd6bc0606d7d0b01f530284efdb3e"
+    },
+    {
+      "id": "lay-pp-xhtml-icb_invalid_meta",
+      "identifier": "lay-pp-xhtml-icb_invalid_meta",
+      "title": "lay-pp-xhtml-icb_invalid_meta",
+      "description": "Reading systems SHOULD attempt to extract 'width' and 'height' values even if the tag's syntax is invalid.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-fxl-rs-xhtml-icb_invalid_meta"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 181749,
+      "sha256": "cd01714e7e8fdf56ebb330dbb911534ca1bf28e72b51712a79fe703dc72c0be0"
+    },
+    {
+      "id": "lay-pp-xhtml-icb_multi",
+      "identifier": "lay-pp-xhtml-icb_multi",
+      "title": "lay-pp-xhtml-icb_multi",
+      "description": "The same XHTML content outside the initial containing block (ICB) is clipped but the effect is different because the two pages have a different viewport setting.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#sec-fxl-icb-html",
+        "https://www.w3.org/TR/epub-rs/#confreq-fxl-rs-xhtml-icb"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 181666,
+      "sha256": "ad51134abaf79557134ec0760ef57863b879e03a31e84afc6999b5c205816d8a"
+    },
+    {
+      "id": "lay-pp-xhtml-icb_multi_declarations",
+      "identifier": "lay-pp-xhtml-icb_multi_declarations",
+      "title": "lay-pp-xhtml-icb_multi_declarations",
+      "description": "Only the first of multiple viewport meta tags is retained, the second is ignored.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-fxl-rs-xhtml-multiple-icb-def"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 181586,
+      "sha256": "7f0517d2ae64b27f0ff4415ce7570a176d1488db46d3f2871a6e8ca47e00f2ae"
+    },
+    {
+      "id": "lay-pp-xhtml-icb_repeated-in-meta",
+      "identifier": "lay-pp-xhtml-icb_repeated-in-meta",
+      "title": "lay-pp-xhtml-icb_repeated-in-meta",
+      "description": "Reading system should use the first declaration of a 'width' or 'height' (i.e., ignore repeated declarations).",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-fxl-rs-xhtml-icb_repeated-in-meta"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 181755,
+      "sha256": "c36038807a11044a0390807e5dc8121e22d8660a9c303532f24da82258c66018"
+    },
+    {
+      "id": "lay-pp-xhtml-icb_units",
+      "identifier": "lay-pp-xhtml-icb_units",
+      "title": "lay-pp-xhtml-icb_units",
+      "description": "Units of lengths in an ICB declaration are ignored, values are in pixels.",
+      "coverage": "Pre-paginated Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-fxl-rs-xhtml-icb-units"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 181601,
+      "sha256": "f4cd157cb5e6b8a8c0dc906b94af22f88342c3af834bee0e0938b027ebed66e5"
+    },
+    {
+      "id": "lay-reflow-align-x-center",
+      "identifier": "lay-reflow-align-x-center",
+      "title": "lay-reflow-align-x-center",
+      "description": "For reflowable content, reading systems that support align-x-center must center each page.",
+      "coverage": "Fixed Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#reflow-align-x-center"
+      ],
+      "modified": "2022-12-07T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 3,
+      "template": false,
+      "bytes": 4343,
+      "sha256": "e09e42f1fda4351871c49262308031c766212b43bfaed29105c91d7843e811ca"
+    },
+    {
+      "id": "lay-rendition-flow-pre-pag",
+      "identifier": "lay-rendition-flow-pre-pag",
+      "title": "lay-rendition-flow-pre-pag",
+      "description": "The reading system must ignore rendition:flow properties when processing pre-paginated spine items.",
+      "coverage": "Fixed Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#flow-pre-pag"
+      ],
+      "modified": "2022-09-21T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 5387,
+      "sha256": "67aca28ea2d983d9851e9b5c0991b10b3ae6f9120c8992f91182d7e92d34314b"
+    },
+    {
+      "id": "lay-roll-embedded-images",
+      "identifier": "lay-roll-embedded-images",
+      "title": "A Apple Pie — embedded images in roll",
+      "description": "Roll publication with images embedded in XHTML.",
+      "coverage": "Roll Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-fxl",
+        "https://www.w3.org/TR/epub-rs/#sec-roll-layouts"
+      ],
+      "modified": "2026-01-15T20:32:01Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 10,
+      "template": false,
+      "bytes": 27430581,
+      "sha256": "eace6427a1e047ad75160a1ed3962e99b43f7009699034ec129f959d2d72da32"
+    },
+    {
+      "id": "lay-roll-embedded-images-svg",
+      "identifier": "lay-roll-embedded-images-svg",
+      "title": "A Apple Pie — embedded images in SVG for roll",
+      "description": "Pre-paginated publication with images embedded in XHTML.",
+      "coverage": "Roll Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-fxl",
+        "https://www.w3.org/TR/epub-rs/#sec-roll-layouts"
+      ],
+      "modified": "2026-01-31T20:32:01Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 9,
+      "template": false,
+      "bytes": 27429760,
+      "sha256": "8abbf9688b02d042856a37676b8bfff35e17ca5371f230928d4eeba8cac1fa16"
+    },
+    {
+      "id": "lay-roll-images-in-spine",
+      "identifier": "lay-roll-images-in-spine",
+      "title": "A Apple Pie — images in the spine in roll",
+      "description": "Roll publication with images in the spine with fallbacks.",
+      "coverage": "Roll Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-fxl",
+        "https://www.w3.org/TR/epub-rs/#sec-roll-layouts",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-manifest-fallback"
+      ],
+      "modified": "2026-01-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 9,
+      "template": false,
+      "bytes": 27740796,
+      "sha256": "72e0e33cd73c33eaccc4e55aafdfae3c082fccd39ef3667c3f561f182d0241a0"
+    },
+    {
+      "id": "lay-roll-images-mixed",
+      "identifier": "lay-roll-images-mixed",
+      "title": "A Apple Pie — embedded images except for two in the spine in a roll",
+      "description": "Roll publication with mixed embedded and spine images.",
+      "coverage": "Roll Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-fxl",
+        "https://www.w3.org/TR/epub-rs/#sec-roll-layouts",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-manifest-fallback"
+      ],
+      "modified": "2026-01-15T20:32:01Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 10,
+      "template": false,
+      "bytes": 30444798,
+      "sha256": "9f323c23020d0ccc5c184359cd5ac17b996320065ae9d185bf32af8a804bf4e2"
+    },
+    {
+      "id": "lay-viewport-meta-prop",
+      "identifier": "lay-viewport-meta-prop",
+      "title": "lay-viewport-meta-prop",
+      "description": "Reading systems must ignore rendering instructions in the meta viewport delaration other than the dimenstions.",
+      "coverage": "Fixed Layout",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#viewport-meta-prop"
+      ],
+      "modified": "2022-12-07T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 230930,
+      "sha256": "c7350e4e139f7b37afcea879c7882de2a61f588a67c3cb3f34127db7a599f401"
+    },
+    {
+      "id": "mol-audio",
+      "identifier": "mol-audio",
+      "title": "mol-audio",
+      "description": "Tests whether the Reading System obeys the clipBegin and clipEnd attributes.",
+      "coverage": "Media Overlays",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#mol-audio"
+      ],
+      "modified": "2022-05-24T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 3012618,
+      "sha256": "b700681a0adb9dddcd4f0cbad10606453d0e9e88cfbe08b6109cd3f63ab9b90e"
+    },
+    {
+      "id": "mol-audio-exceeding-clipend",
+      "identifier": "mol-audio-exceeding-clipend",
+      "title": "mol-audio-exceeding-clipend",
+      "description": "Tests whether the Reading System ignores the clipEnd attribute in the smil file's par element if it exceeds the length of the audio file.",
+      "coverage": "Media Overlays",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#mol-audio-exceeding-clipend"
+      ],
+      "modified": "2022-08-09T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 3648556,
+      "sha256": "f90e4899fa99a020abe0ee236099c2aaee8eb9adf15c08fbc07383c2e9435c60"
+    },
+    {
+      "id": "mol-audio-no-clipbegin",
+      "identifier": "mol-audio-no-clipbegin",
+      "title": "mol-audio-no-clipbegin",
+      "description": "Tests whether the Reading System starts at the beginning of the audio track in the absence of a clipBegin attribute in the smil file.",
+      "coverage": "Media Overlays",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#mol-audio-no-clipbegin"
+      ],
+      "modified": "2022-08-09T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 3013132,
+      "sha256": "63db37f8098f86aa390ae3554711ecee2e97f4b3c78eaf116b0a640a2126cccd"
+    },
+    {
+      "id": "mol-audio-no-clipend",
+      "identifier": "mol-audio-no-clipend",
+      "title": "mol-audio-no-clipend",
+      "description": "Tests whether the Reading System plays until the end of the audio track in the absence of a clipEnd attribute in the smil file.",
+      "coverage": "Media Overlays",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#mol-audio-no-clipend"
+      ],
+      "modified": "2023-01-18T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 3013161,
+      "sha256": "6f702c18243a997739cb52d1f40daf7ac9510c40e92db5ba60d79098d14a6c54"
+    },
+    {
+      "id": "mol-css",
+      "identifier": "mol-css",
+      "title": "mol-css",
+      "description": "Tests whether the Reading System implements the associated CSS styling for media overlays.",
+      "coverage": "Media Overlays",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-mo",
+        "https://www.w3.org/TR/epub-rs/#mol-rendering-with-styling"
+      ],
+      "modified": "2022-08-09T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 9003107,
+      "sha256": "dc5314cada945edfd5a9a8714b08130a23a99c331a225fef87d81aaf7ad7c2c6"
+    },
+    {
+      "id": "mol-ignore",
+      "identifier": "mol-ignore",
+      "title": "mol-ignore",
+      "description": "Tests whether Reading System not supporting media overlays ignores the relevant items and attributes.",
+      "coverage": "Media Overlays",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-mo-ignore"
+      ],
+      "modified": "2022-08-09T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 9003056,
+      "sha256": "e0e35244a5a85d515122ab4a0cd83bebcf7065f69dc74fba25fd00540fe649d9"
+    },
+    {
+      "id": "mol-navigation",
+      "identifier": "mol-navigation",
+      "title": "mol-navigation",
+      "description": "When navigating to another page, the media overlay playback position updates accordingly.",
+      "coverage": "Media Overlays",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#mol-navigation"
+      ],
+      "modified": "2023-01-16T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 598836,
+      "sha256": "9cfca084ba7ef7d691593f2677b5290567c320dd2d05837743fde4687c5eaf82"
+    },
+    {
+      "id": "mol-support_xhtml",
+      "identifier": "mol-support_xhtml",
+      "title": "mol-support_xhtml",
+      "description": "Tests whether the Reading System supports playback for XHTML content documents.",
+      "coverage": "Media Overlays",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-loading-mol",
+        "https://www.w3.org/TR/epub-rs/#mol-rendering-with-styling"
+      ],
+      "modified": "2022-08-09T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 9003121,
+      "sha256": "3a1ba2cc3285affd754cac825f18cf19be4444166186f05db5fb3a5875878ef3"
+    },
+    {
+      "id": "mol-support_xhtml-fxl",
+      "identifier": "mol-support_xhtml-fxl",
+      "title": "mol-support_xhtml-fxl",
+      "description": "Tests whether the Reading System supports playback for XHTML content documents in fixed layout.",
+      "coverage": "Media Overlays",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-loading-mol",
+        "https://www.w3.org/TR/epub-rs/#mol-rendering-with-styling"
+      ],
+      "modified": "2023-01-11T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 9003319,
+      "sha256": "5e3feba4ea471d6d107fa6e31d93ce90628d8519276b28de5b36a07831ccbaa1"
+    },
+    {
+      "id": "mol-support_xhtml-load",
+      "identifier": "mol-support_xhtml-load",
+      "title": "mol-support_xhtml-load",
+      "description": "Tests whether the playback starts at the right places in the MO definition, including entries in the middle of the file.",
+      "coverage": "Media Overlays",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#mol-support-xhtml-load"
+      ],
+      "modified": "2022-08-11T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 3,
+      "template": false,
+      "bytes": 9003929,
+      "sha256": "cb79e52295636ddbefd1a76e429587fe3650e20f366941d20a59652d75a33475"
+    },
+    {
+      "id": "mol-support_xhtml-load-fxl",
+      "identifier": "mol-support_xhtml-load-fxl",
+      "title": "mol-support_xhtml-load-fxl",
+      "description": "Tests whether the playback starts at the right places in the MO definition, including entries in the middle of the file in fixed layout.",
+      "coverage": "Media Overlays",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#mol-support-xhtml-load"
+      ],
+      "modified": "2023-01-11T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 3,
+      "template": false,
+      "bytes": 9004211,
+      "sha256": "e08d36b0ce10b0688eb52ea64fd032061ff07eb8c64ab338f51755ffa49be591"
+    },
+    {
+      "id": "mol-support_xhtml-load-next",
+      "identifier": "mol-support_xhtml-load-next",
+      "title": "mol-support_xhtml-load-next",
+      "description": "Tests whether the Reading System supports playback of XHTML content documents with content switching automatically as playback goes on. The switch also involves a switch of MO files.",
+      "coverage": "Media Overlays",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#mol-support-xhtml-load-next"
+      ],
+      "modified": "2022-08-10T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 3,
+      "template": false,
+      "bytes": 9004312,
+      "sha256": "0db5b296d0a07869fb2631a9055ce9d025a0154c6985532e5aa8eb90deea8fea"
+    },
+    {
+      "id": "mol-support_xhtml-load-next-fxl",
+      "identifier": "mol-support_xhtml-load-next-fxl",
+      "title": "mol-support_xhtml-load-next-fxl",
+      "description": "Tests whether the Reading System supports playback of XHTML content documents  in fixed layout with content switching automatically as playback goes on. The switch also involves a switch of MO files.",
+      "coverage": "Media Overlays",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#mol-support-xhtml-load-next"
+      ],
+      "modified": "2023-01-11T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 3,
+      "template": false,
+      "bytes": 9004594,
+      "sha256": "add7443973641c4dc552278bf8f5e25ef08800dfe0e3c0833ed9b0dc09003dba"
+    },
+    {
+      "id": "mol-timing-synchronization",
+      "identifier": "mol-timing-synchronization",
+      "title": "mol-timing-synchronization",
+      "description": "Tests whether the Reading System implements media overlays.",
+      "coverage": "Media Overlays",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#mol-timing-sync"
+      ],
+      "modified": "2022-02-10T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 9002878,
+      "sha256": "431f5f51558e01fa987cd9088df536ae08249c73df78fca9f94444256ef2fc87"
+    },
+    {
+      "id": "mol-timing-synchronization_fxl",
+      "identifier": "mol-timing-synchronization_fxl",
+      "title": "mol-timing-synchronization_fxl",
+      "description": "Tests whether the Reading System implements media overlays in fixed layout publications.",
+      "coverage": "Media Overlays",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#mol-timing-sync",
+        "https://www.w3.org/TR/epub-rs/#mol-rendering-with-styling"
+      ],
+      "modified": "2022-12-07T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 3241616,
+      "sha256": "0b6c7c15b337550603d31a4911fc10bd56ce46aa23df7d13fd88069cc50e7a6b"
+    },
+    {
+      "id": "mol-timing-synchronization_multiple_audio",
+      "identifier": "mol-timing-synchronization_multiple_audio",
+      "title": "mol-timing-synchronization_multiple_audio",
+      "description": "Tests whether the Reading System implements media overlays with a SMIL file referring to two audio files.",
+      "coverage": "Media Overlays",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#mol-timing-sync"
+      ],
+      "modified": "2022-08-09T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 3648491,
+      "sha256": "799e4398ddcafcf3e710d135e29a2eaeb83f4b856dcd8d2bb449a4ae795baa61"
+    },
+    {
+      "id": "mol-timing-synchronization_multiple_audio-fxl",
+      "identifier": "mol-timing-synchronization_multiple_audio-fxl",
+      "title": "mol-timing-synchronization_multiple_audio-fxl",
+      "description": "Tests whether the Reading System implements media overlays with a SMIL file referring to two audio files in fixed layout.",
+      "coverage": "Media Overlays",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#mol-timing-sync"
+      ],
+      "modified": "2023-01-11T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 3648696,
+      "sha256": "91aeada1c45742b2193fb094b357ff34390f1d7128647bc26d1d4a45a1b16b6f"
+    },
+    {
+      "id": "mol-timing-synchronization_svg",
+      "identifier": "mol-timing-synchronization_svg",
+      "title": "mol-timing-synchronization_svg",
+      "description": "Basic media overlay test in SVG content with CSS styling.",
+      "coverage": "Media Overlays",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#mol-timing-sync",
+        "https://www.w3.org/TR/epub-rs/#mol-rendering-with-styling"
+      ],
+      "modified": "2022-09-22T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 3013442,
+      "sha256": "8c0edb810ac9e7f1d68538872eda0da262fdc19152ddbd307f6fe3f718b6bc8e"
+    },
+    {
+      "id": "mol-timing-synchronization_svg-fxl",
+      "identifier": "mol-timing-synchronization_svg-fxl",
+      "title": "mol-timing-synchronization_svg-fxl",
+      "description": "Basic media overlay test in SVG content  in fixed layout with CSS styling.",
+      "coverage": "Media Overlays",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#mol-timing-sync",
+        "https://www.w3.org/TR/epub-rs/#mol-rendering-with-styling"
+      ],
+      "modified": "2023-01-11T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 3013555,
+      "sha256": "97941bafa5c4c99d637d990ac6aa9c97773576d58a5855f616aa71227b38a3e4"
+    },
+    {
+      "id": "mol-tts_multi",
+      "identifier": "mol-tts_multi",
+      "title": "mol-tts_multi",
+      "description": "Tests whether the reading system implements Text-to-Speech as a fallback when no audio content is provided. Several fragments are defined in the SMIL file.",
+      "coverage": "Media Overlays",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#mol-tts"
+      ],
+      "modified": "2022-08-09T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 3575,
+      "sha256": "a3a6c29fa5c1d039a1719895a392ff22c04bbc2030bcf5556c47d862ad2fc78f"
+    },
+    {
+      "id": "mol-tts_single",
+      "identifier": "mol-tts_single",
+      "title": "mol-tts_single",
+      "description": "Tests whether the reading rystem implements text-to-speech as a fallback when no audio content is provided. Only one fragment is defined in the SMIL file.",
+      "coverage": "Media Overlays",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#mol-tts"
+      ],
+      "modified": "2022-08-09T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 3529,
+      "sha256": "4755a94be4ac273b2c6f8e326de372761024634e44db885f65af2373fe724a44"
+    },
+    {
+      "id": "nav-access",
+      "identifier": "nav-access",
+      "title": "nav-access",
+      "description": "The navigation document contains a single link and can be accessed through reading system controls.",
+      "coverage": "Navigation Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-nav-toc-access"
+      ],
+      "modified": "2021-11-18T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1758,
+      "sha256": "521ddcd81865319e43fe4e68b0b64d464c26697cd1dc1bc06b059c815926971f"
+    },
+    {
+      "id": "nav-activation",
+      "identifier": "nav-activation",
+      "title": "nav-activation",
+      "description": "Activating a link in the navigation document relocates the reading position to the target of the link.",
+      "coverage": "Navigation Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-nav-activation"
+      ],
+      "modified": "2021-01-26T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 3,
+      "template": false,
+      "bytes": 2112,
+      "sha256": "c435e47f4edd682d8b60b0321dad28edad936a3f41ad34bc8d52d44fd4cdb999"
+    },
+    {
+      "id": "nav-non-text_img",
+      "identifier": "nav-non-text_img",
+      "title": "nav-non-text_img",
+      "description": "The navigation document contains a normal link, and a link with an image content with alt text.",
+      "coverage": "Navigation Documents",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-nav-alt-text"
+      ],
+      "modified": "2023-01-11T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 239645,
+      "sha256": "203c439d4cdca70eb03d507e812de6f7dda7229ebc8388c1e6a69f0b038e5e2c"
+    },
+    {
+      "id": "nav-non-text_img_title",
+      "identifier": "nav-non-text_img_title",
+      "title": "nav-non-text_img_title",
+      "description": "The navigation document contains a normal link, and a link with an image content with title and alt text.",
+      "coverage": "Navigation Documents",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-nav-alt-text"
+      ],
+      "modified": "2023-01-11T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 239651,
+      "sha256": "8b9cd25ecbdbd41617682e59eec724c16054c97bc617d16a1560e8c08f0218a8"
+    },
+    {
+      "id": "nav-spine_in-spine",
+      "identifier": "nav-spine_in-spine",
+      "title": "nav-spine_in-spine",
+      "description": "The navigation document is referenced in the spine and can be accessed through reading system controls.",
+      "coverage": "Navigation Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-nav-spine"
+      ],
+      "modified": "2021-01-26T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 3,
+      "template": false,
+      "bytes": 2091,
+      "sha256": "ef2d6d4e9bb7eeb76b09c027c24761a980fd57678c834930b0bab364db85b89e"
+    },
+    {
+      "id": "nav-spine_in-spine-hidden-toc-css",
+      "identifier": "nav-spine_in-spine-hidden-toc-css",
+      "title": "nav-spine_in-spine-hidden-toc-css",
+      "description": "When creating a TOC widget, reading system must ignore CSS statements that hide TOC items from being viewed when the nav document is rendered in the spine.",
+      "coverage": "Navigation Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-nav-hidden"
+      ],
+      "modified": "2025-04-16T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 3,
+      "template": false,
+      "bytes": 2400,
+      "sha256": "407b5132814432c56a36ea22cdf69ae176324f0e6ac6ffa41350107e450d6efb"
+    },
+    {
+      "id": "nav-spine_in-spine-hidden-toc-html",
+      "identifier": "nav-spine_in-spine-hidden-toc-html",
+      "title": "nav-spine_in-spine-hidden-toc-html",
+      "description": "When creating a TOC widget, reading system must ignore HTML attributes that hide TOC items from being viewed when the nav document is rendered in the spine.",
+      "coverage": "Navigation Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-nav-hidden"
+      ],
+      "modified": "2025-04-16T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 3,
+      "template": false,
+      "bytes": 2392,
+      "sha256": "53bd239988bffc8950ee989faf2fe952742e1495289547f4a4fd78b2c00b2b95"
+    },
+    {
+      "id": "nav-spine_in-spine-no-list-style",
+      "identifier": "nav-spine_in-spine-no-list-style",
+      "title": "nav-spine_in-spine-no-list-style",
+      "description": "The reading system's rendering of the navigation must not show numbering, disregarding the list-style-type declared in the navigation document.",
+      "coverage": "Navigation Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-nav-ol-style"
+      ],
+      "modified": "2022-01-25T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 3,
+      "template": false,
+      "bytes": 2346,
+      "sha256": "2357762e7adbea635e5337a08e6eee161b8e1128b9fdab71b98bd9cae110416c"
+    },
+    {
+      "id": "nav-spine_not-in-spine",
+      "identifier": "nav-spine_not-in-spine",
+      "title": "nav-spine_not-in-spine",
+      "description": "The navigation document is not referenced in the spine, but can still be accessed through reading system controls.",
+      "coverage": "Navigation Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-nav-spine"
+      ],
+      "modified": "2021-01-26T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 2119,
+      "sha256": "08d4bc8769962f13a5ebe67674a41500efe030ddd02e20c06a404c05b06252e9"
+    },
+    {
+      "id": "ocf-font_obfuscation",
+      "identifier": "ocf-font_obfuscation",
+      "title": "ocf-font_obfuscation",
+      "description": "An obfuscated (TrueType) font should be displayed after de-obfuscation.",
+      "coverage": "Open Container Format",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-ocf-fobfus",
+        "https://www.w3.org/TR/epub/#obfus-key-unique-id"
+      ],
+      "modified": "2022-09-06T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 56518,
+      "sha256": "03986afa140a419fc7046a5d11e463600fecea32b93435f2c55b1a54f22a9474"
+    },
+    {
+      "id": "ocf-font_obfuscation_bis",
+      "identifier": "ocf-font_obfuscation-bis",
+      "title": "ocf-font_obfuscation-bis",
+      "description": "An obfuscated (TrueType) font should not be displayed after de-obfuscation, because the obfuscation used a different publication id.",
+      "coverage": "Open Container Format",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-ocf-fobfus",
+        "https://www.w3.org/TR/epub/#obfus-key-unique-id"
+      ],
+      "modified": "2022-09-06T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 56575,
+      "sha256": "c3d4895358c8f7ef025cd837156e79e243432c3ab3f1e257dc15b62f4c714dbf"
+    },
+    {
+      "id": "ocf-metainf-inc",
+      "identifier": "ocf-metainf-inc",
+      "title": "ocf-metainf-inc",
+      "description": "An extra configuration file, not in the reserved files' list, is added to the META-INF folder; this file must be ignored.",
+      "coverage": "Open Container Format",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#sec-container-metainf-inc"
+      ],
+      "modified": "2022-05-28T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2396,
+      "sha256": "bdce94cdcab0f06324c029bc08c74d2d3d2f5a3d97ad59d89d1ea12fa219d479"
+    },
+    {
+      "id": "ocf-metainf-manifest",
+      "identifier": "ocf-metainf-manifest",
+      "title": "ocf-metainf-manifest",
+      "description": "An ancillary manifest file, containing an extra spine item, is present in the META-INF directory; this extra item must be ignored by the reading system.",
+      "coverage": "Open Container Format",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#sec-container-metainf-manifest.xml"
+      ],
+      "modified": "2022-05-28T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2995,
+      "sha256": "01326140dfbee459f5a77bc08699512c516a8dc0ab50f4f42083afbbab5747a7"
+    },
+    {
+      "id": "ocf-package_arbitrary",
+      "identifier": "ocf-package_arbitrary",
+      "title": "ocf-package_arbitrary",
+      "description": "The EPUB contains three valid package files and three corresponding sets of content documents, but only one of the\n      packages, in an unusual subdirectory, is referenced by the container.xml file. The reading system must use this\n      package.",
+      "coverage": "Open Container Format",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#container-default-rendition"
+      ],
+      "modified": "2021-01-21T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 4492,
+      "sha256": "2c71ae28ebb46842fabb44732cdbf3982f2b2daed16caf65bf906b915c90ff04"
+    },
+    {
+      "id": "ocf-package_multiple",
+      "identifier": "ocf-package_multiple",
+      "title": "ocf-package_multiple",
+      "description": "The EPUB contains three valid package files and three corresponding sets of content documents, all referenced by the\n      container.xml file. The reading system must use the first package.",
+      "coverage": "Open Container Format",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#container-default-rendition"
+      ],
+      "modified": "2021-01-21T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 4429,
+      "sha256": "307f2847f512835c1b763e085efaafb4b5e97deadf85e6f8c61a86df831282f2"
+    },
+    {
+      "id": "ocf-url_link-leaking-relative",
+      "identifier": "ocf-url_link-leaking-relative",
+      "title": "ocf-url_link-leaking-relative",
+      "description": "Use a relative link with several double-dot path segments from the content to a photograph. The folder hierarchy containing the photograph starts at the root level; the relative image reference exceeds depth of hierarchy.",
+      "coverage": "Open Container Format",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#sec-container-iri-step-parse",
+        "https://www.w3.org/TR/epub-rs/#sec-container-iri-step-parse"
+      ],
+      "modified": "2022-03-06T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 320900,
+      "sha256": "f2354a856a2b1da28c888283da8baf827776a07ae34dee3c53703179a1c0c7ec"
+    },
+    {
+      "id": "ocf-url_link-path-absolute",
+      "identifier": "ocf-url_link-path-absolute",
+      "title": "ocf-url_link-path-absolute",
+      "description": "Use a path-absolute link, i.e., beginning with a leading slash, from the content to a photograph. The folder hierarchy containing the photograph starts at the root level.",
+      "coverage": "Open Container Format",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#sec-container-iri-root-parse",
+        "https://www.w3.org/TR/epub-rs/#sec-container-iri-root-parse"
+      ],
+      "modified": "2022-03-06T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 320845,
+      "sha256": "f6ea6297fd55477e42482ea822875427699a48c72a31cfff26282eca5e72a712"
+    },
+    {
+      "id": "ocf-url_link-relative",
+      "identifier": "ocf-url_link-relative",
+      "title": "ocf-url_link-relative",
+      "description": "A simple relative link from the content to a photograph. The folder hierarchy containing the photograph starts at the root level.",
+      "coverage": "Open Container Format",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#pkg-parse-package-url",
+        "https://www.w3.org/TR/epub/#sec-container-iri-root",
+        "https://www.w3.org/TR/epub-rs/#sec-container-iri-root"
+      ],
+      "modified": "2022-03-06T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 320830,
+      "sha256": "e3c8d1cf48bd85723007a8e7c71792b6490531f836c4f11c7892fb1e5b2bf9bb"
+    },
+    {
+      "id": "ocf-url_manifest",
+      "identifier": "ocf-url_manifest",
+      "title": "ocf-url_manifest",
+      "description": "The manifest refers to an XHTML file in an arbitrary subfolder. The reading system must be able to find the content.",
+      "coverage": "Open Container Format",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#sec-container-iri-root",
+        "https://www.w3.org/TR/epub-rs/#sec-container-iri-root"
+      ],
+      "modified": "2021-01-18T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1782,
+      "sha256": "e330fb2fb6038922061217fc2fec19488bb2e34d7721eac7a04e03b41855b387"
+    },
+    {
+      "id": "ocf-url_origin",
+      "identifier": "ocf-url_origin",
+      "title": "ocf-url_origin",
+      "description": "The origin value is displayed. The origin must be unique for each user-specific instance of the publication.",
+      "coverage": "Open Container Format",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#sec-container-iri-origin",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-scripted-origin-user"
+      ],
+      "modified": "2021-03-05T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2201,
+      "sha256": "8a3a54bff0e51cf7426e88babd374b5889ad39d20bdccfd864996ff1ea54e10c"
+    },
+    {
+      "id": "ocf-url_parse-leaking-relative",
+      "identifier": "ocf-url_parse-leaking-relative",
+      "title": "ocf-url_parse-leaking-relative",
+      "description": "Parse, in Javascript, a relative link with several double-dot path segments from the content to a photograph. The folder hierarchy containing the photograph starts at the root level; the number of segments exceeds the depth of the folder hierarchy.",
+      "coverage": "Open Container Format",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#sec-container-iri-step-parse",
+        "https://www.w3.org/TR/epub-rs/#sec-container-iri-step-parse"
+      ],
+      "modified": "2021-03-05T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2546,
+      "sha256": "b9baa9707366352412a70b216f0b0d95ccfdc0b2c31b25f66b49ad03535c1231"
+    },
+    {
+      "id": "ocf-url_parse-path-absolute",
+      "identifier": "ocf-url_parse-path-absolute",
+      "title": "ocf-url_parse-path-absolute",
+      "description": "Parse, in Javascript, a path-absolute URL, i.e., beginning with a leading slash, from the content to an image. The folder hierarchy containing the image starts at the root level.",
+      "coverage": "Open Container Format",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#sec-container-iri-root-parse",
+        "https://www.w3.org/TR/epub-rs/#sec-container-iri-root-parse"
+      ],
+      "modified": "2021-03-05T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2434,
+      "sha256": "3170c750e511ca39c4bab72ffd6e6fdaa2a05234c59f34993274cb245c0815f1"
+    },
+    {
+      "id": "ocf-url_relative",
+      "identifier": "ocf-url_relative",
+      "title": "ocf-url_relative",
+      "description": "The manifest refers to an XHTML file in an arbitrary subfolder that is relative to the package's own arbitrary folder.\n      The reading system must be able to find the content.",
+      "coverage": "Open Container Format",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#pkg-parse-package-url",
+        "https://www.w3.org/TR/epub/#sec-container-iri-root",
+        "https://www.w3.org/TR/epub/#sec-container-metainf-url-parsing",
+        "https://www.w3.org/TR/epub-rs/#sec-container-iri-root"
+      ],
+      "modified": "2021-11-12T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1845,
+      "sha256": "70298e684755c0dfa58eb714ab1cbc7b45afd0e267bbf5f8b1dc92c2b9efd9e2"
+    },
+    {
+      "id": "ocf-zip-comp",
+      "identifier": "ocf-zip-comp",
+      "title": "ocf-zip-comp",
+      "description": "MUST treat any OCF ZIP container that uses compression techniques other than Deflate as in error.",
+      "coverage": "Open Container Format",
+      "collections": [],
+      "references": [
+        "https://w3c.github.io/epub-specs/epub33/rs/#confreq-zip-comp"
+      ],
+      "modified": "2022-07-30T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1829,
+      "sha256": "78f1ac1759b3e44166f9dbcf7e1d53aae083d83528ecdd68b89ac1777367464e"
+    },
+    {
+      "id": "ocf-zip-mult",
+      "identifier": "ocf-zip-mult",
+      "title": "ocf-zip-mult",
+      "description": "MUST treat any OCF ZIP container that splits the content into segments as in error.",
+      "coverage": "Open Container Format",
+      "collections": [],
+      "references": [
+        "https://w3c.github.io/epub-specs/epub33/rs/#confreq-zip-mult"
+      ],
+      "modified": "2022-07-25T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 320753,
+      "sha256": "0bc3fca72c855d3186877de8b5e8110f767779ddc88f6ad887a0c477a6e9a5f2"
+    },
+    {
+      "id": "pkg-collections-unknown",
+      "identifier": "pkg-collections-unknown",
+      "title": "pkg-collections-unknown",
+      "description": "The package document contains a collection with an unknown role. The reading system must open the EPUB successfully.",
+      "coverage": "Package Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-collections-unknown"
+      ],
+      "modified": "2021-01-26T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1790,
+      "sha256": "b2918b6b1efc7bf571e8d1fb56105a58a3efcab60266a98ca33535f6626b40ec"
+    },
+    {
+      "id": "pkg-creator-order",
+      "identifier": "pkg-creator-order",
+      "title": "pkg-creator-order",
+      "description": "Several creators are listed in the package document. The reading system must not display them out of order (but it may\n      display only the first).",
+      "coverage": "Package Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-creator-order"
+      ],
+      "modified": "2021-01-11T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1864,
+      "sha256": "82ecff0d317944a7fa9a7b06d4d9b5960c1fa4c1e5b4e6ac89eb1f508734dd2e"
+    },
+    {
+      "id": "pkg-dir-auto_root-rtl",
+      "identifier": "pkg-dir-auto_root-rtl",
+      "title": "CSS: مغامرة جديدة!",
+      "description": "The 'dc:title' element contains text whose proper rendering requires bidi control. The element's 'dir' attribute is set\n      to 'auto' and the 'dir' attribute is set to 'rtl' on the package element; the title should display incorrectly.",
+      "coverage": "Internationalization",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#attrdef-dir",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-dir-intro",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-dir-auto"
+      ],
+      "modified": "2021-09-22T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2127,
+      "sha256": "bb55366e86b43244e7370be170ee1547039fcfb6ec5f5f0db4b98778b01572a8"
+    },
+    {
+      "id": "pkg-dir-auto_root-unset",
+      "identifier": "pkg-dir-auto_root-unset",
+      "title": "CSS: הרפתקה חדשה!",
+      "description": "The 'dc:title' element contains text whose proper rendering requires bidi control. The element's 'dir' attribute is set\n      to 'auto'; the title should display incorrectly.",
+      "coverage": "Internationalization",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#attrdef-dir",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-dir-intro",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-dir-auto"
+      ],
+      "modified": "2021-09-22T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2037,
+      "sha256": "c1b7eaa8720ff147acc1891667b64b6a9ca5464005fbbf4f0e12884ca065b1e1"
+    },
+    {
+      "id": "pkg-dir_but_not_content",
+      "identifier": "pkg-dir_but_not_content",
+      "title": "CSS: הרפתקה חדשה!",
+      "description": "The package document's language is set to 'he' and direction 'rtl' but the content document is not annotated for language and direction. The content document should not become automatically 'he' and 'rtl'.",
+      "coverage": "Internationalization",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-lang-no-content"
+      ],
+      "modified": "2022-01-21T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2027,
+      "sha256": "d39ec208ebd703db784b5b6002752bb3fd5f5aaff2d1cedb85fd03457a95e1e0"
+    },
+    {
+      "id": "pkg-dir_creator-rtl",
+      "identifier": "pkg-dir_creator-rtl",
+      "title": "pkg-dir_creator-rtl",
+      "description": "The 'dc:creator' element's 'dir' attribute is set to 'rtl'; the creator's name should display right-to-left.",
+      "coverage": "Internationalization",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#attrdef-dir",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-dir-intro",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-dir"
+      ],
+      "modified": "2021-02-03T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1803,
+      "sha256": "fccc47471038351a8775e06b4b6681724b7f440c548c0e0c26e87438b81af1d4"
+    },
+    {
+      "id": "pkg-dir_rtl-root-ltr",
+      "identifier": "pkg-dir_rtl-root-ltr",
+      "title": "CSS: הרפתקה חדשה!",
+      "description": "The 'dc:title' element contains text whose proper rendering requires bidi control. The element's 'dir' attribute is set\n      to 'rtl' and the 'dir' attribute is set to 'ltr' on the 'package' element; the title should display correctly.",
+      "coverage": "Internationalization",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#attrdef-dir",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-dir-intro",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-dir"
+      ],
+      "modified": "2021-09-22T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2104,
+      "sha256": "53e112ba5de3b4ecf9503a2654ffe577b90a291b3aa57b564bff7a9c9be9d15a"
+    },
+    {
+      "id": "pkg-dir_rtl-root-unset",
+      "identifier": "pkg-dir_rtl-root-unset",
+      "title": "CSS: הרפתקה חדשה!",
+      "description": "The 'dc:title' element contains text whose proper rendering requires bidi control. The element's 'dir' attribute is set\n      to 'rtl'; the title should display correctly.",
+      "coverage": "Internationalization",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#attrdef-dir",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-dir-intro",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-dir"
+      ],
+      "modified": "2021-09-22T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2017,
+      "sha256": "5cbec47180aadb05db47068325b50f166a18a5c596baa1da30f613679e271500"
+    },
+    {
+      "id": "pkg-dir_unset-root-rtl",
+      "identifier": "pkg-dir_unset-root-rtl",
+      "title": "CSS: مغامرة جديدة!",
+      "description": "The 'dc:title' element contains text whose proper rendering requires bidi control. The root's 'dir' attribute is set to\n      'rtl'; the title should display correctly.",
+      "coverage": "Internationalization",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#attrdef-dir",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-dir-intro",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-dir"
+      ],
+      "modified": "2021-09-22T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2046,
+      "sha256": "8157ce6084131095814e4a2ef833467e332ee5ce72e3729021925c014fbe3c1c"
+    },
+    {
+      "id": "pkg-dir_unset-root-unset",
+      "identifier": "pkg-dir_unset-root-unset",
+      "title": "CSS: مغامرة جديدة!",
+      "description": "The 'dc:title' element contains text whose proper rendering requires bidi control. The element's 'dir' attribute is not\n      set; the title should display incorrectly.",
+      "coverage": "Internationalization",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#attrdef-dir",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-dir-intro",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-dir"
+      ],
+      "modified": "2021-09-22T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2013,
+      "sha256": "6062508ff603c061679f67901a7455efe2e7c99b18ef6f74ff01f080d019445b"
+    },
+    {
+      "id": "pkg-lang_but_not_content",
+      "identifier": "pkg-lang_but_not_content",
+      "title": "Le contenu n'est pas automatiquement français",
+      "description": "The package document's language is set to 'fr' but the content document is not annotated for language. The content document should not become automatically 'fr' but should be the default 'en'.",
+      "coverage": "Internationalization",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-lang-no-content"
+      ],
+      "modified": "2022-09-14T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2199,
+      "sha256": "d430b41cffa539807a88f82a798cef06062d947b21d3fe88fdc3617da415d2df"
+    },
+    {
+      "id": "pkg-linked-records",
+      "identifier": "pkg-linked-records",
+      "title": "Package metadata title!",
+      "description": "Reading System must process and display the title and creator metadata from the package document.\n        An ONIX 3.0 format linked metadata record exists, but contains neither title nor creator metadata.",
+      "coverage": "Package Documents",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#sec-linked-records",
+        "https://www.w3.org/TR/epub/#sec-linked-records"
+      ],
+      "modified": "2023-01-16T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 3136,
+      "sha256": "58d392b72277b8bfa7ff0f3cfbd76077ca17b013edadf3755931a36875690402"
+    },
+    {
+      "id": "pkg-manifest-unknown",
+      "identifier": "pkg-manifest-unknown",
+      "title": "pkg-manifest-unknown",
+      "description": "The package document contains a manifest item with unknown properties. The reading system must open the EPUB\n      successfully.",
+      "coverage": "Package Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-manifest-unknown"
+      ],
+      "modified": "2021-01-18T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1771,
+      "sha256": "eb638f11facd15a5dca6e12a424c56ac8ed621808547ecc58627e16b50f9b327"
+    },
+    {
+      "id": "pkg-manifest-unlisted-resource",
+      "identifier": "pkg-manifest-unlisted-resource",
+      "title": "pkg-manifest-unlisted-resource",
+      "description": "The XHTML content references an image that does not appear in the manifest. The image should not be shown.",
+      "coverage": "Package Documents",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rendition-rs-manifest"
+      ],
+      "modified": "2021-11-08T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 5815,
+      "sha256": "618e93923308126254056fa6617c1c941a7532ecdea36a3e48911bd2f5915bf8"
+    },
+    {
+      "id": "pkg-meta-unknown",
+      "identifier": "pkg-meta-unknown",
+      "title": "pkg-meta-unknown",
+      "description": "The package document contains a meta tag with an unknown property. The reading system must open the EPUB successfully.",
+      "coverage": "Package Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-meta-unknown"
+      ],
+      "modified": "2021-01-11T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1772,
+      "sha256": "af7b31f91558895ffc2aa1b94b91b1117c8664370be9946856816ca04611ea7d"
+    },
+    {
+      "id": "pkg-meta-whitespace",
+      "identifier": "pkg-meta-whitespace",
+      "title": "pkg-meta-whitespace",
+      "description": "The package document's title and creator contain leading and trailing spaces along with excess internal whitespace. The\n      reading system must render only a single space in all cases.",
+      "coverage": "Package Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-whitespace"
+      ],
+      "modified": "2021-01-11T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1859,
+      "sha256": "960afe09be0aa1f6eec78195f964ca99f427adc1a7645d6920cc63d3ceacb405"
+    },
+    {
+      "id": "pkg-spine-duplicate-item-hyperlink",
+      "identifier": "pkg-spine-duplicate-item-hyperlink",
+      "title": "pkg-spine-duplicate-item-hyperlink",
+      "description": "The spine contains several references to the same content document. The reading system must move to the position of the\n      first duplicate in the reading order when following a hyperlink.",
+      "coverage": "Package Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-duplicate-item-hyperlink"
+      ],
+      "modified": "2021-11-18T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 2168,
+      "sha256": "898ed4fcc654ab246edba0b2c645e686eef6677d49a1b46c4874e231b9f3686a"
+    },
+    {
+      "id": "pkg-spine-duplicate-item-rendering",
+      "identifier": "pkg-spine-duplicate-item-rendering",
+      "title": "pkg-spine-duplicate-item-rendering",
+      "description": "The spine contains several references to the same content document. The reading system must not skip the duplicates\n      when rendering the reading order.",
+      "coverage": "Package Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-duplicate-item-rendering"
+      ],
+      "modified": "2021-11-18T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 2113,
+      "sha256": "bc66420b116a9ee2407a26558b4a060f820db8de03c0cfe6cff358c88908fcf3"
+    },
+    {
+      "id": "pkg-spine-duplicate-item-ui",
+      "identifier": "pkg-spine-duplicate-item-ui",
+      "title": "pkg-spine-duplicate-item-ui",
+      "description": "The spine contains several references to the same content document. The reading system must allow the duplicates to be\n      independently bookmarked or otherwise recognized in the UI.",
+      "coverage": "Package Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-duplicate-item-ui"
+      ],
+      "modified": "2021-11-18T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 2205,
+      "sha256": "c8a404d07a7afbd8e70a363d2fe301b0382e913c920eaaf9a75ceca01fadf9a8"
+    },
+    {
+      "id": "pkg-spine-nonlinear-activation",
+      "identifier": "pkg-spine-nonlinear-activation",
+      "title": "pkg-spine-nonlinear-activation",
+      "description": "An itemref in the spine is marked as non-linear. Although it (possibly) cannot be accessed through the table of\n      contents, it can be reached from a link in the XHTML content.",
+      "coverage": "Package Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#confreq-spine-nonlinear"
+      ],
+      "modified": "2021-01-21T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 2155,
+      "sha256": "9cf12b52fe217c7dc2ee819dc4bc7164f87f406ca66b33acf68c0d90e58b1a5a"
+    },
+    {
+      "id": "pkg-spine-order",
+      "identifier": "pkg-spine-order",
+      "title": "pkg-spine-order",
+      "description": "Basic test of whether a reading system can display spine items in the correct order. The test fails if the reading\n      system presents content in the order in which the file names sort, or if it presents files in manifest order rather\n      than spine order.",
+      "coverage": "Package Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#sec-pkg-doc-spine"
+      ],
+      "modified": "2021-10-14T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 2866,
+      "sha256": "40a02d1290f18e462f7ce9bd1bda9468036e66e7d4aea2e1305b289f103f3ba4"
+    },
+    {
+      "id": "pkg-spine-order-svg",
+      "identifier": "pkg-spine-order-svg",
+      "title": "pkg-spine-order-svg",
+      "description": "Basic test of whether a reading system can display SVG spine items\n     in the correct order.",
+      "coverage": "Package Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-spine-order"
+      ],
+      "modified": "2021-11-22T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 2411,
+      "sha256": "135ff9964739a9f998b012cf7c9b4cc206387cfe41749822efc54371d4b5c4ef"
+    },
+    {
+      "id": "pkg-spine-progression-default",
+      "identifier": "pkg-spine-progression-default",
+      "title": "pkg-spine-progression-default",
+      "description": "In a publication set as using an RTL language, the spine does not set 'page-progression-direction', so it is implicitly\n      'default'.  The pages must appear from right to left.",
+      "coverage": "Internationalization",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-spine-progression-default"
+      ],
+      "modified": "2021-01-21T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 3125,
+      "sha256": "e1d1543eda829941ea2f3f5ceca9704b26428d81d4f266e241863c459c063497"
+    },
+    {
+      "id": "pkg-spine-progression-pre-paginated",
+      "identifier": "pkg-spine-progression-pre-paginated",
+      "title": "pkg-spine-progression-pre-paginated",
+      "description": "In a pre-paginated publication whose XHTML content sets 'dir=\"rtl\"', the spine sets 'page-progression-direction=\"ltr\"'.\n      The pages must appear from left to right.",
+      "coverage": "Internationalization",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-spine-progression-prepaginated"
+      ],
+      "modified": "2021-01-25T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 232808,
+      "sha256": "63122915d4da58061c1a177ffef099de4fd42b0bc49274b2e313e454975d7e40"
+    },
+    {
+      "id": "pkg-spine-progression_ltr",
+      "identifier": "pkg-spine-progression_ltr",
+      "title": "pkg-spine-progression_ltr",
+      "description": "The spine sets 'page-progression-direction=\"ltr\"'. The pages must appear from left to right.",
+      "coverage": "Internationalization",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-spine-progression"
+      ],
+      "modified": "2021-01-21T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 2981,
+      "sha256": "cf1c8d733bf7b4aefda3eea812cbf048e45482311ee2af720f3005013881a411"
+    },
+    {
+      "id": "pkg-spine-progression_rtl",
+      "identifier": "pkg-spine-progression_rtl",
+      "title": "pkg-spine-progression_rtl",
+      "description": "The spine sets 'page-progression-direction=\"rtl\"'. The pages must appear from right to left.",
+      "coverage": "Internationalization",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-spine-progression"
+      ],
+      "modified": "2021-01-21T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 2984,
+      "sha256": "7577f0205fa82dff942a71a2ecea49a15da71a1c4a87d669b55f5d0bbf736759"
+    },
+    {
+      "id": "pkg-spine-unknown",
+      "identifier": "pkg-spine-unknown",
+      "title": "pkg-spine-unknown",
+      "description": "The package document contains a spine item with unknown properties. The reading system must open the EPUB successfully.",
+      "coverage": "Package Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-spine-unknown"
+      ],
+      "modified": "2021-01-26T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1766,
+      "sha256": "d4fa0bd83cf592e1682cda61e8117fecc7ac48b82869a0a3f2d2df3bb7d4321d"
+    },
+    {
+      "id": "pkg-title-order",
+      "identifier": "pkg-title-order",
+      "title": "pkg-title-order",
+      "description": "Several titles are listed in the package document. The reading system must use the first title (and whether to use\n      other titles is not defined).",
+      "coverage": "Package Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#title-order"
+      ],
+      "modified": "2021-01-11T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1823,
+      "sha256": "e80448f5ffc145104a10783e569e9570b5bcf33ab05f9d9b1ab650b6b5838aae"
+    },
+    {
+      "id": "pkg-unique-id",
+      "identifier": "pkg-unique-id",
+      "title": "pkg-unique-id",
+      "description": "The package document's dc:identifier is identical across two publications. The reading system should display both\n      publications independently.",
+      "coverage": "Package Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-unique-id"
+      ],
+      "modified": "2021-01-18T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1793,
+      "sha256": "7398582ba87edaa355af1128e08cbd973d9dab66ee320a41951f3ebcc8f73b1d"
+    },
+    {
+      "id": "pkg-unique-id_duplicate",
+      "identifier": "pkg-unique-id",
+      "title": "pkg-unique-id_duplicate",
+      "description": "The package document's dc:identifier is identical across two publications. The reading system should display both\n      publications independently.",
+      "coverage": "Package Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-pkg-unique-id"
+      ],
+      "modified": "2021-01-18T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1802,
+      "sha256": "3f4b567b226772f56afc325145e5fba62fe0e12be390b81afa208328680927ca"
+    },
+    {
+      "id": "pkg-version-backward",
+      "identifier": "pkg-version-backward",
+      "title": "pkg-version-backward",
+      "description": "“Reading Systems MUST attempt to process an EPUB Publication whose Package Document version attribute is less than\n      \"3.0\"”. This is an EPUB with package version attribute set to \"0\", to see if a reading system will open it.",
+      "coverage": "Package Documents",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-backward-epub"
+      ],
+      "modified": "2021-10-15T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1822,
+      "sha256": "3307cfe711549f1cfa27b534f495f069f82a12eaa50d7d9c96d948a2ef6547c2"
+    },
+    {
+      "id": "pss-support",
+      "identifier": "pss-support",
+      "title": "pss-support",
+      "description": "A separate footnote popup (or equivalent) is displayed if the RS supports structural semantics.",
+      "coverage": "Structural Semantics",
+      "collections": [
+        "may"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub-epub-type",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epubtype-beh"
+      ],
+      "modified": "2022-07-29T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1893,
+      "sha256": "b2f09cbd72e48dad266ec7b3eb5d58c185e74763c6cea7e55d38ac9663557bd5"
+    },
+    {
+      "id": "pss-support_ignore-title",
+      "identifier": "pss-support_ignore-title",
+      "title": "pss-support_ignore-title",
+      "description": "The footnote popup is not displayed for the second page, because the setting is on the title element.",
+      "coverage": "Structural Semantics",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epubtype-ignore-element"
+      ],
+      "modified": "2022-07-29T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 2344,
+      "sha256": "2c7a138916f9c1f0ea35c764affa5cd18b54c120f23a673d3a31c32e5d12587e"
+    },
+    {
+      "id": "pub-cmt-avif",
+      "identifier": "pub-cmt-avif",
+      "title": "pub-cmt-avif",
+      "description": "An AVIF image is displayed as part of the XHTML content.",
+      "coverage": "Core Media Types",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#cmt-avif",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-images"
+      ],
+      "modified": "2025-10-06T13:40:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 22095,
+      "sha256": "1c5ebdc2e875c9d2820715ad5d914e5afdd42c6231f1e80e437e878a2683e168"
+    },
+    {
+      "id": "pub-cmt-gif",
+      "identifier": "pub-cmt-gif",
+      "title": "pub-cmt-gif",
+      "description": "A GIF image is displayed as part of the XHTML content.",
+      "coverage": "Core Media Types",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#cmt-gif",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-images"
+      ],
+      "modified": "2021-04-01T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 135524,
+      "sha256": "adabfc70b2fcb5cd034d08a0bb3e7b57307f5973969eba56ce090d7c68ae6e55"
+    },
+    {
+      "id": "pub-cmt-jpeg",
+      "identifier": "pub-cmt-jpeg",
+      "title": "pub-cmt-jpeg",
+      "description": "A JPEG image is displayed as part of the XHTML content.",
+      "coverage": "Core Media Types",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#cmt-jpeg",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-images"
+      ],
+      "modified": "2021-04-01T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 29374,
+      "sha256": "f75a31cd22904b407ab5aa336dd9e9997c609c2aa4750ce9809ca7bd24ebacf8"
+    },
+    {
+      "id": "pub-cmt-jxl",
+      "identifier": "pub-cmt-jxl",
+      "title": "pub-cmt-jxl",
+      "description": "A JPEG XL image is displayed as part of the XHTML content.",
+      "coverage": "Core Media Types",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#cmt-jxl",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-images"
+      ],
+      "modified": "2026-01-23T13:40:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 84563,
+      "sha256": "4be260df5afaff046c8fedcd6e3234d1a3e10c2e7b7d60544ba265d13506ce62"
+    },
+    {
+      "id": "pub-cmt-mp3",
+      "identifier": "pub-cmt-mp3",
+      "title": "pub-cmt-mp3",
+      "description": "An MP3 audio file is displayed as part of the XHTML content.",
+      "coverage": "Core Media Types",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#cmt-mp3",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-mp3-aac"
+      ],
+      "modified": "2021-04-07T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 22350,
+      "sha256": "f1e5d6281c3b2d16e19835eaa3f1e6124b288a832f76ecbf28d4a386cd675214"
+    },
+    {
+      "id": "pub-cmt-mp4",
+      "identifier": "pub-cmt-mp4",
+      "title": "pub-cmt-mp4",
+      "description": "An MP4 audio file is displayed as part of the XHTML content.",
+      "coverage": "Core Media Types",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#cmt-cmt-mp4-aac",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-mp3-aac"
+      ],
+      "modified": "2021-04-07T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 13788,
+      "sha256": "51c71d9c2946ed248790b6502129ab937368393d0882f6290de1299863fb001a"
+    },
+    {
+      "id": "pub-cmt-opus",
+      "identifier": "pub-cmt-opus",
+      "title": "pub-cmt-opus",
+      "description": "An OPUS audio file is displayed as part of the XHTML content.",
+      "coverage": "Core Media Types",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#cmt-ogg-opus",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-mp3-aac"
+      ],
+      "modified": "2023-01-10T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 34101,
+      "sha256": "ceaebdcfbfb8acb1ee2c13bdc769b9aaaf0d57edc1a5140613b35cd9b703b7f3"
+    },
+    {
+      "id": "pub-cmt-png",
+      "identifier": "pub-cmt-png",
+      "title": "pub-cmt-png",
+      "description": "A PNG image is displayed as part of the XHTML content.",
+      "coverage": "Core Media Types",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#cmt-png",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-images"
+      ],
+      "modified": "2021-04-01T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 315322,
+      "sha256": "0bf5022a2849156e45c93b303e9e5205e830d745d29095e02c020e73f5ee0693"
+    },
+    {
+      "id": "pub-cmt-svg",
+      "identifier": "pub-cmt-svg",
+      "title": "pub-cmt-svg",
+      "description": "An SVG image is displayed as part of the XHTML content (as a reference, not embedded).",
+      "coverage": "Core Media Types",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#cmt-svg",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-images"
+      ],
+      "modified": "2022-09-22T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 3217,
+      "sha256": "412c27a437f4014855afb9dd21187bb550d04e568de785ef68ef76273cbfa292"
+    },
+    {
+      "id": "pub-cmt-webp",
+      "identifier": "pub-cmt-webp",
+      "title": "pub-cmt-webp",
+      "description": "A WEBP image is displayed as part of the XHTML content.",
+      "coverage": "Core Media Types",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub/#cmt-webp",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-images"
+      ],
+      "modified": "2021-04-01T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 27846,
+      "sha256": "45fd6988fc99b1518c2522acad30838e2ea4e5cf97c4f09122639ef78185a5e0"
+    },
+    {
+      "id": "pub-data-urls_browsing-context",
+      "identifier": "pub-data-urls_browsing-context",
+      "title": "pub-data-urls_browsing-context",
+      "description": "The XHTML content contains an img element where the src attribute is given as a data URL. The reading system must\n      display the image rather than opening it in a new top-level browsing context.",
+      "coverage": "Publication Resources",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-data-urls",
+        "https://www.w3.org/TR/epub/#sec-data-urls"
+      ],
+      "modified": "2021-01-01T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 4063,
+      "sha256": "c73e27ed26102b5de4054a81be6887a23874aaf754f6494604843f40596c7c8a"
+    },
+    {
+      "id": "pub-data-urls_top-level-content",
+      "identifier": "pub-data-urls_top-level-content",
+      "title": "pub-data-urls_top-level-content",
+      "description": "The reading system must display an img (where src is a data URL) positioned at the bottom of the first page\n      of a fixed layout ebook rather than opening the data URL as thought it were its own top-level content document.",
+      "coverage": "Publication Resources",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-data-urls",
+        "https://www.w3.org/TR/epub/#sec-data-urls"
+      ],
+      "modified": "2021-12-03T22:11:11Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 230648,
+      "sha256": "e1c1cb4e08a3c1cf6a67e2aae263661a6f9f00f0e0677bd20eaf3bf06ca32fe9"
+    },
+    {
+      "id": "pub-external-links",
+      "identifier": "pub-external-links",
+      "title": "pub-external-links",
+      "description": "The XHTML content document contains a link to an external website. The reading system should open it in a new browser instance after the reader's consent.",
+      "coverage": "Publication Resources",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#sec-external-links-open"
+      ],
+      "modified": "2022-06-21T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1881,
+      "sha256": "9bd803845e6b13e2cac780452f1c9efc7feda70d6a729b151671907497f9f217"
+    },
+    {
+      "id": "pub-external-links_consent",
+      "identifier": "pub-external-links_consent",
+      "title": "pub-external-links_consent",
+      "description": "The XHTML content document contains a 'mailto:' link. The reading system should ask for the reader's consent before opening an email application.",
+      "coverage": "Publication Resources",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#sec-external-links-consent"
+      ],
+      "modified": "2022-06-21T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1892,
+      "sha256": "6a01057d3646313f8a8294d7b3e95e70b92f1cd5857e9e6cd284a0a9f9fcb08c"
+    },
+    {
+      "id": "pub-file-urls",
+      "identifier": "pub-file-urls",
+      "title": "pub-file-urls",
+      "description": "The XHTML content document contains iframes referring to resources on the user's local file system through a file URL.\n      The reading system should refrain from loading these resources.",
+      "coverage": "Publication Resources",
+      "collections": [
+        "must"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-file-urls"
+      ],
+      "modified": "2023-03-03T00:00:00Z",
+      "scripted": false,
+      "remoteResources": true,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2094,
+      "sha256": "eb43a728e56476c84eba591cef86177d066ffea2cbf9ac80f4f77cffde7a98e5"
+    },
+    {
+      "id": "pub-foreign_bad-fallback",
+      "identifier": "pub-foreign_bad-fallback",
+      "title": "pub-foreign_bad-fallback",
+      "description": "This is a test of manifest fallbacks where both the spine item and the fallback are likely to be unsupported. The spine\n      item is a DMG, with a fallback to a PSD file. Reading systems may raise an error on the ingenstion workflow.",
+      "coverage": "Manifest Fallbacks",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-foreign"
+      ],
+      "modified": "2022-12-07T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 24103,
+      "sha256": "a15e797b885ed51656bcf64f6300acdc6f6013c8f47d32f60872ca5666092292"
+    },
+    {
+      "id": "pub-foreign_image",
+      "identifier": "pub-foreign_image",
+      "title": "pub-foreign_image",
+      "description": "An HTML content file contains a PSD image, with a manifest fallback to a PNG image. This tests fallbacks for resources\n      that are not in the spine.",
+      "coverage": "Manifest Fallbacks",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-foreign"
+      ],
+      "modified": "2022-12-07T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 713237,
+      "sha256": "4ac0be0aabbbb4a72aea5ca6cb2b2255379b7cb03ec582387ae2ff326d7b33c7"
+    },
+    {
+      "id": "pub-foreign_json-spine",
+      "identifier": "pub-foreign_json-spine",
+      "title": "pub-foreign_json-spine",
+      "description": "This EPUB uses a JSON content file in the spine, with a manifest fallback to an HTML document. If the reading system\n      does not support JSON, it should display the HTML.",
+      "coverage": "Manifest Fallbacks",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-foreign"
+      ],
+      "modified": "2022-12-07T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2219,
+      "sha256": "2b29d04f4227da78331903c253b13aa308e9e52aded7be01857fbc95d529d486"
+    },
+    {
+      "id": "pub-foreign_xml-spine",
+      "identifier": "pub-foreign_xml-spine",
+      "title": "pub-foreign_xml-spine",
+      "description": "This EPUB uses an ordinary XML content file with mimetype application/xml in the spine, with a manifest fallback to an\n      HTML document. If the reading system does not support XML, it should display the HTML.",
+      "coverage": "Manifest Fallbacks",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-foreign"
+      ],
+      "modified": "2022-12-07T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2188,
+      "sha256": "d0aac9c703fde2aa432ce7135c8019c3c60910ff2660068f32039be239c3d088"
+    },
+    {
+      "id": "pub-foreign_xml-suffix-spine",
+      "identifier": "pub-foreign_xml-suffix-spine",
+      "title": "pub-foreign_xml-suffix-spine",
+      "description": "This EPUB uses an custom XML content file with mimetype application/dtc+xml in the spine, with a manifest fallback to\n      an HTML document. If the reading system does not support XML, it should display the HTML.",
+      "coverage": "Manifest Fallbacks",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-foreign"
+      ],
+      "modified": "2022-12-07T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2207,
+      "sha256": "521e6b98fbb7132441fdd335326bf711b8cbeec9e52b9146bef7a66743a10027"
+    },
+    {
+      "id": "pub-xml-external-id",
+      "identifier": "pub-xml-external-id",
+      "title": "pub-xml-external-id",
+      "description": "The XHTML content document contains a reference to an external entity. The reading system must not resolve it. Reading systems may raise an error on the ingenstion workflow.",
+      "coverage": "Publication Resources",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-xml-extid"
+      ],
+      "modified": "2022-11-04T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2049,
+      "sha256": "2c55712752467a079e899fa865972052eaec464c1d111bfefb4909db27fcebc4"
+    },
+    {
+      "id": "pub-xml-names",
+      "identifier": "pub-xml-names",
+      "title": "pub-xml-names",
+      "description": "An XHTML element has an invalid name with two successive colons. The reading system must produce an error.",
+      "coverage": "Publication Resources",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-xml-ns"
+      ],
+      "modified": "2021-01-04T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1776,
+      "sha256": "7b1252b727ef3795f16a33d4e5765f99bb0ba38605a8311fc9110b65c6d8617d"
+    },
+    {
+      "id": "pub-xml-non-validating_comment",
+      "identifier": "pub-xml-non-validating_comment",
+      "title": "pub-xml-non-validating_comment",
+      "description": "This is a test of XML processing. The nav doc should not appear in the spine because the itemref is commented out.",
+      "coverage": "Publication Resources",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-xml-nval"
+      ],
+      "modified": "2022-11-06T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 3,
+      "template": false,
+      "bytes": 2151,
+      "sha256": "5f625aeddff5365cf893d5d1150371931856e5f1c0e96c1d3b0089861b840e47"
+    },
+    {
+      "id": "pub-xml-non-validating_unclosed",
+      "identifier": "pub-xml-non-validating_unclosed",
+      "title": "pub-xml-non-validating_unclosed",
+      "description": "An XHTML element does not have a closing tag. The reading system must produce an error.",
+      "coverage": "Publication Resources",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-xml-nval"
+      ],
+      "modified": "2021-01-05T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1777,
+      "sha256": "2750ef0dd21168b4204b7c186dd98554651ca58e07b94256c7d35a8af71b8983"
+    },
+    {
+      "id": "scr-not-support_ccscript-modify-host",
+      "identifier": "scr-not-support_ccscript-modify-host",
+      "title": "scr-not-support_ccscript-modify-host",
+      "description": "Checks whether the reading system allows a container-constrained script (in an iframe) to modify the \"host\" content's DOM.",
+      "coverage": "Scripting",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-scripted-container-dom"
+      ],
+      "modified": "2022-08-03T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2791,
+      "sha256": "4220f49feca1131857b0d19d4846acf2d2daf80d72cb8c003ab937d08c0e9ba3"
+    },
+    {
+      "id": "scr-not-support_ccscript-modify-size",
+      "identifier": "scr-not-support_ccscript-modify-size",
+      "title": "scr-not-support_ccscript-modify-size",
+      "description": "Checks whether the reading system allows a container-constrained script (in an iframe) to modify the enclosing iframe's dimensions.",
+      "coverage": "Scripting",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-scripted-container-size"
+      ],
+      "modified": "2022-08-03T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2798,
+      "sha256": "a80eb529125d8c6fb0dbdc15cbcf6b63ac3480ca3b9f27a2ab46f547c3f6f6c5"
+    },
+    {
+      "id": "scr-readingsystem-features",
+      "identifier": "scr-readingsystem-features",
+      "title": "scr-readingsystem-features",
+      "description": "Checks whether the reading system implements the required epubReadingSystem feature string queries.",
+      "coverage": "Scripting",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#scripting-req-readingsystem",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-scripted-readingsystem-object"
+      ],
+      "modified": "2022-07-22T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2762,
+      "sha256": "9486f71dcf627633caa3a31d04746e2003fdbcf5d969e9eccdd93fccfb7a9710"
+    },
+    {
+      "id": "scr-readingsystem-support",
+      "identifier": "scr-readingsystem-support",
+      "title": "scr-readingsystem-support",
+      "description": "Checks whether the reading system implements the epubReadingSystem object.",
+      "coverage": "Scripting",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#scripting-req-readingsystem",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-scripted-readingsystem-object"
+      ],
+      "modified": "2022-07-22T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2303,
+      "sha256": "69fd80e658804039057e10ac92cc27af3142be3a1366190fad5fb3ce187909da"
+    },
+    {
+      "id": "scr-readingsystem-support_iframe",
+      "identifier": "scr-readingsystem-support_iframe",
+      "title": "scr-readingsystem-support_iframe",
+      "description": "Checks whether the reading system implements the epubReadingSystem object in container-constrained document (e.g., an iframe).",
+      "coverage": "Scripting",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#scripting-req-readingsystem",
+        "https://www.w3.org/TR/epub-rs/#scripting-req-readingsystem-properties"
+      ],
+      "modified": "2021-12-10T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 3053,
+      "sha256": "238709f0dc5f3f48f60ff382de5c1247e16801f4baccda087a2786c3b6dae781"
+    },
+    {
+      "id": "scr-readingsystem-support_iframe_svg",
+      "identifier": "scr-readingsystem-support_iframe_svg",
+      "title": "scr-readingsystem-support_iframe_svg",
+      "description": "Checks whether the reading system implements the epubReadingSystem object in container-constrained SVG document (e.g., an iframe).",
+      "coverage": "Scripting",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#scripting-req-readingsystem"
+      ],
+      "modified": "2022-09-22T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 3259,
+      "sha256": "c0572a4b5386a5a0a2953e905209a2fb608ed4a071b69f0b3ad64853fa11b045"
+    },
+    {
+      "id": "scr-readingsystem-support_svg",
+      "identifier": "scr-readingsystem-support_svg",
+      "title": "scr-readingsystem-support_svg",
+      "description": "Checks whether the reading system implements the epubReadingSystem object in a spine-level SVG document.",
+      "coverage": "Scripting",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#scripting-req-readingsystem",
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-scripted-readingsystem-object",
+        "https://www.w3.org/TR/epub-rs/#confreq-svg-rs-script"
+      ],
+      "modified": "2022-09-22T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2493,
+      "sha256": "f1c6288d2970eb9c1dc11eff8a05fab72391cbf742e53cceb3afb713ace246fa"
+    },
+    {
+      "id": "scr-storage-delete",
+      "identifier": "scr-storage-delete",
+      "title": "scr-storage-delete",
+      "description": "The XHTML content document contains a script that adds data to local storage.\n      If this data is persistent (i.e., the data is still available when closing and reopening the EPUB file), users should be able to delete it.",
+      "coverage": "Scripting",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-scripted-storage-delete"
+      ],
+      "modified": "2023-03-03T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2437,
+      "sha256": "8ba72f7f245441675a3de8324d2176d0d3acfcc8b1745c25ece0291c6a7920f2"
+    },
+    {
+      "id": "scr-support",
+      "identifier": "scr-support",
+      "title": "scr-support",
+      "description": "Checks whether the reading system implements scripting in a spine-level document (i.e., whether a simple inline script is executed at all).",
+      "coverage": "Scripting",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-scripted"
+      ],
+      "modified": "2021-12-10T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 1939,
+      "sha256": "25bb6a957994327d9f4eb4306512a4b5cbb663355fc674a2611159ec811441be"
+    },
+    {
+      "id": "scr-support-fallback",
+      "identifier": "scr-support-fallback",
+      "title": "scr-support-fallback",
+      "description": "Checks whether the reading system follows a fallback for scripting content in case scripting is not supported.",
+      "coverage": "Scripting",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-scripted-flbk"
+      ],
+      "modified": "2022-08-04T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2402,
+      "sha256": "33318bbc39914849dd749c0b676d2fa82ab8bc705f022c4e0f4daaf4900fbdce"
+    },
+    {
+      "id": "scr-support_iframe",
+      "identifier": "scr-support_iframe",
+      "title": "scr-support_iframe",
+      "description": "Checks whether the reading system implements container-constrained scripts (i.e., whether a simple inline script is executed at all in an iframe).",
+      "coverage": "Scripting",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-scripted"
+      ],
+      "modified": "2021-12-10T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2636,
+      "sha256": "2d3262f308a9f09357419e03a114a034365be5e677b7643273a776ad666c5a92"
+    },
+    {
+      "id": "scr-support_origin",
+      "identifier": "scr-support_origin",
+      "title": "scr-support_origin",
+      "description": "The origin values of scripted content files are displayed. They must be shared by all spine-level scripts in the publication.",
+      "coverage": "Scripting",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-scripted-origin-shared"
+      ],
+      "modified": "2021-03-08T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 2,
+      "template": false,
+      "bytes": 2983,
+      "sha256": "828b484af09ae0dbdfa969e3456a317ea37ccee221021947213551e321047389"
+    },
+    {
+      "id": "scr-support_origin_unique",
+      "identifier": "scr-support_origin_unique",
+      "title": "scr-support_origin_unique",
+      "description": "The reading system must assign a unique origin to each EPUB publication. This EPUB publication will display its origin, which will be compared to the origin of the EPUB publication of the \"scr-support_origin\" test.",
+      "coverage": "Scripting",
+      "collections": [
+        "must"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-scripted-origin-shared"
+      ],
+      "modified": "2023-03-07T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2463,
+      "sha256": "e59a9b413057e28951249fdb51e2c0633a16133521542a775f19141cc1e375ac"
+    },
+    {
+      "id": "scr-support_scrolled-continuous",
+      "identifier": "scr-support_scrolled-continuous",
+      "title": "scr-support_scrolled-continuous",
+      "description": "Tests handling overflow content with the \"rendition:flow\" property set to \"scrolled-continuous\". The publication is presented as one continuous scroll from spine item to spine item. This feature is optional if the reading system supports scripting.",
+      "coverage": "Scripting",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-scripted-flow-scrolled"
+      ],
+      "modified": "2022-06-02T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 28137,
+      "sha256": "e64aadec1ef6562381b14e25187b8268591a62c205a919d4b62f55998e8b5ea5"
+    },
+    {
+      "id": "scr-support_scrolled-doc",
+      "identifier": "scr-support_scrolled-doc",
+      "title": "scr-support_scrolled-doc",
+      "description": "Tests on handling overflow content with the \"rendition:flow\" property set to \"scrolled-doc\". Each of the chapters in this publication should be vertically scrollable, and swiping horizontally should moves from one to the next. This feature is required if the reading system supports scripting.",
+      "coverage": "Scripting",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-scripted-flow-scrolled"
+      ],
+      "modified": "2022-06-02T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": false,
+      "bytes": 28144,
+      "sha256": "557a40d3d6402152009b5ca6c13cc93a5a3620e0b7b480b92824703c26dfe239"
+    },
+    {
+      "id": "scr-support_svg",
+      "identifier": "scr-support_svg",
+      "title": "scr-support_svg",
+      "description": "Checks whether the reading system implements scripting in a spine-level SVG document (i.e., whether a simple inline script is executed at all).",
+      "coverage": "Scripting",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-scripted"
+      ],
+      "modified": "2021-12-10T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2269,
+      "sha256": "423b338d03bb10fbed65c840def789fa7bd8249d791bb8ee44de05e39bf62dfd"
+    },
+    {
+      "id": "sec-untrusted-consent_network",
+      "identifier": "sec-untrusted-consent_network",
+      "title": "sec-untrusted-consent_network",
+      "description": "The XHTML content document contains references to remote resources, which should only be fetched if the reader consents.",
+      "coverage": "Publication Resources",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#security-privacy-recommendations-sideloaded-consent"
+      ],
+      "modified": "2023-03-07T00:00:00Z",
+      "scripted": true,
+      "remoteResources": true,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2363,
+      "sha256": "e2519ab7e707e62d0d591f1777fe8c6496dbb88d80260f030e1d4c0df89bae3b"
+    },
+    {
+      "id": "sec-untrusted-consent_scripting",
+      "identifier": "sec-untrusted-consent_scripting",
+      "title": "sec-untrusted-consent_scripting",
+      "description": "The XHTML content document contains multiple scripts, which should only be executed if the reader consents.",
+      "coverage": "Publication Resources",
+      "collections": [
+        "should"
+      ],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#security-privacy-recommendations-sideloaded-consent"
+      ],
+      "modified": "2023-03-07T00:00:00Z",
+      "scripted": true,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": false,
+      "bytes": 2991,
+      "sha256": "603a0ea5fdcb08f76cfc3d2ab15c002ddbef21f307cb7333b4f9d6687cf7b4e2"
+    },
+    {
+      "id": "xx-epub-template",
+      "identifier": "TODO: test-id",
+      "title": "TODO: test-id",
+      "description": "TODO: A description of the test for the generated test report.",
+      "coverage": "TODO: Report Category",
+      "collections": [],
+      "references": [
+        "TODO: https://www.w3.org/TR/epub/#spec-anchor",
+        "TODO: https://www.w3.org/TR/epub-rs/#spec-anchor"
+      ],
+      "modified": "TODO: 2021-01-01T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 1,
+      "template": true,
+      "bytes": 1724,
+      "sha256": "e9ffe1dc0656a04fc5837133c3557ab7da514713975d0d3adb3e23996050b55e"
+    },
+    {
+      "id": "xx-lay-pp-template",
+      "identifier": "TODO: test-id",
+      "title": "TODO: test-id",
+      "description": "TODO: A longer description of the test for the generated test report.",
+      "coverage": "TODO: Report Category",
+      "collections": [],
+      "references": [
+        "TODO: https://www.w3.org/TR/epub/#spec-anchor",
+        "TODO: https://www.w3.org/TR/epub-rs/#spec-anchor"
+      ],
+      "modified": "TODO: 2021-01-01T00:00:00Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 4,
+      "template": true,
+      "bytes": 230657,
+      "sha256": "5df4d89c4d009c24eebcbbdd12c9dd0e45b8eb8c9129b3f293cf75043fffc23f"
+    },
+    {
+      "id": "xx-lay-roll-template",
+      "identifier": "TODO: test-id",
+      "title": "TODO: test-id",
+      "description": "TODO: A longer description of the test for the generated test report.",
+      "coverage": "TODO: Report Category",
+      "collections": [],
+      "references": [
+        "https://www.w3.org/TR/epub-rs/#confreq-rs-epub3-fxl",
+        "https://www.w3.org/TR/epub-rs/#sec-roll-layouts"
+      ],
+      "modified": "2026-01-15T20:32:01Z",
+      "scripted": false,
+      "remoteResources": false,
+      "spineLength": 5,
+      "template": true,
+      "bytes": 12551812,
+      "sha256": "9ded1725bb08f009df8da4bb9ee68c605449c4a77082eb7fa2b898b8a37f8bb6"
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+.book-cover {
+  --cover-shadow: 4px 4px 0 color-mix(in srgb, var(--foreground) 18%, transparent);
+
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  aspect-ratio: 2 / 3;
+  place-items: center;
+}
+
+/* Cover art fills its tile, so a shelf reads as one grid rather than as art of many
+   proportions. The frame rides the art itself, so it hugs the cover rather than the box
+   the cover sits in. */
+.book-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  border: 1px solid color-mix(in srgb, var(--foreground) 24%, transparent);
+  border-radius: calc(var(--radius) / 2);
+  box-shadow: var(--cover-shadow);
+}
+
+/* The hero is a showcase rather than a tile: its cover keeps its own proportions, and the
+   frame follows the art to whatever width that leaves. */
+.hero-cover-button .book-cover img {
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.book-cover-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  padding: 15% 9%;
+  border: 2px solid var(--border);
+  border-radius: calc(var(--radius) / 2);
+  box-shadow:
+    inset 5px 0 0 var(--background),
+    inset 7px 0 0 var(--border),
+    var(--cover-shadow);
+  text-align: center;
+  overflow: hidden;
+}
+
+.book-cover-placeholder > span {
+  font-size: clamp(0.6875rem, 2.7cqw, 1.125rem);
+  line-height: 1.25;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
+
+.book-cover-placeholder small {
+  font-size: 0.625rem;
+  line-height: 1.25;
+  overflow: hidden;
+  max-height: 2.5em;
+}
+
+.hero-cover-button .book-cover-placeholder > span {
+  font-size: clamp(1rem, 3.5cqw, 1.75rem);
+  letter-spacing: -0.035em;
+}
+
+.hero-cover-button .book-cover-placeholder small {
+  font-size: 0.75rem;
+}
+
+.book-open {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  text-align: start;
+}
+
+.library-page {
+  display: grid;
+  height: 100%;
+  min-height: 0;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  padding-inline: 16px;
+  width: 100%;
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+.library-toolbar {
+  padding-block: 12px 8px;
+}
+
+.library-search-row,
+.library-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.library-search-row input {
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+  padding: 8px 12px;
+  border: 2px solid var(--input);
+  border-radius: var(--radius);
+  color: var(--foreground);
+  background: var(--background);
+  font: inherit;
+  font-size: 0.875rem;
+}
+
+.library-search-row input::-webkit-search-cancel-button {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-inline-start: 8px;
+  background: var(--muted-foreground);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 4 12 12M12 4 4 12' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  cursor: pointer;
+}
+
+.library-search-row > button {
+  min-height: 44px;
+}
+
+.library-filter-row {
+  min-height: 44px;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+}
+
+.library-result-count {
+  margin-inline-start: auto;
+}
+
+.library-grid-viewport {
+  position: relative;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-top: 4px;
+  touch-action: pan-y pinch-zoom;
+}
+
+.library-font-measure {
+  position: absolute;
+  width: 1rem;
+  height: 0;
+  pointer-events: none;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--book-columns), minmax(0, 1fr));
+  align-content: start;
+  column-gap: 16px;
+  row-gap: var(--row-gap, 16px);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.book-grid li {
+  position: relative;
+  min-width: 0;
+}
+
+.book-grid .book-cover {
+  height: var(--cover-height);
+  width: auto;
+  max-width: 100%;
+  align-self: center;
+}
+
+.library-pagination {
+  margin-inline: -16px;
+}
+
+.library-no-results {
+  padding: 32px 0;
+  text-align: center;
+}
+
+/* The shelf's own empty state stays quiet: Home already carries the invitation. */
+.empty-shelf {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  text-align: center;
+}
+
+.empty-shelf p {
+  margin: 0;
+}
+
+/* A pointer that can hover gets the lift; touch and low-refresh screens do not. */
+@media (hover: hover) and (pointer: fine) {
+  .elephant-app[data-interaction-feedback="standard"]
+    :is(.book-open, .hero-cover-button)
+    .book-cover {
+    transition: transform 120ms ease;
+  }
+
+  .elephant-app[data-interaction-feedback="standard"]
+    :is(.book-open, .hero-cover-button)
+    .book-cover
+    > * {
+    transition: box-shadow 120ms ease;
+  }
+
+  .elephant-app[data-interaction-feedback="standard"]
+    :is(.book-open, .hero-cover-button):hover
+    .book-cover {
+    --cover-shadow: 6px 6px 0 color-mix(in srgb, var(--foreground) 22%, transparent);
+
+    transform: translate(-2px, -2px);
+  }
+}
+
+.elephant-app[data-interaction-feedback="minimal"] .library-grid-viewport {
+  overflow: hidden;
+}
+
+/* A low-refresh display turns pages rather than scrolling them, so nothing here scrolls by
+   finger: `touch-action` keeps the inline axis away from the browser and the turn moves it by
+   script. The axis must still read as scrollable, because a drawer decides whether to yield a
+   cross-axis gesture by looking at `overflow` alone. Hiding it told the drawer the panel
+   scrolls on neither axis, and it swallowed every page swipe inside a sheet. */
+.elephant-app[data-interaction-feedback="minimal"] .epub-navigator-reader__page-viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+/* The shelf widens with the page it sits on; the shape it belongs to is the same one Home reads. */
+@container app-page (height >= 30rem) and (width >= 540px) {
+  @media (min-width: 1136px) {
+    .library-page {
+      padding-inline: 32px;
+    }
+
+    .library-pagination {
+      margin-inline: -32px;
+    }
+  }
+}
+
+/* A low-refresh display dithers an offset grey, so the frame carries the cover alone. */
+.elephant-app[data-interaction-feedback="minimal"] .book-cover {
+  --cover-shadow: 0 0 0 transparent;
+}
+
+.elephant-app[data-interaction-feedback="minimal"] .book-cover img {
+  border-color: var(--border);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .elephant-app[data-interaction-feedback="standard"]
+    :is(.library-grid-viewport, .epub-navigator-reader__page-viewport) {
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+  }
+}

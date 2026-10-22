@@ -1,0 +1,22 @@
+# Fixtures are built from these sources and compared byte for byte against committed digests, so
+# the working tree must not depend on the platform Git checked out on. Without this, Git for
+# Windows rewrites line endings and every fixture check fails.
+* text=auto eol=lf
+
+# The Gradle wrapper script for Windows is only reliable with native line endings.
+*.bat text eol=crlf
+
+# An EPUB mimetype entry is stored uncompressed and compared exactly; it must never gain a
+# trailing newline or any conversion.
+mimetype binary
+
+*.epub binary
+*.gif binary
+*.ico binary
+*.jar binary
+*.jpg binary
+*.m4a binary
+*.mp3 binary
+*.mp4 binary
+*.png binary
+*.webm binary

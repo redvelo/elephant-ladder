@@ -1,0 +1,231 @@
+.shell-shortcuts-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: transparent;
+}
+
+.shell-shortcuts-viewport {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.shell-shortcuts {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 42rem;
+  max-height: calc(100% - 2rem);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  background: var(--popover);
+  color: var(--popover-foreground);
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.shell-shortcuts-header {
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.25rem 0.25rem 0.25rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.shell-shortcuts-header h2 {
+  flex: 1;
+  min-width: 0;
+  font-weight: 500;
+}
+
+.shell-shortcuts-groups {
+  padding: 1rem;
+}
+
+.app-dialog-backdrop {
+  background: color-mix(in srgb, var(--foreground) 48%, transparent);
+}
+
+.app-dialog-viewport {
+  padding: 20px;
+}
+
+.app-dialog {
+  --reader-page-inset: 24px;
+  max-block-size: min(90dvh, 100%);
+}
+
+.app-dialog-header {
+  display: flex;
+  flex: none;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 24px 12px;
+}
+
+.app-dialog-header > div {
+  min-width: 0;
+}
+
+.app-dialog-header button {
+  flex: none;
+  margin-block-start: -8px;
+  margin-inline-end: -8px;
+}
+
+.app-dialog-kicker {
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.app-dialog-title {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  overflow-wrap: anywhere;
+}
+
+.app-dialog[data-kind="decision"] .app-dialog-title {
+  font-size: clamp(1.7rem, 6vw, 2.7rem);
+  line-height: 1;
+}
+
+.app-dialog-description {
+  margin: 0;
+  color: var(--muted-foreground);
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.app-dialog-body {
+  margin-top: 20px;
+}
+
+.app-dialog-actions {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 10px;
+  padding: 16px 24px 24px;
+}
+
+/* An outcome belongs beside the way out, not on whichever page the body paginated it to. */
+.app-dialog-actions-status {
+  flex: 1 1 100%;
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.app-dialog-pages,
+.app-dialog-body :is(.target-menu, .app-select-popup) {
+  scrollbar-width: none;
+}
+
+/* The body ends where the dialog ends, so it carries the closing inset itself: without it
+   the last row of content sits on the border, and its own edge is clipped. */
+.app-dialog-pages {
+  padding-block-end: 24px;
+}
+
+/* Touch reserves the dialog for a decision that must be answered. A surface is
+   content you navigated to, so it takes the whole screen like a page instead. */
+@media (pointer: coarse) {
+  .app-dialog-viewport {
+    padding: 12px;
+  }
+
+  .app-dialog[data-kind="surface"] {
+    width: 100%;
+    max-inline-size: none;
+    block-size: 100%;
+    max-block-size: none;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
+      env(safe-area-inset-left);
+    border: 0;
+    border-radius: 0;
+  }
+
+  /* A surface is the screen while it is open, so its own colour reaches the cutout and the
+     insets sit inside it. Padding the viewport instead leaves the camera strip the backdrop's
+     colour rather than the surface's. */
+  .app-dialog-viewport:has(.app-dialog[data-kind="surface"]) {
+    padding: 0;
+  }
+
+  .app-dialog-actions {
+    justify-content: stretch;
+  }
+
+  .app-dialog-actions > :not(.app-dialog-actions-status) {
+    flex: 1 1 auto;
+    min-height: 48px;
+  }
+
+  /* A full-screen surface is a page, so the way out leads the header instead of
+     hanging off its far corner. */
+  .app-dialog[data-kind="surface"] .app-dialog-header {
+    align-items: center;
+    justify-content: start;
+    padding-block-start: 12px;
+  }
+
+  .app-dialog[data-kind="surface"] .app-dialog-header button {
+    order: -1;
+    margin-block-start: 0;
+    margin-inline: -8px 0;
+  }
+}
+
+/* Without a dim, a thin sliver of the shell around a dialog reads as an artefact.
+   A wider inset makes the surrounding surface look deliberate instead. */
+@media (min-width: 540px) {
+  .elephant-app[data-interaction-feedback="minimal"]
+    .app-dialog-viewport:not(:has(.app-dialog[data-kind="surface"])) {
+    padding: 44px;
+  }
+}
+
+/* The notices are a document the build ships, shown as written rather than reflowed. */
+.app-notices {
+  margin: 0;
+  font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.app-notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0;
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--foreground);
+  background: var(--background);
+  font-size: 0.8125rem;
+  text-align: center;
+  pointer-events: auto;
+}
+
+/* Dimming is alpha over text: on low-refresh displays it dithers and ghosts, so the
+   dialog's own border carries the separation instead. */
+.elephant-app[data-interaction-feedback="minimal"] .app-dialog-backdrop {
+  background: transparent;
+}

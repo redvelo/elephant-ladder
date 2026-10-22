@@ -1,0 +1,66 @@
+[package]
+name = "elephant-ladder-native-host"
+version = "0.1.0"
+edition = "2024"
+description = "The Elephant Ladder native host: storage, mounting, policy, and authenticated routes"
+authors.workspace = true
+repository.workspace = true
+license.workspace = true
+publish = false
+
+[features]
+
+[dependencies]
+arc-swap = "1"
+avif-decode = { version = "3.0.0", default-features = false }
+avif-parse = "2.1.0"
+axum = "0.8"
+base64 = "0.22"
+blake3 = { version = "1", features = ["neon"] }
+bytemuck = "1.25.2"
+elephant-ladder-dictionary-pack = { path = "../../../../dictionary/crates/dictionary-pack" }
+epub-stack = { version = "0.3.0", features = ["serde"] }
+epub-navigator = { path = "../../../../navigator/crates/epub-navigator" }
+getrandom = "0.3"
+futures-util = "0.3"
+fs2 = "0.4"
+http-body-util = "0.1"
+imgref = "1.12.3"
+include_dir = "0.7"
+jxl-oxide = "0.12.6"
+md-5 = "0.10"
+mp3lame-encoder = "0.2.5"
+ogg = "0.9.2"
+opus = "0.4.0"
+percent-encoding = "2.3"
+png = "0.18.1"
+quick-xml = "0.42.0"
+reqwest = { version = "0.13", default-features = false, features = ["rustls", "stream", "http2"] }
+rubato = "5.0.1"
+rusqlite = { version = "0.37", features = ["bundled"] }
+rustls = { version = "0.23", default-features = false, features = ["aws-lc-rs", "std", "tls12"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha1 = "0.10"
+sha2 = "0.10"
+socket2 = "0.6"
+subtle = "2"
+symphonia = { version = "0.6.1", default-features = false, features = ["aac", "isomp4"] }
+thiserror = "2"
+time = { version = "0.3", default-features = false, features = ["formatting", "parsing", "std"] }
+tokio = { version = "1", features = ["fs", "io-util", "macros", "net", "rt-multi-thread", "sync", "time"] }
+tokio-util = { version = "0.7", features = ["io"] }
+tracing = "0.1"
+url = "2"
+webpki-roots = "1"
+
+[dev-dependencies]
+elephant-ladder-dictionary-pack-builder = { path = "../../../../dictionary/crates/dictionary-pack-builder" }
+# Paused time, so a test can observe an admission wait without waiting for it.
+tokio = { version = "1", features = ["test-util"] }
+symphonia = { version = "0.6.1", default-features = false, features = ["aac", "isomp4", "flac", "mp3"] }
+insta = "1"
+tempfile = "3"
+tower = { version = "0.5", features = ["util"] }
+tracing-subscriber = { version = "0.3", features = ["fmt", "json"] }
+zip = "8"

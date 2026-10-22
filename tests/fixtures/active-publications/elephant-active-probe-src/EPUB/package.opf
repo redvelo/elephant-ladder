@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="publication-id">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:identifier id="publication-id">urn:uuid:4bcbf614-54b9-4b97-a00e-cc465659bb30</dc:identifier>
+    <dc:title>Elephant Active Probe</dc:title>
+    <dc:language>en</dc:language>
+    <meta property="dcterms:modified">2026-09-08T00:00:00Z</meta>
+  </metadata>
+  <manifest>
+    <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav" />
+    <item id="probe" href="text/probe.xhtml" media-type="application/xhtml+xml" properties="scripted" />
+    <item id="peer" href="text/peer.xhtml" media-type="application/xhtml+xml" properties="scripted" />
+    <item id="style" href="styles/probe.css" media-type="text/css" />
+    <item id="image" href="images/probe-image.svg" media-type="image/svg+xml" />
+    <item id="scripted-svg" href="images/scripted-probe.svg" media-type="image/svg+xml" properties="scripted" />
+    <item id="classic" href="js/classic.js" media-type="text/javascript" />
+    <item id="probe-module" href="js/probe-module.js" media-type="text/javascript" />
+    <item id="peer-module" href="js/peer-module.js" media-type="text/javascript" />
+    <item id="report" href="js/report.js" media-type="text/javascript" />
+    <item id="static-dependency" href="js/static-dependency.js" media-type="text/javascript" />
+    <item id="dynamic-dependency" href="js/dynamic-dependency.js" media-type="text/javascript" />
+    <item id="worker" href="js/dedicated-module-worker.js" media-type="text/javascript" />
+    <item id="lifecycle-worker" href="js/dedicated-lifecycle-worker.js" media-type="text/javascript" />
+    <item id="shared-worker" href="js/shared-module-worker.js" media-type="text/javascript" />
+    <item id="worker-dependency" href="js/worker-dependency.js" media-type="text/javascript" />
+    <item id="service-worker" href="js/service-worker.js" media-type="text/javascript" />
+    <item id="relative-data" href="data/relative.json" media-type="application/json" />
+    <item id="root-data" href="data/root-relative.json" media-type="application/json" />
+    <item id="audio" href="media/exact-44-byte.wav" media-type="audio/wav" />
+  </manifest>
+  <spine>
+    <itemref idref="probe" />
+    <itemref idref="peer" />
+  </spine>
+</package>

@@ -1,0 +1,5902 @@
+{
+  "schema": "elephant-w3c-expectations-v1",
+  "tests": {
+    "cnt-css-fonts_ot": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": true
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "font": {
+              "document": 0,
+              "loaded": "Franky Toys"
+            }
+          }
+        ]
+      },
+      "note": "The embedded face is listed as loaded by the document's FontFaceSet."
+    },
+    "cnt-css-fonts_tt": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": true
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "font": {
+              "document": 0,
+              "loaded": "Lobster"
+            }
+          }
+        ]
+      },
+      "note": "The embedded face is listed as loaded by the document's FontFaceSet."
+    },
+    "cnt-css-fonts_woff": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": true
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "font": {
+              "document": 0,
+              "loaded": "Pacifico"
+            }
+          }
+        ]
+      },
+      "note": "The embedded face is listed as loaded by the document's FontFaceSet."
+    },
+    "cnt-css-fonts_woff2": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": true
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "font": {
+              "document": 0,
+              "loaded": "Macondo"
+            }
+          }
+        ]
+      },
+      "note": "The embedded face is listed as loaded by the document's FontFaceSet."
+    },
+    "cnt-mathml-support": {
+      "observation": {
+        "queries": [
+          {
+            "id": "math",
+            "selector": "math"
+          },
+          {
+            "id": "msup",
+            "selector": "msup",
+            "rect": true
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "math",
+              "matches": {
+                "min": 1
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "msup",
+              "rect": {
+                "height": {
+                  "min": 1
+                },
+                "width": {
+                  "min": 1
+                }
+              }
+            }
+          }
+        ]
+      },
+      "note": "The superscript lays out with a box of its own, which plain text would not give it."
+    },
+    "cnt-svg-css": {
+      "observation": {
+        "queries": [
+          {
+            "id": "path",
+            "selector": "path.fil0",
+            "styles": [
+              "fill",
+              "stroke",
+              "stroke-width"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "document": {
+              "document": 0,
+              "field": "svgRoot",
+              "equals": true
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "path",
+              "style": {
+                "stroke": "rgb(0, 128, 0)",
+                "stroke-width": "15px"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "cnt-svg-css-inclusion": {
+      "observation": {
+        "queries": [
+          {
+            "id": "path",
+            "selector": "svg path.fil0",
+            "styles": [
+              "fill",
+              "stroke"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "path",
+              "style": {
+                "stroke": "rgb(0, 128, 0)"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "path",
+              "style": {
+                "fill": {
+                  "includes": "url("
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "cnt-svg-css-reference": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "resource": {
+              "document": 0,
+              "source": "img/001.svg",
+              "state": "loaded"
+            }
+          }
+        ]
+      },
+      "note": "A referenced SVG is an image to the browser; the host's CSS cannot reach into it. Loading proves the image path."
+    },
+    "cnt-svg-embedded": {
+      "observation": {
+        "queries": [
+          {
+            "id": "path",
+            "selector": "svg path.fil0",
+            "rect": true
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "path",
+              "rect": {
+                "height": {
+                  "min": 1
+                },
+                "width": {
+                  "min": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "cnt-svg-support": {
+      "observation": {
+        "queries": [
+          {
+            "id": "path",
+            "selector": "path.fil0"
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "document": {
+              "document": 0,
+              "field": "svgRoot",
+              "equals": true
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "path",
+              "matches": {
+                "min": 1
+              }
+            }
+          }
+        ]
+      }
+    },
+    "cnt-xhtml-support": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "body",
+              "text": {
+                "includes": "Test passes if you see this"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "css-epub-hyphens": {
+      "observation": {
+        "queries": [
+          {
+            "id": "none",
+            "selector": "p[style*=\"-epub-hyphens: none\"]",
+            "styles": [
+              "hyphens"
+            ]
+          },
+          {
+            "id": "manual",
+            "selector": "p[style*=\"-epub-hyphens: manual\"]",
+            "styles": [
+              "hyphens"
+            ]
+          },
+          {
+            "id": "auto",
+            "selector": "p[style*=\"-epub-hyphens: auto\"]",
+            "styles": [
+              "hyphens"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "query": {
+              "document": 0,
+              "id": "none",
+              "style": {
+                "hyphens": "none"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "manual",
+              "style": {
+                "hyphens": "manual"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "auto",
+              "style": {
+                "hyphens": "auto"
+              }
+            }
+          }
+        ]
+      },
+      "note": "The content agent restates each prefixed declaration with its unprefixed equivalent, so the property reaches the computed style; the rendering it then produces is the browser's."
+    },
+    "css-epub-line-break": {
+      "observation": {
+        "queries": [
+          {
+            "id": "auto",
+            "selector": "p.auto",
+            "styles": [
+              "line-break"
+            ]
+          },
+          {
+            "id": "loose",
+            "selector": "p.loose",
+            "styles": [
+              "line-break"
+            ]
+          },
+          {
+            "id": "normal",
+            "selector": "p.normal",
+            "styles": [
+              "line-break"
+            ]
+          },
+          {
+            "id": "strict",
+            "selector": "p.strict",
+            "styles": [
+              "line-break"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "query": {
+              "document": 0,
+              "id": "auto",
+              "style": {
+                "line-break": "auto"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "loose",
+              "style": {
+                "line-break": "loose"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "normal",
+              "style": {
+                "line-break": "normal"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "strict",
+              "style": {
+                "line-break": "strict"
+              }
+            }
+          }
+        ]
+      },
+      "note": "The content agent restates each prefixed declaration with its unprefixed equivalent, so the property reaches the computed style; the rendering it then produces is the browser's."
+    },
+    "css-epub-text-align-last": {
+      "observation": {
+        "queries": [
+          {
+            "id": "auto",
+            "selector": "p[style*=\"-epub-text-align-last: auto\"]",
+            "styles": [
+              "text-align-last"
+            ]
+          },
+          {
+            "id": "start",
+            "selector": "p[style*=\"-epub-text-align-last: start\"]",
+            "styles": [
+              "text-align-last"
+            ]
+          },
+          {
+            "id": "end",
+            "selector": "p[style*=\"-epub-text-align-last: end\"]",
+            "styles": [
+              "text-align-last"
+            ]
+          },
+          {
+            "id": "left",
+            "selector": "p[style*=\"-epub-text-align-last: left\"]",
+            "styles": [
+              "text-align-last"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "query": {
+              "document": 0,
+              "id": "auto",
+              "style": {
+                "text-align-last": "auto"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "start",
+              "style": {
+                "text-align-last": "start"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "end",
+              "style": {
+                "text-align-last": "end"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "left",
+              "style": {
+                "text-align-last": "left"
+              }
+            }
+          }
+        ]
+      },
+      "note": "The content agent restates each prefixed declaration with its unprefixed equivalent, so the property reaches the computed style; the rendering it then produces is the browser's."
+    },
+    "css-epub-text-combine-horizontal": {
+      "observation": {
+        "queries": [
+          {
+            "id": "html",
+            "selector": "html",
+            "styles": [
+              "writing-mode"
+            ]
+          },
+          {
+            "id": "h-none",
+            "selector": ".epub-text-combine-horizontal-none",
+            "styles": [
+              "text-combine-upright"
+            ]
+          },
+          {
+            "id": "h-all",
+            "selector": ".epub-text-combine-horizontal-all",
+            "styles": [
+              "text-combine-upright"
+            ]
+          },
+          {
+            "id": "c-none",
+            "selector": ".epub-text-combine-none",
+            "styles": [
+              "text-combine-upright"
+            ]
+          },
+          {
+            "id": "c-horizontal",
+            "selector": ".epub-text-combine-horizontal",
+            "styles": [
+              "text-combine-upright"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "query": {
+              "document": 0,
+              "id": "html",
+              "style": {
+                "writing-mode": "vertical-rl"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "h-none",
+              "style": {
+                "text-combine-upright": "none"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "h-all",
+              "style": {
+                "text-combine-upright": "all"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "c-none",
+              "style": {
+                "text-combine-upright": "none"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "c-horizontal",
+              "style": {
+                "text-combine-upright": "all"
+              }
+            }
+          }
+        ]
+      },
+      "note": "The content agent restates each prefixed declaration with its unprefixed equivalent, so the property reaches the computed style; the rendering it then produces is the browser's. Both the current and the deprecated `-epub-text-combine` spelling map onto `text-combine-upright`."
+    },
+    "css-epub-text-emphasis": {
+      "observation": {
+        "queries": [
+          {
+            "id": "dot",
+            "selector": ".emphasis-filled-dot",
+            "styles": [
+              "text-emphasis-style"
+            ]
+          },
+          {
+            "id": "circle",
+            "selector": ".emphasis-filled-circle",
+            "styles": [
+              "text-emphasis-style"
+            ]
+          },
+          {
+            "id": "double-circle",
+            "selector": ".emphasis-filled-double-circle",
+            "styles": [
+              "text-emphasis-style"
+            ]
+          },
+          {
+            "id": "triangle",
+            "selector": ".emphasis-filled-double-triangle",
+            "styles": [
+              "text-emphasis-style"
+            ]
+          },
+          {
+            "id": "sesame",
+            "selector": ".emphasis-filled-sesame",
+            "styles": [
+              "text-emphasis-style"
+            ]
+          },
+          {
+            "id": "over-left",
+            "selector": ".emphasis-filled-dot-over-left",
+            "styles": [
+              "text-emphasis-position"
+            ]
+          },
+          {
+            "id": "over-right",
+            "selector": ".emphasis-filled-dot-over-right",
+            "styles": [
+              "text-emphasis-position"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": true
+      },
+      "verdict": {
+        "all": [
+          {
+            "query": {
+              "document": 0,
+              "id": "dot",
+              "style": {
+                "text-emphasis-style": {
+                  "matches": "dot"
+                }
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "circle",
+              "style": {
+                "text-emphasis-style": {
+                  "matches": "^(filled )?circle$"
+                }
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "double-circle",
+              "style": {
+                "text-emphasis-style": {
+                  "matches": "double-circle"
+                }
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "triangle",
+              "style": {
+                "text-emphasis-style": {
+                  "matches": "triangle"
+                }
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "sesame",
+              "style": {
+                "text-emphasis-style": {
+                  "matches": "sesame"
+                }
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 1,
+              "id": "over-left",
+              "style": {
+                "text-emphasis-position": {
+                  "matches": "over"
+                }
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 3,
+              "id": "over-right",
+              "style": {
+                "text-emphasis-position": {
+                  "matches": "over"
+                }
+              }
+            }
+          },
+          {
+            "font": {
+              "document": 0,
+              "loaded": "KentenGeneric"
+            }
+          }
+        ]
+      },
+      "note": "The content agent restates each prefixed declaration with its unprefixed equivalent, so the property reaches the computed style; the rendering it then produces is the browser's. Chromium serializes `text-emphasis-position` as its block side only, so left and right are not distinguished here."
+    },
+    "css-epub-text-orientation": {
+      "observation": {
+        "queries": [
+          {
+            "id": "mixed",
+            "selector": "p.text-orientation-mixed",
+            "styles": [
+              "text-orientation"
+            ]
+          },
+          {
+            "id": "upright",
+            "selector": "p.text-orientation-upright",
+            "styles": [
+              "text-orientation"
+            ]
+          },
+          {
+            "id": "sideways",
+            "selector": "p.text-orientation-sideways",
+            "styles": [
+              "text-orientation"
+            ]
+          },
+          {
+            "id": "sideways-right",
+            "selector": "p.text-orientation-sideways-right",
+            "styles": [
+              "text-orientation"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "query": {
+              "document": 1,
+              "id": "mixed",
+              "style": {
+                "text-orientation": "mixed"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 1,
+              "id": "upright",
+              "style": {
+                "text-orientation": "upright"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 1,
+              "id": "sideways",
+              "style": {
+                "text-orientation": "sideways"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 1,
+              "id": "sideways-right",
+              "style": {
+                "text-orientation": "sideways"
+              }
+            }
+          }
+        ]
+      },
+      "note": "The content agent restates each prefixed declaration with its unprefixed equivalent, so the property reaches the computed style; the rendering it then produces is the browser's. The deprecated `vertical-right`, `rotate-right` and `rotate-normal` keywords map onto `mixed` and `sideways`."
+    },
+    "css-epub-text-transform": {
+      "observation": {
+        "queries": [
+          {
+            "id": "fullwidth",
+            "selector": "p[style*=\"fullwidth\"]",
+            "styles": [
+              "text-transform"
+            ],
+            "attributes": [
+              "style"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "query": {
+          "document": 0,
+          "id": "fullwidth",
+          "style": {
+            "text-transform": "full-width"
+          }
+        }
+      },
+      "note": "The agent maps the prefixed value (the observed `style` attribute carries `text-transform: full-width` after it), but Chromium does not implement `text-transform: full-width`, so the computed value stays `none`."
+    },
+    "css-epub-text-underline-position": {
+      "observation": {
+        "queries": [
+          {
+            "id": "html",
+            "selector": "html",
+            "styles": [
+              "text-underline-position",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "query": {
+              "document": 0,
+              "id": "html",
+              "style": {
+                "text-underline-position": "auto"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 1,
+              "id": "html",
+              "style": {
+                "text-underline-position": "under"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 2,
+              "id": "html",
+              "style": {
+                "text-underline-position": {
+                  "matches": "left"
+                }
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 4,
+              "id": "html",
+              "style": {
+                "text-underline-position": {
+                  "matches": "right"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "note": "The content agent restates each prefixed declaration with its unprefixed equivalent, so the property reaches the computed style; the rendering it then produces is the browser's. The deprecated `alphabetic` keyword maps onto `auto`."
+    },
+    "css-epub-word-break": {
+      "observation": {
+        "queries": [
+          {
+            "id": "normal",
+            "selector": "p[style*=\"-epub-word-break: normal\"]",
+            "styles": [
+              "word-break"
+            ]
+          },
+          {
+            "id": "keep-all",
+            "selector": "p[style*=\"-epub-word-break: keep-all\"]",
+            "styles": [
+              "word-break"
+            ]
+          },
+          {
+            "id": "break-all",
+            "selector": "p[style*=\"-epub-word-break: break-all\"]",
+            "styles": [
+              "word-break"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "query": {
+              "document": 0,
+              "id": "normal",
+              "style": {
+                "word-break": "normal"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "keep-all",
+              "style": {
+                "word-break": "keep-all"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "break-all",
+              "style": {
+                "word-break": "break-all"
+              }
+            }
+          }
+        ]
+      },
+      "note": "The content agent restates each prefixed declaration with its unprefixed equivalent, so the property reaches the computed style; the rendering it then produces is the browser's."
+    },
+    "css-epub-writing-mode": {
+      "observation": {
+        "queries": [
+          {
+            "id": "p",
+            "selector": "p[style*=\"-epub-writing-mode\"]",
+            "styles": [
+              "writing-mode"
+            ]
+          },
+          {
+            "id": "body",
+            "selector": "body",
+            "styles": [
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "query": {
+              "document": 0,
+              "id": "p",
+              "style": {
+                "writing-mode": "horizontal-tb"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 1,
+              "id": "body",
+              "style": {
+                "writing-mode": "vertical-rl"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 2,
+              "id": "body",
+              "style": {
+                "writing-mode": "vertical-lr"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "fxl-layout-duplication": {
+      "verdict": "n/a",
+      "note": "Passes when EPUBCheck reports the duplicate; it asks nothing of a reading system."
+    },
+    "fxl-page-spread-break": {
+      "verdict": {
+        "when": {
+          "premise": {
+            "path": {
+              "path": "runner.frame.landscape",
+              "equals": true
+            }
+          },
+          "rule": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 1,
+                      "document": 0
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "right",
+                      "document": 0
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 0,
+                      "document": 1
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "left",
+                      "document": 1
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 3,
+                      "document": 2
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "right",
+                      "document": 2
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 2
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 2,
+                      "document": 3
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "left",
+                      "document": 3
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 3
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "note": "page-spread properties pair the pages regardless of the authored page-break CSS."
+    },
+    "fxl-page-spread-center": {
+      "verdict": {
+        "when": {
+          "premise": {
+            "path": {
+              "path": "runner.frame.landscape",
+              "equals": true
+            }
+          },
+          "rule": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion",
+                      "equals": null,
+                      "document": 0
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion",
+                      "equals": null,
+                      "document": 1
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 3,
+                      "document": 2
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "right",
+                      "document": 2
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 2
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 2,
+                      "document": 3
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "left",
+                      "document": 3
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 3
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "note": "A centred first page stands alone; placement restarts after it, so the second page is also alone and the third and fourth pair up."
+    },
+    "fxl-spine-overrides_behave-as-global": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "fixed-xhtml",
+              "document": 0
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "reflowable-xhtml",
+              "document": 1
+            }
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "fxl-spine-overrides_behave-as-global-bis": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "reflowable-xhtml",
+              "document": 0
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "fixed-xhtml",
+              "document": 1
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "reflowable-xhtml",
+              "document": 2
+            }
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "fxl-spine-overrides_duplicate": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "fixed-xhtml",
+              "document": 0
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "reflowable-xhtml",
+              "document": 1
+            }
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      },
+      "note": "The first itemref override wins."
+    },
+    "lay-fxl-layout-default": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "reflowable-xhtml",
+              "document": 0
+            }
+          },
+          {
+            "settled": {
+              "document": 0
+            }
+          }
+        ]
+      }
+    },
+    "lay-fxl-layout-pre-paginated": {
+      "verdict": {
+        "every": {
+          "all": [
+            {
+              "path": {
+                "path": "committed.frame.adapter",
+                "equals": "fixed-xhtml"
+              }
+            },
+            {
+              "settled": {}
+            }
+          ]
+        }
+      }
+    },
+    "lay-fxl-layout-pre-paginated-spreads": {
+      "verdict": {
+        "when": {
+          "premise": {
+            "path": {
+              "path": "runner.frame.landscape",
+              "equals": true
+            }
+          },
+          "rule": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion",
+                      "equals": null,
+                      "document": 0
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 2,
+                      "document": 1
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "right",
+                      "document": 1
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 1,
+                      "document": 2
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "left",
+                      "document": 2
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 2
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion",
+                      "equals": null,
+                      "document": 3
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 3
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "note": "Decided from the synthetic spread Navigator formed in a landscape frame; in a portrait frame the row stays open, since auto spreads are not expected there."
+    },
+    "lay-fxl-orientation-default": {
+      "verdict": "adjudicate",
+      "note": "Device orientation is a platform property the runner does not control."
+    },
+    "lay-fxl-orientation-landscape": {
+      "verdict": "adjudicate",
+      "note": "Device orientation is a platform property the runner does not control."
+    },
+    "lay-fxl-page-spread-combined": {
+      "verdict": {
+        "when": {
+          "premise": {
+            "path": {
+              "path": "runner.frame.landscape",
+              "equals": true
+            }
+          },
+          "rule": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 2,
+                      "document": 1
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "right",
+                      "document": 1
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 1,
+                      "document": 2
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "left",
+                      "document": 2
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 2
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "note": "Decided from the synthetic spread Navigator formed in a landscape frame; in a portrait frame the row stays open, since auto spreads are not expected there."
+    },
+    "lay-fxl-page-spread-left": {
+      "verdict": {
+        "when": {
+          "premise": {
+            "path": {
+              "path": "runner.frame.landscape",
+              "equals": true
+            }
+          },
+          "rule": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion",
+                      "equals": null,
+                      "document": 0
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 2,
+                      "document": 1
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "right",
+                      "document": 1
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 1,
+                      "document": 2
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "left",
+                      "document": 2
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 2
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "note": "Decided from the synthetic spread Navigator formed in a landscape frame; in a portrait frame the row stays open, since auto spreads are not expected there."
+    },
+    "lay-fxl-page-spread-right": {
+      "verdict": {
+        "when": {
+          "premise": {
+            "path": {
+              "path": "runner.frame.landscape",
+              "equals": true
+            }
+          },
+          "rule": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion",
+                      "equals": null,
+                      "document": 0
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 2,
+                      "document": 1
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "right",
+                      "document": 1
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 1,
+                      "document": 2
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "left",
+                      "document": 2
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 2
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "note": "Decided from the synthetic spread Navigator formed in a landscape frame; in a portrait frame the row stays open, since auto spreads are not expected there."
+    },
+    "lay-fxl-spread-auto": {
+      "verdict": {
+        "when": {
+          "premise": {
+            "path": {
+              "path": "runner.frame.landscape",
+              "equals": true
+            }
+          },
+          "rule": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 2,
+                      "document": 1
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "right",
+                      "document": 1
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 1,
+                      "document": 2
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "left",
+                      "document": 2
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 2
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "note": "Decided from the synthetic spread Navigator formed in a landscape frame; in a portrait frame the row stays open, since auto spreads are not expected there."
+    },
+    "lay-fxl-spread-both": {
+      "verdict": {
+        "when": {
+          "premise": {
+            "path": {
+              "path": "runner.frame.landscape",
+              "equals": true
+            }
+          },
+          "rule": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 2,
+                      "document": 1
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "right",
+                      "document": 1
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 1,
+                      "document": 2
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "left",
+                      "document": 2
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 2
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "note": "rendition:spread both forms a spread in any orientation; the landscape gate keeps the row comparable with its siblings."
+    },
+    "lay-fxl-spread-default": {
+      "verdict": {
+        "when": {
+          "premise": {
+            "path": {
+              "path": "runner.frame.landscape",
+              "equals": true
+            }
+          },
+          "rule": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 2,
+                      "document": 1
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "right",
+                      "document": 1
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 1,
+                      "document": 2
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "left",
+                      "document": 2
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 2
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "note": "Decided from the synthetic spread Navigator formed in a landscape frame; in a portrait frame the row stays open, since auto spreads are not expected there."
+    },
+    "lay-fxl-spread-landscape": {
+      "verdict": {
+        "when": {
+          "premise": {
+            "path": {
+              "path": "runner.frame.landscape",
+              "equals": true
+            }
+          },
+          "rule": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 2,
+                      "document": 1
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "right",
+                      "document": 1
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 1,
+                      "document": 2
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "left",
+                      "document": 2
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 2
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "note": "Decided from the synthetic spread Navigator formed in a landscape frame; in a portrait frame the row stays open, since auto spreads are not expected there."
+    },
+    "lay-fxl-spread-none": {
+      "verdict": {
+        "every": {
+          "all": [
+            {
+              "path": {
+                "path": "fixedCompanion",
+                "equals": null
+              }
+            },
+            {
+              "settled": {}
+            }
+          ]
+        }
+      },
+      "note": "No synthetic spread is formed for any page."
+    },
+    "lay-fxl-svg-icb_multi": {
+      "verdict": {
+        "all": [
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 900,
+                  "document": 1
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 1
+                }
+              }
+            ]
+          },
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 1200,
+                  "document": 2
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 2
+                }
+              }
+            ]
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "fixed-svg",
+              "document": 1
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "fixed-svg",
+              "document": 2
+            }
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      },
+      "note": "The SVG viewBox is the initial containing block; clipping to it is the browser's."
+    },
+    "lay-fxl-xhtml-icb": {
+      "verdict": {
+        "all": [
+          {
+            "every": {
+              "all": [
+                {
+                  "path": {
+                    "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                    "equals": 900
+                  }
+                },
+                {
+                  "path": {
+                    "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                    "equals": 600
+                  }
+                },
+                {
+                  "settled": {}
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "note": "Navigator sizes each page to the declared viewport; content outside it is clipped by the frame."
+    },
+    "lay-fxl-xhtml-icb_device_sizes": {
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "same": [
+              {
+                "document": 0,
+                "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width"
+              },
+              {
+                "document": 0,
+                "path": "committed.layout.layout.settlement.settlement.geometry.containingViewport.width"
+              }
+            ]
+          },
+          {
+            "same": [
+              {
+                "document": 0,
+                "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height"
+              },
+              {
+                "document": 0,
+                "path": "committed.layout.layout.settlement.settlement.geometry.containingViewport.height"
+              }
+            ]
+          }
+        ]
+      },
+      "note": "device-width/device-height resolve to the containing viewport."
+    },
+    "lay-fxl-xhtml-icb_invalid_meta": {
+      "verdict": {
+        "all": [
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 900,
+                  "document": 0
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 0
+                }
+              }
+            ]
+          },
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 900,
+                  "document": 1
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 1
+                }
+              }
+            ]
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "lay-fxl-xhtml-icb_multi": {
+      "verdict": {
+        "all": [
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 900,
+                  "document": 0
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 0
+                }
+              }
+            ]
+          },
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 1400,
+                  "document": 1
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 1
+                }
+              }
+            ]
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "lay-fxl-xhtml-icb_multi_declarations": {
+      "verdict": {
+        "all": [
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 1000,
+                  "document": 0
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 0
+                }
+              }
+            ]
+          },
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 1000,
+                  "document": 1
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 1
+                }
+              }
+            ]
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "lay-fxl-xhtml-icb_repeated-in-meta": {
+      "verdict": {
+        "all": [
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 900,
+                  "document": 0
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 0
+                }
+              }
+            ]
+          },
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 900,
+                  "document": 1
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 1
+                }
+              }
+            ]
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "lay-fxl-xhtml-icb_units": {
+      "verdict": {
+        "all": [
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 1000,
+                  "document": 0
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 0
+                }
+              }
+            ]
+          },
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 1000,
+                  "document": 1
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 1
+                }
+              }
+            ]
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "lay-page-layout-both": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "fixed-xhtml",
+              "document": 0
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "reflowable-xhtml",
+              "document": 1
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "fixed-xhtml",
+              "document": 2
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "fixed-xhtml",
+              "document": 3
+            }
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "lay-page-layout-both-spread": {
+      "verdict": {
+        "when": {
+          "premise": {
+            "path": {
+              "path": "runner.frame.landscape",
+              "equals": true
+            }
+          },
+          "rule": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 2,
+                      "document": 1
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "right",
+                      "document": 1
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 1
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "note": "The reflowable second page is authored page-spread-left and must pair with the pre-paginated third page on its right. The unauthored reflowable fourth page is not a spread participant, so the authored page-spread-left fifth page opens a new spread with no companion after it."
+    },
+    "lay-pkg-flow-paginated": {
+      "verdict": "adjudicate",
+      "note": "Flow and viewport presentation are judged by looking; the evidence records the committed layout for the record."
+    },
+    "lay-pkg-flow-scrolled-continuous": {
+      "verdict": "adjudicate",
+      "note": "Flow and viewport presentation are judged by looking; the evidence records the committed layout for the record."
+    },
+    "lay-pkg-flow-scrolled-doc": {
+      "verdict": "adjudicate",
+      "note": "Flow and viewport presentation are judged by looking; the evidence records the committed layout for the record."
+    },
+    "lay-pp-embedded-images": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "every": {
+              "settled": {}
+            }
+          },
+          {
+            "every": {
+              "path": {
+                "path": "committed.frame.adapter",
+                "matches": "^fixed-"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "lay-pp-embedded-images-svg": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "every": {
+              "settled": {}
+            }
+          },
+          {
+            "every": {
+              "path": {
+                "path": "committed.frame.adapter",
+                "matches": "^fixed-"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "lay-pp-images-in-spine": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "every": {
+              "settled": {}
+            }
+          },
+          {
+            "every": {
+              "path": {
+                "path": "committed.frame.adapter",
+                "matches": "^fixed-"
+              }
+            }
+          }
+        ]
+      },
+      "note": "A spine image may render directly or through its XHTML fallback; either is a fixed page."
+    },
+    "lay-pp-images-mixed": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "every": {
+              "settled": {}
+            }
+          },
+          {
+            "every": {
+              "path": {
+                "path": "committed.frame.adapter",
+                "matches": "^fixed-"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "lay-pp-layout-default": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "reflowable-xhtml",
+              "document": 0
+            }
+          },
+          {
+            "settled": {
+              "document": 0
+            }
+          }
+        ]
+      }
+    },
+    "lay-pp-layout-duplication": {
+      "verdict": "n/a",
+      "note": "Passes when EPUBCheck reports the duplicate; it asks nothing of a reading system."
+    },
+    "lay-pp-layout-pre-paginated": {
+      "verdict": {
+        "every": {
+          "all": [
+            {
+              "path": {
+                "path": "committed.frame.adapter",
+                "equals": "fixed-xhtml"
+              }
+            },
+            {
+              "settled": {}
+            }
+          ]
+        }
+      }
+    },
+    "lay-pp-layout-pre-paginated-spreads": {
+      "verdict": {
+        "when": {
+          "premise": {
+            "path": {
+              "path": "runner.frame.landscape",
+              "equals": true
+            }
+          },
+          "rule": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion",
+                      "equals": null,
+                      "document": 0
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 2,
+                      "document": 1
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "right",
+                      "document": 1
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 1,
+                      "document": 2
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "left",
+                      "document": 2
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 2
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion",
+                      "equals": null,
+                      "document": 3
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 3
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "note": "Decided from the synthetic spread Navigator formed in a landscape frame; in a portrait frame the row stays open, since auto spreads are not expected there."
+    },
+    "lay-pp-page-spread-combined": {
+      "verdict": {
+        "when": {
+          "premise": {
+            "path": {
+              "path": "runner.frame.landscape",
+              "equals": true
+            }
+          },
+          "rule": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 2,
+                      "document": 1
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "right",
+                      "document": 1
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 1,
+                      "document": 2
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "left",
+                      "document": 2
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 2
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "note": "Decided from the synthetic spread Navigator formed in a landscape frame; in a portrait frame the row stays open, since auto spreads are not expected there."
+    },
+    "lay-pp-page-spread-left": {
+      "verdict": {
+        "when": {
+          "premise": {
+            "path": {
+              "path": "runner.frame.landscape",
+              "equals": true
+            }
+          },
+          "rule": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion",
+                      "equals": null,
+                      "document": 0
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 2,
+                      "document": 1
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "right",
+                      "document": 1
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 1,
+                      "document": 2
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "left",
+                      "document": 2
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 2
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "note": "Decided from the synthetic spread Navigator formed in a landscape frame; in a portrait frame the row stays open, since auto spreads are not expected there."
+    },
+    "lay-pp-page-spread-right": {
+      "verdict": {
+        "when": {
+          "premise": {
+            "path": {
+              "path": "runner.frame.landscape",
+              "equals": true
+            }
+          },
+          "rule": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion",
+                      "equals": null,
+                      "document": 0
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 2,
+                      "document": 1
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "right",
+                      "document": 1
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "path": {
+                      "path": "fixedCompanion.frame.occurrence",
+                      "equals": 1,
+                      "document": 2
+                    }
+                  },
+                  {
+                    "path": {
+                      "path": "fixedCompanion.placement",
+                      "equals": "left",
+                      "document": 2
+                    }
+                  },
+                  {
+                    "settled": {
+                      "document": 2
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "note": "Decided from the synthetic spread Navigator formed in a landscape frame; in a portrait frame the row stays open, since auto spreads are not expected there."
+    },
+    "lay-pp-spine-overrides_behave-as-global": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "fixed-xhtml",
+              "document": 0
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "reflowable-xhtml",
+              "document": 1
+            }
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "lay-pp-spine-overrides_behave-as-global-bis": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "reflowable-xhtml",
+              "document": 0
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "fixed-xhtml",
+              "document": 1
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "reflowable-xhtml",
+              "document": 2
+            }
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "lay-pp-spine-overrides_image-only-pp": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "fixed-xhtml",
+              "document": 0
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "reflowable-xhtml",
+              "document": 1
+            }
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "lay-pp-spine-overrides_image-only-reflow": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "reflowable-xhtml",
+              "document": 0
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "fixed-xhtml",
+              "document": 1
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "reflowable-xhtml",
+              "document": 2
+            }
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "lay-pp-spine-overrides_image-spine-pp": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "matches": "^fixed-",
+              "document": 0
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "reflowable-xhtml",
+              "document": 1
+            }
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      },
+      "note": "A spine image may render directly or through its XHTML fallback; either is a fixed page."
+    },
+    "lay-pp-spine-overrides_image-spine-reflow": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "reflowable-xhtml",
+              "document": 0
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "matches": "^fixed-",
+              "document": 1
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "reflowable-xhtml",
+              "document": 2
+            }
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      },
+      "note": "A spine image may render directly or through its XHTML fallback; either is a fixed page."
+    },
+    "lay-pp-spread-none": {
+      "verdict": {
+        "every": {
+          "all": [
+            {
+              "path": {
+                "path": "fixedCompanion",
+                "equals": null
+              }
+            },
+            {
+              "settled": {}
+            }
+          ]
+        }
+      },
+      "note": "No synthetic spread is formed for any page."
+    },
+    "lay-pp-svg-icb_multi": {
+      "verdict": {
+        "all": [
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 900,
+                  "document": 1
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 1
+                }
+              }
+            ]
+          },
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 1200,
+                  "document": 2
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 2
+                }
+              }
+            ]
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "fixed-svg",
+              "document": 1
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.adapter",
+              "equals": "fixed-svg",
+              "document": 2
+            }
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      },
+      "note": "The SVG viewBox is the initial containing block; clipping to it is the browser's."
+    },
+    "lay-pp-xhtml-icb": {
+      "verdict": {
+        "all": [
+          {
+            "every": {
+              "all": [
+                {
+                  "path": {
+                    "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                    "equals": 900
+                  }
+                },
+                {
+                  "path": {
+                    "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                    "equals": 600
+                  }
+                },
+                {
+                  "settled": {}
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "note": "Navigator sizes each page to the declared viewport; content outside it is clipped by the frame."
+    },
+    "lay-pp-xhtml-icb_invalid_meta": {
+      "verdict": {
+        "all": [
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 900,
+                  "document": 0
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 0
+                }
+              }
+            ]
+          },
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 900,
+                  "document": 1
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 1
+                }
+              }
+            ]
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "lay-pp-xhtml-icb_multi": {
+      "verdict": {
+        "all": [
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 900,
+                  "document": 0
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 0
+                }
+              }
+            ]
+          },
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 1400,
+                  "document": 1
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 1
+                }
+              }
+            ]
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "lay-pp-xhtml-icb_multi_declarations": {
+      "verdict": {
+        "all": [
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 1000,
+                  "document": 0
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 0
+                }
+              }
+            ]
+          },
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 1000,
+                  "document": 1
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 1
+                }
+              }
+            ]
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "lay-pp-xhtml-icb_repeated-in-meta": {
+      "verdict": {
+        "all": [
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 900,
+                  "document": 0
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 0
+                }
+              }
+            ]
+          },
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 900,
+                  "document": 1
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 1
+                }
+              }
+            ]
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "lay-pp-xhtml-icb_units": {
+      "verdict": {
+        "all": [
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 1000,
+                  "document": 0
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 0
+                }
+              }
+            ]
+          },
+          {
+            "all": [
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.width",
+                  "equals": 1000,
+                  "document": 1
+                }
+              },
+              {
+                "path": {
+                  "path": "committed.layout.layout.settlement.settlement.geometry.intrinsicViewport.height",
+                  "equals": 600,
+                  "document": 1
+                }
+              }
+            ]
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "lay-reflow-align-x-center": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode",
+              "width",
+              "height"
+            ]
+          },
+          {
+            "id": "title",
+            "selector": "title",
+            "text": true
+          }
+        ],
+        "resources": true,
+        "fonts": true
+      },
+      "verdict": "adjudicate",
+      "note": "Centring is judged by looking; the body's rendered box is recorded so the evidence shows whether rendition:align-x-center narrowed the page's content."
+    },
+    "lay-rendition-flow-pre-pag": {
+      "verdict": "adjudicate",
+      "note": "Flow and viewport presentation are judged by looking; the evidence records the committed layout for the record."
+    },
+    "lay-roll-embedded-images": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "publication.kernel.publicationLayout",
+              "equals": "roll"
+            }
+          },
+          {
+            "settled": {
+              "document": 0
+            }
+          }
+        ]
+      },
+      "note": "A roll is one continuous presentation: opening a later occurrence scrolls it rather than committing a new document, so only the first settles as a document."
+    },
+    "lay-roll-embedded-images-svg": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "publication.kernel.publicationLayout",
+              "equals": "roll"
+            }
+          },
+          {
+            "settled": {
+              "document": 0
+            }
+          }
+        ]
+      },
+      "note": "A roll is one continuous presentation: opening a later occurrence scrolls it rather than committing a new document, so only the first settles as a document."
+    },
+    "lay-roll-images-in-spine": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "publication.kernel.publicationLayout",
+              "equals": "roll"
+            }
+          },
+          {
+            "settled": {
+              "document": 0
+            }
+          }
+        ]
+      },
+      "note": "A roll is one continuous presentation: opening a later occurrence scrolls it rather than committing a new document, so only the first settles as a document."
+    },
+    "lay-roll-images-mixed": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "publication.kernel.publicationLayout",
+              "equals": "roll"
+            }
+          },
+          {
+            "settled": {
+              "document": 0
+            }
+          }
+        ]
+      },
+      "note": "A roll is one continuous presentation: opening a later occurrence scrolls it rather than committing a new document, so only the first settles as a document."
+    },
+    "lay-viewport-meta-prop": {
+      "verdict": "adjudicate",
+      "note": "Flow and viewport presentation are judged by looking; the evidence records the committed layout for the record."
+    },
+    "mol-audio": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-audio-exceeding-clipend": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-audio-no-clipbegin": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-audio-no-clipend": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-css": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-ignore": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-navigation": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-support_xhtml": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-support_xhtml-fxl": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-support_xhtml-load": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-support_xhtml-load-fxl": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-support_xhtml-load-next": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-support_xhtml-load-next-fxl": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-timing-synchronization": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-timing-synchronization_fxl": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-timing-synchronization_multiple_audio": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-timing-synchronization_multiple_audio-fxl": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-timing-synchronization_svg": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-timing-synchronization_svg-fxl": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-tts_multi": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "mol-tts_single": {
+      "verdict": "adjudicate",
+      "note": "Playback and synchronization are heard, not observed; see the media-overlay qualification collector."
+    },
+    "nav-access": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "publication.facts.navigationTargets.length",
+              "equals": 1
+            }
+          },
+          {
+            "settled": {
+              "document": 0
+            }
+          }
+        ]
+      },
+      "note": "The navigation document parses to the one link the reader's table of contents offers."
+    },
+    "nav-activation": {
+      "verdict": "adjudicate",
+      "note": "Activation is an interaction; the runner does not follow links."
+    },
+    "nav-non-text_img": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "publication.facts.navigation.lists.0.points.0.label",
+              "equals": "Start page"
+            }
+          },
+          {
+            "path": {
+              "path": "publication.facts.navigation.lists.0.points.1.label",
+              "equals": "Description of the Abbey of S\u00e9nanque"
+            }
+          }
+        ]
+      },
+      "note": "The table of contents is built from the parsed navigation labels, where the image's alt text stands in for the image."
+    },
+    "nav-non-text_img_title": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "publication.facts.navigation.lists.0.points.0.label",
+              "equals": "Start page"
+            }
+          },
+          {
+            "path": {
+              "path": "publication.facts.navigation.lists.0.points.1.label",
+              "equals": "Description of the Abbey of S\u00e9nanque"
+            }
+          }
+        ]
+      },
+      "note": "The table of contents is built from the parsed navigation labels, where the image's alt text stands in for the image."
+    },
+    "nav-spine_in-spine": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "publication.facts.navigation.lists.0.points.length",
+              "equals": 2
+            }
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "nav-spine_in-spine-hidden-toc-css": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "publication.facts.navigation.lists.0.points.length",
+              "equals": 2
+            }
+          },
+          {
+            "path": {
+              "path": "publication.facts.navigationTargets.length",
+              "equals": 2
+            }
+          }
+        ]
+      },
+      "note": "Both links reach the table of contents model; hiding only affects the document rendered in the spine."
+    },
+    "nav-spine_in-spine-hidden-toc-html": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "publication.facts.navigation.lists.0.points.length",
+              "equals": 2
+            }
+          },
+          {
+            "path": {
+              "path": "publication.facts.navigationTargets.length",
+              "equals": 2
+            }
+          }
+        ]
+      },
+      "note": "Both links reach the table of contents model; hiding only affects the document rendered in the spine."
+    },
+    "nav-spine_in-spine-no-list-style": {
+      "verdict": "adjudicate",
+      "note": "The reader's own table of contents is a product surface the runner does not render."
+    },
+    "nav-spine_not-in-spine": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "publication.facts.navigation.lists.0.points.length",
+              "equals": 2
+            }
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "ocf-font_obfuscation": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": true
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "font": {
+              "document": 0,
+              "loaded": "Lobster"
+            }
+          }
+        ]
+      },
+      "note": "The obfuscated face loads once de-obfuscated with the publication's unique identifier."
+    },
+    "ocf-font_obfuscation_bis": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": true
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "not": {
+              "font": {
+                "document": 0,
+                "loaded": "Lobster"
+              }
+            }
+          }
+        ]
+      },
+      "note": "Alone this proves nothing: an implementation that loads no font satisfies it. Its controls are ocf-font_obfuscation, where the same face must load from a correctly keyed obfuscation, and cnt-css-fonts_tt, where it must load unobfuscated."
+    },
+    "ocf-metainf-inc": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "body",
+              "text": {
+                "includes": "Test passes"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "ocf-metainf-manifest": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "publication.kernel.readingOrderLength",
+              "equals": 1
+            }
+          },
+          {
+            "settled": {
+              "document": 0
+            }
+          }
+        ]
+      }
+    },
+    "ocf-package_arbitrary": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "body",
+              "text": {
+                "includes": "Test passes if you see this"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "ocf-package_multiple": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "body",
+              "text": {
+                "includes": "Test passes if you see this"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "ocf-url_link-leaking-relative": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "resource": {
+              "document": 0,
+              "source": "monastery.jpg",
+              "state": "loaded"
+            }
+          }
+        ]
+      }
+    },
+    "ocf-url_link-path-absolute": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "resource": {
+              "document": 0,
+              "source": "monastery.jpg",
+              "state": "loaded"
+            }
+          }
+        ]
+      }
+    },
+    "ocf-url_link-relative": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "resource": {
+              "document": 0,
+              "source": "monastery.jpg",
+              "state": "loaded"
+            }
+          }
+        ]
+      }
+    },
+    "ocf-url_manifest": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "body",
+              "text": {
+                "includes": "Test passes if this page opens"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "ocf-url_origin": {
+      "verdict": "adjudicate",
+      "note": "Needs two users of one installation; the origin carries an installation-specific authority."
+    },
+    "ocf-url_parse-leaking-relative": {
+      "observation": {
+        "queries": [
+          {
+            "id": "calculated",
+            "selector": "#image_url_parent_paths",
+            "text": true
+          },
+          {
+            "id": "expected-url",
+            "selector": "#expected",
+            "text": true
+          },
+          {
+            "id": "root",
+            "selector": "#container_root_url",
+            "text": true
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "query": {
+              "document": 0,
+              "id": "root",
+              "text": {
+                "matches": "^http://p-[0-9a-f]+\\.localhost:[0-9]+/$"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "calculated",
+              "text": {
+                "matches": "^http://p-[0-9a-f]+\\.localhost:[0-9]+/media/imgs/monastery\\.jpg$"
+              }
+            }
+          }
+        ]
+      },
+      "note": "The container root is the publication authority's root; the parsed URL must land directly under it."
+    },
+    "ocf-url_parse-path-absolute": {
+      "observation": {
+        "queries": [
+          {
+            "id": "calculated",
+            "selector": "#image_url_path_absolute",
+            "text": true
+          },
+          {
+            "id": "expected-url",
+            "selector": "#expected",
+            "text": true
+          },
+          {
+            "id": "root",
+            "selector": "#container_root_url",
+            "text": true
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "query": {
+              "document": 0,
+              "id": "root",
+              "text": {
+                "matches": "^http://p-[0-9a-f]+\\.localhost:[0-9]+/$"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "calculated",
+              "text": {
+                "matches": "^http://p-[0-9a-f]+\\.localhost:[0-9]+/media/imgs/monastery\\.jpg$"
+              }
+            }
+          }
+        ]
+      },
+      "note": "The container root is the publication authority's root; the parsed URL must land directly under it."
+    },
+    "ocf-url_relative": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "body",
+              "text": {
+                "includes": "Test passes if this page opens"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "ocf-zip-comp": {
+      "verdict": "adjudicate",
+      "note": "Upstream packs every test directory with plain deflate, so the published container does not have the defect the test describes; judge against a hand-built container."
+    },
+    "ocf-zip-mult": {
+      "verdict": "adjudicate",
+      "note": "Upstream packs every test directory with plain deflate, so the published container does not have the defect the test describes; judge against a hand-built container."
+    },
+    "pkg-collections-unknown": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "body",
+              "text": {
+                "includes": "Test passes if the EPUB opens"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "pkg-creator-order": {
+      "verdict": "adjudicate",
+      "note": "The requirement is about the order creators are displayed in; the evidence only shows the order they were parsed in, which is a different claim. Look at the book details."
+    },
+    "pkg-dir-auto_root-rtl": {
+      "verdict": "adjudicate",
+      "note": "The library's rendering of bidirectional metadata is a product surface outside the runner's view."
+    },
+    "pkg-dir-auto_root-unset": {
+      "verdict": "adjudicate",
+      "note": "The library's rendering of bidirectional metadata is a product surface outside the runner's view."
+    },
+    "pkg-dir_but_not_content": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "body",
+              "style": {
+                "direction": "ltr"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "pkg-dir_creator-rtl": {
+      "verdict": "adjudicate",
+      "note": "The library's rendering of bidirectional metadata is a product surface outside the runner's view."
+    },
+    "pkg-dir_rtl-root-ltr": {
+      "verdict": "adjudicate",
+      "note": "The library's rendering of bidirectional metadata is a product surface outside the runner's view."
+    },
+    "pkg-dir_rtl-root-unset": {
+      "verdict": "adjudicate",
+      "note": "The library's rendering of bidirectional metadata is a product surface outside the runner's view."
+    },
+    "pkg-dir_unset-root-rtl": {
+      "verdict": "adjudicate",
+      "note": "The library's rendering of bidirectional metadata is a product surface outside the runner's view."
+    },
+    "pkg-dir_unset-root-unset": {
+      "verdict": "adjudicate",
+      "note": "The library's rendering of bidirectional metadata is a product surface outside the runner's view."
+    },
+    "pkg-lang_but_not_content": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "document": {
+              "document": 0,
+              "field": "lang",
+              "equals": ""
+            }
+          }
+        ]
+      },
+      "note": "The content document keeps no language of its own rather than inheriting the package's."
+    },
+    "pkg-linked-records": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "publication.facts.package.metadata.title.0.content",
+              "equals": "Package metadata title!"
+            }
+          },
+          {
+            "path": {
+              "path": "publication.facts.package.metadata.creator.0.content",
+              "equals": "Matthew Chan"
+            }
+          }
+        ]
+      }
+    },
+    "pkg-manifest-unknown": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "body",
+              "text": {
+                "includes": "Test passes if the EPUB opens"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "pkg-manifest-unlisted-resource": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "resource": {
+              "document": 0,
+              "source": "red.png",
+              "state": "failed"
+            }
+          }
+        ]
+      },
+      "note": "A resource the manifest does not list is not served."
+    },
+    "pkg-meta-unknown": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "body",
+              "text": {
+                "includes": "Test passes if the EPUB opens"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "pkg-meta-whitespace": {
+      "verdict": "adjudicate",
+      "note": "The library's rendering of the title is a product surface; the facts keep the authored whitespace."
+    },
+    "pkg-spine-duplicate-item-hyperlink": {
+      "verdict": "adjudicate",
+      "note": "Hyperlink and bookmark behaviour are interactions the runner does not perform."
+    },
+    "pkg-spine-duplicate-item-rendering": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "publication.kernel.readingOrderLength",
+              "equals": 4
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.resource",
+              "equals": "EPUB/content_002.xhtml",
+              "document": 1
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.resource",
+              "equals": "EPUB/content_002.xhtml",
+              "document": 2
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.resource",
+              "equals": "EPUB/content_002.xhtml",
+              "document": 3
+            }
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "pkg-spine-duplicate-item-ui": {
+      "verdict": "adjudicate",
+      "note": "Hyperlink and bookmark behaviour are interactions the runner does not perform."
+    },
+    "pkg-spine-nonlinear-activation": {
+      "verdict": "adjudicate",
+      "note": "Hyperlink and bookmark behaviour are interactions the runner does not perform."
+    },
+    "pkg-spine-order": {
+      "verdict": {
+        "every": {
+          "all": [
+            {
+              "same": [
+                {
+                  "path": "committed.frame.resource"
+                },
+                {
+                  "path": "facts.document.resource"
+                }
+              ]
+            },
+            {
+              "settled": {}
+            }
+          ]
+        }
+      },
+      "note": "Every occurrence commits the resource the spine names for it, in spine order."
+    },
+    "pkg-spine-order-svg": {
+      "verdict": {
+        "every": {
+          "all": [
+            {
+              "same": [
+                {
+                  "path": "committed.frame.resource"
+                },
+                {
+                  "path": "facts.document.resource"
+                }
+              ]
+            },
+            {
+              "settled": {}
+            }
+          ]
+        }
+      },
+      "note": "Every occurrence commits the resource the spine names for it, in spine order."
+    },
+    "pkg-spine-progression-default": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "publication.facts.package.spine.pageProgressionDirection",
+              "equals": null
+            }
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "pkg-spine-progression-pre-paginated": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "publication.facts.package.spine.pageProgressionDirection",
+              "exists": true
+            }
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "pkg-spine-progression_ltr": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "publication.facts.package.spine.pageProgressionDirection",
+              "equals": "ltr"
+            }
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "pkg-spine-progression_rtl": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "publication.facts.package.spine.pageProgressionDirection",
+              "equals": "rtl"
+            }
+          },
+          {
+            "every": {
+              "settled": {}
+            }
+          }
+        ]
+      }
+    },
+    "pkg-spine-unknown": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "body",
+              "text": {
+                "includes": "Test passes if the EPUB opens"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "pkg-title-order": {
+      "verdict": {
+        "path": {
+          "path": "publication.facts.package.metadata.title.0.content",
+          "equals": "pkg-title-order"
+        }
+      },
+      "note": "The first dc:title in this package is the test id; the facts keep package order, which the library shows first."
+    },
+    "pkg-unique-id": {
+      "verdict": "adjudicate",
+      "note": "Two imports of publications sharing an identifier are a library behaviour outside one run."
+    },
+    "pkg-unique-id_duplicate": {
+      "verdict": "adjudicate",
+      "note": "Two imports of publications sharing an identifier are a library behaviour outside one run."
+    },
+    "pkg-version-backward": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "body",
+              "text": {
+                "includes": "Test passes if the EPUB opens"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "pss-support": {
+      "verdict": "adjudicate",
+      "note": "Footnote activation is an interaction the runner does not perform."
+    },
+    "pss-support_ignore-title": {
+      "verdict": "adjudicate",
+      "note": "Footnote activation is an interaction the runner does not perform."
+    },
+    "pub-cmt-avif": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "resource": {
+              "document": 0,
+              "source": "001.avif",
+              "state": "loaded"
+            }
+          }
+        ]
+      }
+    },
+    "pub-cmt-gif": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "resource": {
+              "document": 0,
+              "source": "001.gif",
+              "state": "loaded"
+            }
+          }
+        ]
+      }
+    },
+    "pub-cmt-jpeg": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "resource": {
+              "document": 0,
+              "source": "001.jpg",
+              "state": "loaded"
+            }
+          }
+        ]
+      }
+    },
+    "pub-cmt-jxl": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "resource": {
+              "document": 0,
+              "source": "001.jxl",
+              "state": "loaded"
+            }
+          }
+        ]
+      }
+    },
+    "pub-cmt-mp3": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "resource": {
+              "document": 0,
+              "source": "001.mp3",
+              "state": "loaded"
+            }
+          }
+        ]
+      },
+      "note": "Loaded means the element reached HAVE_METADATA; audibility is not observed."
+    },
+    "pub-cmt-mp4": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "resource": {
+              "document": 0,
+              "source": "001.m4a",
+              "state": "loaded"
+            }
+          }
+        ]
+      },
+      "note": "Loaded means the element reached HAVE_METADATA; audibility is not observed."
+    },
+    "pub-cmt-opus": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "resource": {
+              "document": 0,
+              "source": "001.opus",
+              "state": "loaded"
+            }
+          }
+        ]
+      },
+      "note": "Loaded means the element reached HAVE_METADATA; audibility is not observed."
+    },
+    "pub-cmt-png": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "resource": {
+              "document": 0,
+              "source": "001.png",
+              "state": "loaded"
+            }
+          }
+        ]
+      }
+    },
+    "pub-cmt-svg": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "resource": {
+              "document": 0,
+              "source": "001.svg",
+              "state": "loaded"
+            }
+          }
+        ]
+      }
+    },
+    "pub-cmt-webp": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "resource": {
+              "document": 0,
+              "source": "001.webp",
+              "state": "loaded"
+            }
+          }
+        ]
+      }
+    },
+    "pub-data-urls_browsing-context": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "resource": {
+              "document": 0,
+              "source": "data:image/jpeg",
+              "state": "loaded"
+            }
+          }
+        ]
+      }
+    },
+    "pub-data-urls_top-level-content": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "resource": {
+              "document": 0,
+              "source": "data:image/svg+xml",
+              "state": "loaded"
+            }
+          },
+          {
+            "path": {
+              "path": "publication.kernel.readingOrderLength",
+              "equals": 2
+            }
+          }
+        ]
+      }
+    },
+    "pub-external-links": {
+      "verdict": "adjudicate",
+      "note": "Link activation and consent are interactions the runner does not perform."
+    },
+    "pub-external-links_consent": {
+      "verdict": "adjudicate",
+      "note": "Link activation and consent are interactions the runner does not perform."
+    },
+    "pub-file-urls": {
+      "verdict": "adjudicate",
+      "note": "file: frames are refused by the publication CSP; what an empty frame shows is not observable from the host document."
+    },
+    "pub-foreign_bad-fallback": {
+      "verdict": "adjudicate",
+      "note": "Either an ingestion error or an unloadable document satisfies the test."
+    },
+    "pub-foreign_image": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "resource": {
+              "document": 0,
+              "source": "p009-star.psd",
+              "state": "loaded"
+            }
+          }
+        ]
+      }
+    },
+    "pub-foreign_json-spine": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "body",
+              "text": {
+                "includes": "Test passes if you see this text"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "pub-foreign_xml-spine": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "body",
+              "text": {
+                "includes": "Test passes if you see this text"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "pub-foreign_xml-suffix-spine": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "settled": {
+              "document": 0
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "body",
+              "text": {
+                "includes": "Test passes if you see this text"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "pub-xml-external-id": {
+      "observation": {
+        "queries": [
+          {
+            "id": "body",
+            "selector": "body",
+            "text": true,
+            "styles": [
+              "direction",
+              "writing-mode"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": "adjudicate",
+      "note": "The entity is not resolved, but the document never reaches readiness (load fails with readiness-timeout); whether that counts as the permitted ingestion error is a judgement."
+    },
+    "pub-xml-names": {
+      "verdict": "adjudicate",
+      "note": "An XML error page is what the browser shows; the evidence records the committed document for review."
+    },
+    "pub-xml-non-validating_comment": {
+      "verdict": {
+        "all": [
+          {
+            "path": {
+              "path": "publication.kernel.readingOrderLength",
+              "equals": 2
+            }
+          },
+          {
+            "path": {
+              "path": "committed.frame.resource",
+              "equals": "EPUB/content_001.xhtml",
+              "document": 0
+            }
+          }
+        ]
+      }
+    },
+    "pub-xml-non-validating_unclosed": {
+      "verdict": "adjudicate",
+      "note": "An XML error page is what the browser shows; the evidence records the committed document for review."
+    },
+    "scr-not-support_ccscript-modify-host": {
+      "observation": {
+        "queries": [
+          {
+            "id": "host",
+            "selector": "#modified_content",
+            "text": true
+          },
+          {
+            "id": "frame-ran",
+            "selector": "#scripting_support",
+            "within": [
+              "iframe"
+            ],
+            "text": true
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": "adjudicate",
+      "note": "Passing means the host paragraph was left alone, which is also what happens if the frame's script never ran. The marker proving it ran is inside the frame, and `frame-ran` records that the observation cannot reach it: the isolation this test checks is what stops the evidence deciding it. Read the box."
+    },
+    "scr-not-support_ccscript-modify-size": {
+      "observation": {
+        "queries": [
+          {
+            "id": "frame",
+            "selector": "#the_frame",
+            "attributes": [
+              "width",
+              "height"
+            ]
+          },
+          {
+            "id": "frame-ran",
+            "selector": "#scripting_support",
+            "within": [
+              "iframe"
+            ],
+            "text": true
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": "adjudicate",
+      "note": "Passing means the frame's dimensions was left alone, which is also what happens if the frame's script never ran. The marker proving it ran is inside the frame, and `frame-ran` records that the observation cannot reach it: the isolation this test checks is what stops the evidence deciding it. Read the box."
+    },
+    "scr-readingsystem-features": {
+      "observation": {
+        "queries": [
+          {
+            "id": "dom-manipulation",
+            "selector": "#dom-manipulation",
+            "text": true
+          },
+          {
+            "id": "layout-changes",
+            "selector": "#layout-changes",
+            "text": true
+          },
+          {
+            "id": "touch-events",
+            "selector": "#touch-events",
+            "text": true
+          },
+          {
+            "id": "mouse-events",
+            "selector": "#mouse-events",
+            "text": true
+          },
+          {
+            "id": "keyboard-events",
+            "selector": "#keyboard-events",
+            "text": true
+          },
+          {
+            "id": "spine-scripting",
+            "selector": "#spine-scripting",
+            "text": true
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "query": {
+              "document": 0,
+              "id": "dom-manipulation",
+              "text": {
+                "matches": "^(true|false)$"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "layout-changes",
+              "text": {
+                "matches": "^(true|false)$"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "touch-events",
+              "text": {
+                "matches": "^(true|false)$"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "mouse-events",
+              "text": {
+                "matches": "^(true|false)$"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "keyboard-events",
+              "text": {
+                "matches": "^(true|false)$"
+              }
+            }
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "spine-scripting",
+              "text": {
+                "matches": "^(true|false)$"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "scr-readingsystem-support": {
+      "observation": {
+        "queries": [
+          {
+            "id": "pass",
+            "selector": "#pass",
+            "styles": [
+              "display"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "query": {
+          "document": 0,
+          "id": "pass",
+          "style": {
+            "display": "block"
+          }
+        }
+      }
+    },
+    "scr-readingsystem-support_iframe": {
+      "verdict": "adjudicate",
+      "note": "The frame is container-constrained on another origin, so its result is not readable from the host; the owned container-constrained fixture covers epubReadingSystem in frames."
+    },
+    "scr-readingsystem-support_iframe_svg": {
+      "verdict": "adjudicate",
+      "note": "The frame is container-constrained on another origin, so its result is not readable from the host; the owned container-constrained fixture covers epubReadingSystem in frames."
+    },
+    "scr-readingsystem-support_svg": {
+      "observation": {
+        "queries": [
+          {
+            "id": "pass",
+            "selector": "#ers_passes",
+            "styles": [
+              "display"
+            ]
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "query": {
+          "document": 0,
+          "id": "pass",
+          "style": {
+            "display": "block"
+          }
+        }
+      }
+    },
+    "scr-storage-delete": {
+      "verdict": "adjudicate",
+      "note": "Deleting stored data is a product interaction."
+    },
+    "scr-support": {
+      "observation": {
+        "queries": [
+          {
+            "id": "report",
+            "selector": "#scripting_support",
+            "text": true
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "query": {
+          "document": 0,
+          "id": "report",
+          "text": {
+            "includes": "Test passes"
+          }
+        }
+      }
+    },
+    "scr-support-fallback": {
+      "verdict": "n/a",
+      "note": "Scripting is supported, so the fallback is never followed."
+    },
+    "scr-support_iframe": {
+      "verdict": "adjudicate",
+      "note": "The frame is container-constrained on another origin; the owned container-constrained fixture covers script execution in frames."
+    },
+    "scr-support_origin": {
+      "observation": {
+        "queries": [
+          {
+            "id": "origin",
+            "selector": "#origin",
+            "text": true
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "same": [
+              {
+                "document": 0,
+                "query": "origin"
+              },
+              {
+                "document": 1,
+                "query": "origin"
+              }
+            ]
+          },
+          {
+            "query": {
+              "document": 0,
+              "id": "origin",
+              "text": {
+                "matches": "^http://p-"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "scr-support_origin_unique": {
+      "observation": {
+        "queries": [
+          {
+            "id": "origin",
+            "selector": "#origin",
+            "text": true
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "same": [
+          {
+            "document": 0,
+            "query": "origin"
+          },
+          {
+            "path": "fixture.publicationOrigin"
+          }
+        ]
+      },
+      "note": "The displayed origin is the publication's own authority, which the host derives per publication."
+    },
+    "scr-support_scrolled-continuous": {
+      "verdict": "adjudicate",
+      "note": "Flow and viewport presentation are judged by looking; the evidence records the committed layout for the record."
+    },
+    "scr-support_scrolled-doc": {
+      "verdict": "adjudicate",
+      "note": "Flow and viewport presentation are judged by looking; the evidence records the committed layout for the record."
+    },
+    "scr-support_svg": {
+      "observation": {
+        "queries": [
+          {
+            "id": "passes",
+            "selector": "#passes",
+            "text": true
+          }
+        ],
+        "resources": false,
+        "fonts": false
+      },
+      "verdict": {
+        "query": {
+          "document": 0,
+          "id": "passes",
+          "text": {
+            "equals": "Test passes."
+          }
+        }
+      }
+    },
+    "sec-untrusted-consent_network": {
+      "observation": {
+        "queries": [
+          {
+            "id": "script",
+            "selector": "#remote_scripting_support",
+            "text": true
+          },
+          {
+            "id": "red",
+            "selector": ".paint_red",
+            "styles": [
+              "color"
+            ]
+          }
+        ],
+        "resources": true,
+        "fonts": false
+      },
+      "verdict": {
+        "all": [
+          {
+            "query": {
+              "document": 0,
+              "id": "script",
+              "text": {
+                "includes": "not"
+              }
+            }
+          },
+          {
+            "resource": {
+              "document": 0,
+              "source": "logos/W3C",
+              "state": "failed"
+            }
+          },
+          {
+            "not": {
+              "query": {
+                "document": 0,
+                "id": "red",
+                "style": {
+                  "color": "rgb(255, 0, 0)"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "note": "Remote resources stay blocked under the run's policy until the reader allows them."
+    },
+    "sec-untrusted-consent_scripting": {
+      "verdict": "adjudicate",
+      "note": "The run's policy enables active content without asking; consent is a product dialog the runner does not exercise."
+    }
+  }
+}

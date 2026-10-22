@@ -1,0 +1,15 @@
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@import "./palette-reset.css";
+@import "epub-navigator/theme.css";
+@import "./tokens.css";
+
+/* Only shipped code decides which utilities exist, so a class name in a test or a script cannot
+   quietly add one. Navigator's built components are scanned alongside the application's own
+   sources: both stylesheets emit into the same `utilities` layer at the same specificity, and the
+   bundler keeps one copy of a shared rule at its later position, so a pass that knew only half
+   the class names would sort `border` after Navigator's `border-b-2` and overrule it. */
+@source "../**/*.{ts,tsx}";
+@source "../../node_modules/epub-navigator/dist/*.js";

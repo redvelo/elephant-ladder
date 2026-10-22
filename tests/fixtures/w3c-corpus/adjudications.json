@@ -1,0 +1,395 @@
+{
+  "schema": "elephant-w3c-adjudications-v1",
+  "tests": {
+    "lay-fxl-orientation-default": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "all spreads, correct orientation"
+    },
+    "lay-pkg-flow-paginated": {
+      "result": true,
+      "evidence": "2026-10-06T04-52-19.504Z-ouheBA",
+      "date": "2026-10-06",
+      "note": "pass"
+    },
+    "lay-pkg-flow-scrolled-continuous": {
+      "result": true,
+      "evidence": "2026-10-06T04-52-19.504Z-ouheBA",
+      "date": "2026-10-06",
+      "note": "You can continuously scroll with space and the keyboard controls but not with mouse scroll should we fix that ?"
+    },
+    "lay-pkg-flow-scrolled-doc": {
+      "result": true,
+      "evidence": "2026-10-06T04-52-19.504Z-ouheBA",
+      "date": "2026-10-06",
+      "note": "t"
+    },
+    "lay-reflow-align-x-center": {
+      "result": true,
+      "evidence": "2026-10-06T18-17-30.707Z-HPV7Vj",
+      "date": "2026-10-06",
+      "note": ""
+    },
+    "lay-rendition-flow-pre-pag": {
+      "result": true,
+      "evidence": "2026-10-06T18-02-43.615Z-qUJ16V",
+      "date": "2026-10-06",
+      "note": "t"
+    },
+    "lay-viewport-meta-prop": {
+      "result": true,
+      "evidence": "2026-10-06T07-08-37.304Z-jGGvOe",
+      "date": "2026-10-06",
+      "note": "t"
+    },
+    "mol-audio": {
+      "result": true,
+      "evidence": "2026-10-06T01-02-10.933Z-7pMzV9",
+      "date": "2026-10-06",
+      "note": "t"
+    },
+    "mol-audio-exceeding-clipend": {
+      "result": true,
+      "evidence": "2026-10-06T01-02-10.933Z-7pMzV9",
+      "date": "2026-10-06",
+      "note": "t"
+    },
+    "mol-audio-no-clipbegin": {
+      "result": true,
+      "evidence": "2026-10-06T01-02-10.933Z-7pMzV9",
+      "date": "2026-10-06",
+      "note": "t"
+    },
+    "mol-audio-no-clipend": {
+      "result": true,
+      "evidence": "2026-10-06T01-02-10.933Z-7pMzV9",
+      "date": "2026-10-06",
+      "note": "t"
+    },
+    "mol-css": {
+      "result": true,
+      "evidence": "2026-10-06T01-02-10.933Z-7pMzV9",
+      "date": "2026-10-06",
+      "note": "t"
+    },
+    "mol-ignore": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "We support overlays so this test should be ignored"
+    },
+    "mol-navigation": {
+      "result": true,
+      "evidence": "2026-10-06T01-02-10.933Z-7pMzV9",
+      "date": "2026-10-06",
+      "note": "t"
+    },
+    "mol-support_xhtml": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "passes"
+    },
+    "mol-support_xhtml-fxl": {
+      "result": true,
+      "evidence": "2026-10-06T07-08-37.304Z-jGGvOe",
+      "date": "2026-10-06",
+      "note": "t"
+    },
+    "mol-support_xhtml-load": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "passes"
+    },
+    "mol-support_xhtml-load-fxl": {
+      "result": true,
+      "evidence": "2026-10-06T07-08-37.304Z-jGGvOe",
+      "date": "2026-10-06",
+      "note": "t"
+    },
+    "mol-support_xhtml-load-next": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "passes"
+    },
+    "mol-support_xhtml-load-next-fxl": {
+      "result": true,
+      "evidence": "2026-10-06T07-08-37.304Z-jGGvOe",
+      "date": "2026-10-06",
+      "note": "t"
+    },
+    "mol-timing-synchronization": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "passes"
+    },
+    "mol-timing-synchronization_fxl": {
+      "result": true,
+      "evidence": "2026-10-06T07-08-37.304Z-jGGvOe",
+      "date": "2026-10-06",
+      "note": "t"
+    },
+    "mol-timing-synchronization_multiple_audio": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "passes"
+    },
+    "mol-timing-synchronization_multiple_audio-fxl": {
+      "result": true,
+      "evidence": "2026-10-06T07-08-37.304Z-jGGvOe",
+      "date": "2026-10-06",
+      "note": "t"
+    },
+    "mol-timing-synchronization_svg": {
+      "result": true,
+      "evidence": "2026-10-06T16-19-38.476Z-ISdDxC",
+      "date": "2026-10-06",
+      "note": "t"
+    },
+    "mol-timing-synchronization_svg-fxl": {
+      "result": true,
+      "evidence": "2026-10-06T16-19-38.476Z-ISdDxC",
+      "date": "2026-10-06",
+      "note": "t"
+    },
+    "mol-tts_multi": {
+      "result": "todo",
+      "evidence": "2026-10-06T18-17-30.707Z-HPV7Vj",
+      "date": "2026-10-06",
+      "note": "No TTS yet. Optional per RS 3.4 §9.1; planned, not shipped."
+    },
+    "mol-tts_single": {
+      "result": "todo",
+      "evidence": "2026-10-06T18-17-30.707Z-HPV7Vj",
+      "date": "2026-10-06",
+      "note": "No TTS yet. Optional per RS 3.4 §9.1; planned, not shipped."
+    },
+    "nav-activation": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "passes"
+    },
+    "nav-spine_in-spine-no-list-style": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "passes"
+    },
+    "ocf-url_origin": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "rs does not have multiple users but when browser data is reset does have different origins"
+    },
+    "ocf-zip-comp": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "hand-built container with bzip2 entries (Python zipfile, mimetype stored): import refused with HTTP 422, 'compression method not supported: 12'"
+    },
+    "ocf-zip-mult": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "hand-built split container (7z -v64k volumes, first volume offered as the EPUB): import refused with HTTP 422, 'invalid Zip archive: Could not find EOCD'"
+    },
+    "pkg-creator-order": {
+      "result": true,
+      "evidence": "2026-10-06T21-40-51.898Z-9uy6Tu",
+      "date": "2026-10-06",
+      "note": ""
+    },
+    "pkg-dir-auto_root-rtl": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "passes"
+    },
+    "pkg-dir-auto_root-unset": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "displays as CSS: הרפתקה חדשה!"
+    },
+    "pkg-dir_creator-rtl": {
+      "result": true,
+      "evidence": "2026-10-06T01-02-10.933Z-7pMzV9",
+      "date": "2026-10-06",
+      "note": "pass"
+    },
+    "pkg-dir_rtl-root-ltr": {
+      "result": true,
+      "evidence": "2026-10-06T01-02-10.933Z-7pMzV9",
+      "date": "2026-10-06",
+      "note": "pass"
+    },
+    "pkg-dir_rtl-root-unset": {
+      "result": true,
+      "evidence": "2026-10-06T01-02-10.933Z-7pMzV9",
+      "date": "2026-10-06",
+      "note": "pass"
+    },
+    "pkg-dir_unset-root-rtl": {
+      "result": true,
+      "evidence": "2026-10-06T01-02-10.933Z-7pMzV9",
+      "date": "2026-10-06",
+      "note": "pass"
+    },
+    "pkg-dir_unset-root-unset": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "passes"
+    },
+    "pkg-meta-whitespace": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "true"
+    },
+    "pkg-spine-duplicate-item-hyperlink": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "true"
+    },
+    "pkg-spine-duplicate-item-ui": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "each can be bookmarked navigating to that bookmark properly resolves"
+    },
+    "pkg-spine-nonlinear-activation": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "true"
+    },
+    "pkg-unique-id": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "true"
+    },
+    "pkg-unique-id_duplicate": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "true"
+    },
+    "pss-support": {
+      "result": true,
+      "evidence": "2026-10-06T07-08-37.304Z-jGGvOe",
+      "date": "2026-10-06",
+      "note": "t"
+    },
+    "pss-support_ignore-title": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "Our rs does not recognize footnote on the title on second page"
+    },
+    "pub-external-links": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "passes"
+    },
+    "pub-external-links_consent": {
+      "result": true,
+      "evidence": "2026-10-06T07-08-37.304Z-jGGvOe",
+      "date": "2026-10-06",
+      "note": "t"
+    },
+    "pub-file-urls": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "All empty"
+    },
+    "pub-foreign_bad-fallback": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "Reader unavailable\nThis section has no XHTML or SVG document in its manifest fallback chain."
+    },
+    "pub-xml-external-id": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "Section unavailable\nThe section did not start its reading agent in time.\n\nMaybe we can do a better error in this case?"
+    },
+    "pub-xml-names": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "This page contains the following errors:\nerror on line 6 at column 9: Failed to parse QName 'p::p'\nBelow is a rendering of the page up to the first error."
+    },
+    "pub-xml-non-validating_unclosed": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "This page contains the following errors:\nerror on line 8 at column 10: Opening and ending tag mismatch: p line 7 and body\nBelow is a rendering of the page up to the first error."
+    },
+    "scr-not-support_ccscript-modify-host": {
+      "result": true,
+      "evidence": "2026-10-06T21-40-51.898Z-9uy6Tu",
+      "date": "2026-10-06",
+      "note": ""
+    },
+    "scr-not-support_ccscript-modify-size": {
+      "result": true,
+      "evidence": "2026-10-06T21-40-51.898Z-9uy6Tu",
+      "date": "2026-10-06",
+      "note": ""
+    },
+    "scr-readingsystem-support_iframe": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "Iframe is visible and says system supports scripting"
+    },
+    "scr-readingsystem-support_iframe_svg": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "Iframe is visible and says system supports scripting"
+    },
+    "scr-storage-delete": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "Reset browser data purges the stored data"
+    },
+    "scr-support_iframe": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "true"
+    },
+    "scr-support_scrolled-continuous": {
+      "result": true,
+      "evidence": "2026-10-06T06-27-36.937Z-RFMRTs",
+      "date": "2026-10-06",
+      "note": "Pass"
+    },
+    "scr-support_scrolled-doc": {
+      "result": true,
+      "evidence": "2026-10-06T04-52-19.504Z-ouheBA",
+      "date": "2026-10-06",
+      "note": "t"
+    },
+    "sec-untrusted-consent_scripting": {
+      "result": true,
+      "evidence": "2026-10-05T09-21-09.166Z-xvkv0o",
+      "date": "2026-10-05",
+      "note": "We are prompted for consent"
+    }
+  }
+}

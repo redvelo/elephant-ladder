@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Check your understanding</title>
+  <link rel="stylesheet" type="text/css" href="../style/book.css"/>
+  <script src="../script/quiz.js"></script>
+</head>
+<body epub:type="bodymatter">
+<section>
+<h1>Check your understanding</h1>
+<p>Choose one answer for each question. The book marks your answer at once and remembers your best score, even after you close it. You may change an answer.</p>
+
+<form class="quiz" id="quiz">
+  <fieldset data-question="q1">
+    <legend>1. Which country launched Sputnik, the first artificial satellite, in 1957?</legend>
+    <label class="option" data-correct="true"><input type="radio" name="q1" value="a"/> The Soviet Union</label>
+    <label class="option" data-correct="false"><input type="radio" name="q1" value="b"/> The United States</label>
+    <label class="option" data-correct="false"><input type="radio" name="q1" value="c"/> France</label>
+    <label class="option" data-correct="false"><input type="radio" name="q1" value="d"/> The United Kingdom</label>
+    <p class="explanation">Sputnik was Soviet, and it was being second that pushed the United States to set its Moon goal in 1961.</p>
+  </fieldset>
+  <fieldset data-question="q2">
+    <legend>2. According to the Outer Space Treaty of 1967, who may claim the Moon as territory?</legend>
+    <label class="option" data-correct="true"><input type="radio" name="q2" value="a"/> No nation</label>
+    <label class="option" data-correct="false"><input type="radio" name="q2" value="b"/> The first nation to land</label>
+    <label class="option" data-correct="false"><input type="radio" name="q2" value="c"/> The United Nations</label>
+    <label class="option" data-correct="false"><input type="radio" name="q2" value="d"/> Any nation that builds a base</label>
+    <p class="explanation">Both rivals signed the treaty two years before the landing: whoever arrived first would arrive as a visitor.</p>
+  </fieldset>
+  <fieldset data-question="q3">
+    <legend>3. Why did Armstrong fly the last part of the landing by hand?</legend>
+    <label class="option" data-correct="true"><input type="radio" name="q3" value="a"/> The automatic landing site was a field of boulders</label>
+    <label class="option" data-correct="false"><input type="radio" name="q3" value="b"/> The computer had failed completely</label>
+    <label class="option" data-correct="false"><input type="radio" name="q3" value="c"/> Mission Control ordered it</label>
+    <label class="option" data-correct="false"><input type="radio" name="q3" value="d"/> Aldrin asked him to</label>
+    <p class="explanation">The computer kept working through its alarms; it was the boulders at the automatic site that made Armstrong take over, landing with about twenty-five seconds of fuel left.</p>
+  </fieldset>
+  <fieldset data-question="q4">
+    <legend>4. Why did the clearest television pictures of the first steps reach the world through Australia?</legend>
+    <label class="option" data-correct="true"><input type="radio" name="q4" value="a"/> The Moon was above Australia's radio dishes at that hour</label>
+    <label class="option" data-correct="false"><input type="radio" name="q4" value="b"/> NASA's own antennas were switched off</label>
+    <label class="option" data-correct="false"><input type="radio" name="q4" value="c"/> Australia had better cameras</label>
+    <label class="option" data-correct="false"><input type="radio" name="q4" value="d"/> The broadcast was made in Australian time</label>
+    <p class="explanation">Honeysuckle Creek and Parkes happened to have the Moon in view; the signal itself came from the Moon, the dishes only received it.</p>
+  </fieldset>
+  <fieldset data-question="q5">
+    <legend>5. What happened to the Soviet probe Luna 15 during the Apollo 11 mission?</legend>
+    <label class="option" data-correct="true"><input type="radio" name="q5" value="a"/> It crashed into the Moon</label>
+    <label class="option" data-correct="false"><input type="radio" name="q5" value="b"/> It returned a soil sample</label>
+    <label class="option" data-correct="false"><input type="radio" name="q5" value="c"/> It photographed the astronauts</label>
+    <label class="option" data-correct="false"><input type="radio" name="q5" value="d"/> It never launched</label>
+    <p class="explanation">Luna 15 was meant to bring back soil by machine; it crashed while Armstrong and Aldrin were on the surface.</p>
+  </fieldset>
+  <p><input class="score" type="text" readonly="readonly" aria-label="Score" value="Answer the five questions below."/></p>
+  <p class="full-marks">Full marks. Every answer is in the chapter.</p>
+  <p><input type="reset" value="Try again"/></p>
+</form>
+<p><input class="saved" id="best" type="text" readonly="readonly" aria-label="Best score" value="No score saved yet."/></p>
+</section>
+
+<section id="trip">
+<h2>Sign up for the planetarium visit</h2>
+<p>The class visits the planetarium next month. Fill in the form and the book confirms your place. Nothing leaves the book.</p>
+<input class="state" type="checkbox" id="trip-state-name" tabindex="-1"/>
+<input class="state" type="checkbox" id="trip-state-group" tabindex="-1"/>
+<input class="state" type="checkbox" id="trip-state-done" tabindex="-1"/>
+<input class="state" type="checkbox" id="trip-state-blocked" tabindex="-1"/>
+<form class="trip" id="trip-form" novalidate="novalidate">
+  <label>Your name <input type="text" name="name" autocomplete="off"/></label>
+  <label>Your class
+    <select name="group">
+      <option value="">Choose a class</option>
+      <option value="7A">7A</option><option value="7B">7B</option><option value="8A">8A</option><option value="8B">8B</option>
+    </select>
+  </label>
+  <label><input type="checkbox" name="guardian"/> A parent or guardian is coming too</label>
+  <p><button type="submit">Sign up</button></p>
+  <div class="messages">
+    <p class="msg-name error">Please write your name.</p>
+    <p class="msg-group error">Please choose your class.</p>
+    <p class="msg-done ok">Thank you. Your place on the planetarium visit is confirmed inside this book.</p>
+    <p class="msg-blocked error">This reading system does not let books submit forms.</p>
+  </div>
+</form>
+</section>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# The application library is also built as a cdylib so the Android host can load it
+# through JNI. On x86 that makes rav1d's AV1 tables exported, and therefore
+# preemptible, while its hand written assembly addresses them directly; binding
+# references locally keeps that assembly linkable without giving up its speed.
+[target.x86_64-unknown-linux-gnu]
+rustflags = ["-C", "link-arg=-Wl,-Bsymbolic"]

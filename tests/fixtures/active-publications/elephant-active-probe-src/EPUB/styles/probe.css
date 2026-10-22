@@ -1,0 +1,115 @@
+:root {
+  color-scheme: light;
+  --probe-paper: #f2ebdd;
+  --probe-ink: #181815;
+  --probe-amber: #d99a24;
+  --probe-rule: #181815;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--probe-ink);
+  background: var(--probe-paper);
+}
+
+main {
+  width: min(42rem, 100%);
+  min-height: 100vh;
+  padding: clamp(1.5rem, 7vw, 3.5rem);
+}
+
+main::before {
+  display: block;
+  margin-bottom: clamp(2rem, 8vw, 4rem);
+  color: var(--probe-amber);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  content: "Elephant Ladder / Active publication";
+}
+
+[data-elephant-probe-document="peer.xhtml"] main::before {
+  content: "Elephant Ladder / Same-origin peer";
+}
+
+h1 {
+  max-width: 12ch;
+  margin: 0;
+  padding-bottom: clamp(1.25rem, 5vw, 2.25rem);
+  border-bottom: 2px solid var(--probe-rule);
+  font-size: clamp(2.5rem, 9vw, 5.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+}
+
+p {
+  max-width: 36rem;
+  margin: 1.25rem 0 0;
+  font-size: clamp(1rem, 3.5vw, 1.25rem);
+  line-height: 1.5;
+}
+
+#styled-probe {
+  color: rgb(17, 68, 102);
+}
+
+#image-probe,
+#svg-probe {
+  display: inline-block;
+  width: 72px;
+  height: 72px;
+  margin: 1.5rem 0 0;
+  padding: 10px;
+  border: 2px solid var(--probe-rule);
+  border-radius: 0.875rem;
+  background: #fff;
+  vertical-align: top;
+}
+
+#svg-probe {
+  margin-inline-start: 0.5rem;
+}
+
+a {
+  display: inline-flex;
+  min-height: 44px;
+  padding: 0.7rem 1rem;
+  align-items: center;
+  border: 2px solid var(--probe-ink);
+  border-radius: 0.875rem;
+  color: var(--probe-paper);
+  background: var(--probe-ink);
+  font-size: 0.9rem;
+  font-weight: 750;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 3px double var(--probe-ink);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+  }
+}
+
+@media (forced-colors: active) {
+  :root {
+    --probe-paper: Canvas;
+    --probe-ink: CanvasText;
+    --probe-amber: CanvasText;
+    --probe-rule: CanvasText;
+  }
+}

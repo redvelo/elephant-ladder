@@ -1,0 +1,206 @@
+.settings-viewport,
+.library-grid-viewport,
+.app-dialog-pages,
+.app-feedback,
+.app-select-popup,
+.target-menu,
+.target-menu-items {
+  scrollbar-width: none;
+}
+
+.app-select-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  max-width: 100%;
+  border: 0;
+  /* Transparent, not the page colour: an opaque trigger paints over the focus ring of the
+     search field above it. */
+  background: none;
+  color: var(--foreground);
+  font: inherit;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.app-select-positioner {
+  z-index: 50;
+}
+
+.app-select-popup {
+  min-width: var(--anchor-width);
+  max-width: var(--available-width);
+  max-height: var(--available-height);
+  overflow-y: auto;
+}
+
+.target-menu {
+  min-width: min(280px, calc(100vw - 24px));
+  max-width: min(26rem, var(--available-width));
+  max-height: var(--available-height);
+  overflow-y: auto;
+}
+
+.target-menu-header {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 10px 12px 12px;
+}
+
+/* The header cover sizes from its own proportions: a definite height would take the row
+   the identity column sets and stretch the art to it. */
+.target-menu-header .book-cover {
+  display: block;
+  height: auto;
+  aspect-ratio: 2 / 3;
+}
+
+.target-menu-identity {
+  min-width: 0;
+}
+
+.target-menu-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.target-menu-byline {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  overflow-wrap: anywhere;
+}
+
+.target-menu-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  margin: 8px 0 0;
+  overflow: hidden;
+  color: var(--muted-foreground);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.target-menu-facts {
+  margin: 8px 0 0;
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+}
+
+.target-menu-backdrop[data-starting-style],
+.target-menu-backdrop[data-ending-style] {
+  opacity: 0;
+}
+
+.target-menu-backdrop[data-swiping] {
+  transition-duration: 0ms;
+}
+
+/* Navigator's drawer floats: inset from every edge, rounded all round, over a shadow. This one
+   is a sheet off the bottom edge, so it meets the sides and the bottom and draws only the edge
+   it arrives over. */
+.target-menu-drawer {
+  --drawer-inset: 0px;
+  --drawer-bleed-background: var(--background);
+
+  padding-block-end: max(env(safe-area-inset-bottom), 12px);
+  border-width: 2px 0 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  box-shadow: none;
+}
+
+.target-menu-drawer .target-menu-header {
+  flex: none;
+  grid-template-columns: 96px minmax(0, 1fr);
+  padding: 12px 20px 16px;
+  border-block-end: 2px solid var(--border);
+}
+
+.target-menu-drawer .target-menu-title {
+  font-size: 1.05rem;
+}
+
+.target-menu-items {
+  min-height: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Rows in the app's own language rather than a browser button's. */
+.target-menu-item {
+  display: flex;
+  appearance: none;
+  align-items: center;
+  width: 100%;
+  min-height: 60px;
+  padding: 14px 20px;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  font-size: 0.9375rem;
+  text-align: start;
+  cursor: pointer;
+  outline: none;
+}
+
+.target-menu-item + .target-menu-item {
+  border-top: 2px solid var(--border);
+}
+
+.target-menu-item:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: -2px;
+}
+
+.target-menu-drawer .target-menu-separator {
+  height: 12px;
+  margin: 0;
+  border: 0;
+  border-top: 2px solid var(--border);
+  background: transparent;
+}
+
+/* Motion and dimming are the drawer's depth cues, and a low-refresh display smears both. Such
+   a display keeps the structural edge and drops them; the sheet then reads as a page swap,
+   which is what it is there. */
+.elephant-app[data-interaction-feedback="minimal"] :is(.target-menu-drawer, .target-menu-backdrop) {
+  transition: none;
+}
+
+.elephant-app[data-interaction-feedback="minimal"] .target-menu-backdrop {
+  background-color: transparent;
+}
+
+/* A sheet following the finger is motion as much as a transition is. The drag writes the
+   transform as an inline style on every move, which is what has to be outranked here. */
+.elephant-app[data-interaction-feedback="minimal"] .target-menu-drawer {
+  transform: none !important;
+}
+
+.settings-row,
+.target-menu-positioner {
+  z-index: 35;
+}
+
+/* Touch-first: the same menu arrives from the bottom edge, where a thumb can reach it. */
+/* The reader leaves its drawers undimmed, over a page being read. A menu over the library is a
+   different call, so the application states its own and outranks the primitive's default. */
+/* Navigator leaves its drawers undimmed with an unlayered `.epub-navigator-theme
+   [data-slot="drawer-overlay"]` reset, which outranks a single class. A menu over the library is
+   a different call, so the application states its own at the same weight. */
+.elephant-app .target-menu-backdrop {
+  position: fixed;
+  z-index: 34;
+  inset: 0;
+  background-color: color-mix(in srgb, var(--foreground) 48%, transparent);
+  opacity: calc(1 - var(--drawer-swipe-progress, 0));
+  transition: opacity 450ms cubic-bezier(0.32, 0.72, 0, 1);
+}

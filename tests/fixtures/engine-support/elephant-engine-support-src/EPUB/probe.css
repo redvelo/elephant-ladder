@@ -1,0 +1,10 @@
+body { margin: 1.5em; font-family: sans-serif; line-height: 1.4; }
+h1 { font-size: 1.3rem; }
+h2 { margin-top: 1.4em; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; }
+dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.15em 1em; margin: 0.4em 0; }
+dt { font-family: monospace; }
+dd { margin: 0; font-weight: 700; }
+dd[data-answer="yes"] { color: #16653d; }
+dd[data-answer="no"] { color: #a81b1b; }
+.summary { font-family: monospace; font-size: 0.7rem; overflow-wrap: anywhere; color: #555; }
+#status[data-state="partial"] { color: #a81b1b; font-weight: 700; }

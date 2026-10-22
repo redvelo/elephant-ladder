@@ -1,0 +1,330 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+}
+
+.fixture-runner {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: clamp(20px, 3vw, 36px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto minmax(0, 1fr);
+  gap: clamp(16px, 2vw, 24px);
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+}
+
+.fixture-runner-header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 4px 0 clamp(18px, 2.5vw, 28px);
+  border-bottom: 2px solid var(--border);
+}
+
+.fixture-runner h1,
+.fixture-runner h2,
+.fixture-runner p {
+  margin: 0;
+}
+
+.fixture-runner h1 {
+  margin-top: 8px;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.fixture-runner-deck {
+  max-width: 58ch;
+  margin-top: 14px !important;
+  color: var(--muted-foreground);
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  line-height: 1.45;
+}
+
+.fixture-runner-kicker,
+.fixture-runner-label {
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.11em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.fixture-runner-kicker {
+  color: #d99a24;
+}
+
+.fixture-runner-state {
+  min-width: 128px;
+  padding: 10px 14px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--card);
+  text-align: end;
+}
+
+.fixture-runner-state span,
+.fixture-runner-state strong {
+  display: block;
+}
+
+.fixture-runner-state span {
+  color: var(--muted-foreground);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.fixture-runner-state strong {
+  margin-top: 5px;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.fixture-runner-frame,
+.fixture-runner-summary {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-xl);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+/*
+ * The publication surface is a stated viewport, not whatever the window and the panel
+ * chrome leave over. Page counts, spread eligibility and whether a section settles all
+ * move with the viewport, so a surface that varied with the window made evidence from
+ * two runs incomparable — and under a tiling compositor the window varies run to run.
+ * It is landscape, which is what a synthetic spread needs.
+ *
+ * A screen too narrow to show all of it scrolls to the rest rather than resizing it,
+ * because a surface that fits the screen is a surface that varies with the screen.
+ */
+.fixture-runner-surface {
+  width: 892px;
+  height: 403px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.fixture-runner-frame {
+  display: grid;
+  grid-template-rows: auto auto;
+  justify-items: start;
+  overflow: visible;
+}
+
+.fixture-runner-summary {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+}
+
+.fixture-runner-panel-header {
+  min-height: 70px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 2px solid var(--border);
+  background: var(--muted);
+}
+
+.fixture-runner-panel-header h2 {
+  margin-top: 4px;
+  font-size: 1.05rem;
+  line-height: 1.15;
+}
+
+.fixture-runner-panel-header > p {
+  max-width: 22ch;
+  color: var(--muted-foreground);
+  font-size: 0.7rem;
+  font-weight: 650;
+  line-height: 1.35;
+  text-align: end;
+}
+
+.fixture-runner-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  border: 0;
+  background: #fff;
+}
+
+.fixture-runner-score {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  max-width: none !important;
+  color: var(--foreground) !important;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.fixture-runner-score strong {
+  font-size: 1.35rem;
+  letter-spacing: -0.04em;
+}
+
+.fixture-runner-score span {
+  color: var(--muted-foreground);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.fixture-runner-summary pre {
+  margin: 0;
+  padding: 12px 16px;
+  overflow-wrap: anywhere;
+  border-bottom: 2px solid var(--destructive);
+  color: var(--foreground);
+  background: var(--muted);
+  font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+  font-size: 0.75rem;
+  white-space: pre-wrap;
+}
+
+.fixture-runner-table-scroll {
+  min-height: 0;
+  overflow: auto;
+  scrollbar-color: var(--foreground) var(--background);
+}
+
+.fixture-runner-summary table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.76rem;
+}
+
+.fixture-runner-summary th,
+.fixture-runner-summary td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.fixture-runner-summary th {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  color: var(--muted-foreground);
+  background: var(--background);
+  font-size: 0.64rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.fixture-runner-summary th:first-child {
+  width: 42%;
+}
+
+.fixture-runner-summary th:nth-child(2) {
+  width: 20%;
+}
+
+.fixture-runner-summary tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.fixture-runner-summary td:last-child {
+  color: var(--muted-foreground);
+  font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+  font-size: 0.7rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.fixture-runner-verdict {
+  display: inline-block;
+  min-width: 3.3rem;
+  padding: 3px 6px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+[data-check-result="failed"] .fixture-runner-verdict {
+  border-color: var(--destructive);
+  border-width: 2px;
+}
+
+.fixture-runner[data-runner-state="passed"] .fixture-runner-state,
+.fixture-runner[data-runner-state="failed"] .fixture-runner-state {
+  color: var(--primary-foreground);
+  border-color: var(--primary);
+  background: var(--primary);
+}
+
+.fixture-runner[data-runner-state="failed"] .fixture-runner-state {
+  color: var(--foreground);
+  border-color: var(--destructive);
+  background: var(--card);
+}
+
+@media (max-width: 760px) {
+  .fixture-runner {
+    padding: 14px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .fixture-runner-header {
+    grid-column: 1;
+    align-items: start;
+  }
+
+  .fixture-runner h1 {
+    font-size: clamp(2.25rem, 13vw, 3.5rem);
+  }
+
+  .fixture-runner-deck {
+    display: none;
+  }
+
+  .fixture-runner-state {
+    min-width: 104px;
+  }
+
+  .fixture-runner-summary {
+    min-height: 620px;
+  }
+}
+
+@media (forced-colors: active) {
+  .fixture-runner-kicker {
+    color: CanvasText;
+  }
+
+  .fixture-runner-surface,
+  .fixture-runner-frame iframe {
+    forced-color-adjust: none;
+  }
+}

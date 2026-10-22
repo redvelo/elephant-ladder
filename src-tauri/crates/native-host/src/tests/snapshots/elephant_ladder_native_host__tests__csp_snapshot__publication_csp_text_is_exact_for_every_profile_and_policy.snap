@@ -1,0 +1,219 @@
+---
+source: crates/native-host/src/tests/csp_snapshot.rs
+expression: rendered
+---
+foreground | Enabled | Allowed
+    default-src 'none'
+    base-uri 'none'
+    object-src http://nested.test https:
+    form-action 'none'
+    frame-src http://nested.test https:
+    child-src http://nested.test https:
+    frame-ancestors http://reader.test
+    script-src 'self' http://reader.test/public/content-agent/[content-agent].js 'unsafe-inline' https:
+    script-src-attr 'unsafe-inline'
+    style-src 'self' 'unsafe-inline' http://reader.test/public/reader-fonts/[reader-fonts]/reader-serif.css https:
+    img-src 'self' data: https:
+    font-src 'self' http://reader.test/public/reader-fonts/[reader-fonts]/files/ https:
+    media-src 'self' https:
+    connect-src 'self' https: wss:
+    worker-src 'self'
+    sandbox allow-scripts allow-same-origin allow-forms allow-modals
+
+nested | Enabled | Allowed
+    default-src 'none'
+    base-uri 'none'
+    object-src 'none'
+    form-action 'none'
+    frame-src 'none'
+    child-src 'none'
+    frame-ancestors http://foreground.test http://reader.test
+    script-src http://nested.test http://reader.test/public/content-agent/[content-agent].js 'unsafe-inline' https:
+    script-src-attr 'unsafe-inline'
+    style-src http://nested.test 'unsafe-inline' http://reader.test/public/reader-fonts/[reader-fonts]/reader-serif.css https:
+    img-src http://nested.test data: https:
+    font-src http://nested.test data: http://reader.test/public/reader-fonts/[reader-fonts]/files/ https:
+    media-src http://nested.test data: https:
+    connect-src https: wss:
+    worker-src 'none'
+    sandbox allow-scripts allow-forms allow-modals
+
+nested+auxiliary | Enabled | Allowed
+    default-src 'none'
+    base-uri 'none'
+    object-src 'none'
+    form-action 'none'
+    frame-src 'none'
+    child-src 'none'
+    frame-ancestors http://foreground.test http://reader.test
+    script-src http://nested.test http://reader.test/public/content-agent/[content-agent].js http://aux.test/s.js 'unsafe-inline' https:
+    script-src-attr 'unsafe-inline'
+    style-src http://nested.test 'unsafe-inline' http://reader.test/public/reader-fonts/[reader-fonts]/reader-serif.css https:
+    img-src http://nested.test data: https:
+    font-src http://nested.test data: http://reader.test/public/reader-fonts/[reader-fonts]/files/ https:
+    media-src http://nested.test data: https:
+    connect-src https: wss:
+    worker-src 'none'
+    sandbox allow-scripts allow-forms allow-modals
+
+foreground | Enabled | Blocked
+    default-src 'none'
+    base-uri 'none'
+    object-src http://nested.test
+    form-action 'none'
+    frame-src http://nested.test
+    child-src http://nested.test
+    frame-ancestors http://reader.test
+    script-src 'self' http://reader.test/public/content-agent/[content-agent].js 'unsafe-inline'
+    script-src-attr 'unsafe-inline'
+    style-src 'self' 'unsafe-inline' http://reader.test/public/reader-fonts/[reader-fonts]/reader-serif.css
+    img-src 'self' data:
+    font-src 'self' http://reader.test/public/reader-fonts/[reader-fonts]/files/
+    media-src 'self'
+    connect-src 'self'
+    worker-src 'self'
+    sandbox allow-scripts allow-same-origin allow-forms allow-modals
+
+nested | Enabled | Blocked
+    default-src 'none'
+    base-uri 'none'
+    object-src 'none'
+    form-action 'none'
+    frame-src 'none'
+    child-src 'none'
+    frame-ancestors http://foreground.test http://reader.test
+    script-src http://nested.test http://reader.test/public/content-agent/[content-agent].js 'unsafe-inline'
+    script-src-attr 'unsafe-inline'
+    style-src http://nested.test 'unsafe-inline' http://reader.test/public/reader-fonts/[reader-fonts]/reader-serif.css
+    img-src http://nested.test data:
+    font-src http://nested.test data: http://reader.test/public/reader-fonts/[reader-fonts]/files/
+    media-src http://nested.test data:
+    connect-src 'none'
+    worker-src 'none'
+    sandbox allow-scripts allow-forms allow-modals
+
+nested+auxiliary | Enabled | Blocked
+    default-src 'none'
+    base-uri 'none'
+    object-src 'none'
+    form-action 'none'
+    frame-src 'none'
+    child-src 'none'
+    frame-ancestors http://foreground.test http://reader.test
+    script-src http://nested.test http://reader.test/public/content-agent/[content-agent].js http://aux.test/s.js 'unsafe-inline'
+    script-src-attr 'unsafe-inline'
+    style-src http://nested.test 'unsafe-inline' http://reader.test/public/reader-fonts/[reader-fonts]/reader-serif.css
+    img-src http://nested.test data:
+    font-src http://nested.test data: http://reader.test/public/reader-fonts/[reader-fonts]/files/
+    media-src http://nested.test data:
+    connect-src 'none'
+    worker-src 'none'
+    sandbox allow-scripts allow-forms allow-modals
+
+foreground | Disabled | Allowed
+    default-src 'none'
+    base-uri 'none'
+    object-src http://nested.test https:
+    form-action 'none'
+    frame-src http://nested.test https:
+    child-src http://nested.test https:
+    frame-ancestors http://reader.test
+    script-src 'nonce-NONCE' http://reader.test/public/content-agent/[content-agent].js
+    script-src-attr 'none'
+    style-src 'self' 'unsafe-inline' http://reader.test/public/reader-fonts/[reader-fonts]/reader-serif.css https:
+    img-src 'self' data: https:
+    font-src 'self' http://reader.test/public/reader-fonts/[reader-fonts]/files/ https:
+    media-src 'self' https:
+    connect-src 'self' https: wss:
+    worker-src 'none'
+    sandbox allow-scripts allow-same-origin
+
+nested | Disabled | Allowed
+    default-src 'none'
+    base-uri 'none'
+    object-src 'none'
+    form-action 'none'
+    frame-src 'none'
+    child-src 'none'
+    frame-ancestors http://foreground.test http://reader.test
+    script-src 'nonce-NONCE' http://reader.test/public/content-agent/[content-agent].js
+    script-src-attr 'none'
+    style-src http://nested.test 'unsafe-inline' http://reader.test/public/reader-fonts/[reader-fonts]/reader-serif.css https:
+    img-src http://nested.test data: https:
+    font-src http://nested.test data: http://reader.test/public/reader-fonts/[reader-fonts]/files/ https:
+    media-src http://nested.test data: https:
+    connect-src https: wss:
+    worker-src 'none'
+    sandbox allow-scripts
+
+nested+auxiliary | Disabled | Allowed
+    default-src 'none'
+    base-uri 'none'
+    object-src 'none'
+    form-action 'none'
+    frame-src 'none'
+    child-src 'none'
+    frame-ancestors http://foreground.test http://reader.test
+    script-src 'nonce-NONCE' http://reader.test/public/content-agent/[content-agent].js
+    script-src-attr 'none'
+    style-src http://nested.test 'unsafe-inline' http://reader.test/public/reader-fonts/[reader-fonts]/reader-serif.css https:
+    img-src http://nested.test data: https:
+    font-src http://nested.test data: http://reader.test/public/reader-fonts/[reader-fonts]/files/ https:
+    media-src http://nested.test data: https:
+    connect-src https: wss:
+    worker-src 'none'
+    sandbox allow-scripts
+
+foreground | Disabled | Blocked
+    default-src 'none'
+    base-uri 'none'
+    object-src http://nested.test
+    form-action 'none'
+    frame-src http://nested.test
+    child-src http://nested.test
+    frame-ancestors http://reader.test
+    script-src 'nonce-NONCE' http://reader.test/public/content-agent/[content-agent].js
+    script-src-attr 'none'
+    style-src 'self' 'unsafe-inline' http://reader.test/public/reader-fonts/[reader-fonts]/reader-serif.css
+    img-src 'self' data:
+    font-src 'self' http://reader.test/public/reader-fonts/[reader-fonts]/files/
+    media-src 'self'
+    connect-src 'self'
+    worker-src 'none'
+    sandbox allow-scripts allow-same-origin
+
+nested | Disabled | Blocked
+    default-src 'none'
+    base-uri 'none'
+    object-src 'none'
+    form-action 'none'
+    frame-src 'none'
+    child-src 'none'
+    frame-ancestors http://foreground.test http://reader.test
+    script-src 'nonce-NONCE' http://reader.test/public/content-agent/[content-agent].js
+    script-src-attr 'none'
+    style-src http://nested.test 'unsafe-inline' http://reader.test/public/reader-fonts/[reader-fonts]/reader-serif.css
+    img-src http://nested.test data:
+    font-src http://nested.test data: http://reader.test/public/reader-fonts/[reader-fonts]/files/
+    media-src http://nested.test data:
+    connect-src 'none'
+    worker-src 'none'
+    sandbox allow-scripts
+
+nested+auxiliary | Disabled | Blocked
+    default-src 'none'
+    base-uri 'none'
+    object-src 'none'
+    form-action 'none'
+    frame-src 'none'
+    child-src 'none'
+    frame-ancestors http://foreground.test http://reader.test
+    script-src 'nonce-NONCE' http://reader.test/public/content-agent/[content-agent].js
+    script-src-attr 'none'
+    style-src http://nested.test 'unsafe-inline' http://reader.test/public/reader-fonts/[reader-fonts]/reader-serif.css
+    img-src http://nested.test data:
+    font-src http://nested.test data: http://reader.test/public/reader-fonts/[reader-fonts]/files/
+    media-src http://nested.test data:
+    connect-src 'none'
+    worker-src 'none'
+    sandbox allow-scripts

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Elephant Ladder
+Comment=Read EPUB publications
+Exec=elephant-ladder %U
+Icon=com.redvelo.ElephantLadder
+StartupWMClass=elephant-ladder
+Categories=Office;Viewer;
+MimeType=application/epub+zip;x-scheme-handler/elephant-ladder;
+Terminal=false

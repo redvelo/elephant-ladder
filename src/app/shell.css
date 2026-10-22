@@ -1,0 +1,166 @@
+.elephant-shell {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+@media (max-width: 760px) {
+  .elephant-shell {
+    padding: 14px;
+  }
+}
+
+.elephant-shell:has(.library-shell) {
+  width: 100%;
+  padding: 0;
+}
+
+.library-shell {
+  -webkit-tap-highlight-color: transparent;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  height: var(--app-viewport-height, 100dvh);
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) 0 env(safe-area-inset-left);
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.app-navigation {
+  grid-column: 1;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 180px));
+  justify-content: center;
+  gap: 6px;
+  padding: 0 8px calc(6px + env(safe-area-inset-bottom));
+}
+
+/* A phone rounds its display corners across the bar, clipping the fill of an outer tab that
+   reaches the edge. The arc is ~12px deep at that height, so the bar stands clear of it. */
+@media (max-width: 760px) {
+  .app-navigation {
+    padding: 0 16px calc(14px + env(safe-area-inset-bottom));
+  }
+}
+
+.app-navigation button {
+  display: grid;
+  min-height: 64px;
+  align-content: center;
+  justify-items: center;
+  gap: 3px;
+  position: relative;
+  font-size: max(16px, 1.125rem);
+  font-weight: 550;
+}
+
+.app-navigation svg {
+  width: 26px;
+  height: 26px;
+}
+
+.library-shell :is(button, input, select):focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+
+.library-shell button:disabled {
+  cursor: default;
+}
+
+/* Notices float over the page above the navigation. A message that took layout space would
+   resize the page under it, and the shelf sizes its covers from that space. */
+.app-feedback {
+  grid-column: 1;
+  grid-row: 2;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: end;
+  justify-self: center;
+  width: min(32rem, 100% - 32px);
+  max-height: 60%;
+  margin-bottom: 12px;
+  overflow: auto;
+  pointer-events: none;
+}
+
+.app-feedback:empty {
+  display: none;
+}
+
+.app-page {
+  grid-column: 1;
+  grid-row: 2;
+  min-height: 0;
+  min-width: 0;
+  container: app-page / size;
+}
+
+.app-page[hidden] {
+  display: none;
+}
+
+.kicker {
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.summary {
+  max-width: 720px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.acquisition-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.acquisition-status {
+  margin: 16px 0 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.acquisition-error {
+  padding: 10px;
+  border: 1px solid var(--border);
+}
+
+/* The current tab is filled, as selected controls are everywhere else. */
+.elephant-app:not([data-interaction-feedback="minimal"]) .app-navigation button[aria-current] {
+  border-radius: var(--radius);
+  color: var(--background);
+  background: var(--foreground);
+}
+
+/* A low-refresh display ghosts a block that size, so a rule under the label carries the
+   selection there instead. */
+.elephant-app[data-interaction-feedback="minimal"] .app-navigation button[aria-current] {
+  font-weight: 650;
+}
+
+.elephant-app[data-interaction-feedback="minimal"] .app-navigation button[aria-current]::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  inset-inline: 8px;
+  height: 2px;
+  background: currentColor;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .elephant-app:not([data-interaction-feedback="minimal"])
+    .app-navigation
+    button:not([aria-current]):hover {
+    border-radius: var(--radius);
+    background: color-mix(in srgb, var(--foreground) 8%, transparent);
+  }
+}

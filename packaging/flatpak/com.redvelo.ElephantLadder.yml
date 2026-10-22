@@ -1,0 +1,82 @@
+# Packages the release build from this checkout; run
+# `node scripts/tauri-pinned.mjs build --no-bundle` first. The host toolchain's glibc must
+# not be newer than the runtime's.
+id: com.redvelo.ElephantLadder
+runtime: org.freedesktop.Platform
+runtime-version: '26.08'
+sdk: org.freedesktop.Sdk
+command: elephant-ladder
+finish-args:
+  - --share=ipc
+  # Dictionary packs and pronunciation audio are fetched from the network. Publication
+  # content still reaches it only where the remote-resources policy allows: the sandbox is
+  # one layer of that defence, not the boundary that decides it.
+  - --share=network
+  # tauri-runtime-cef forces X11, and fallback-x11 hides X11 on Wayland sessions.
+  - --socket=x11
+  - --socket=pulseaudio
+  - --device=dri
+build-options:
+  no-debuginfo: true
+modules:
+  - name: zypak
+    sources:
+      - type: git
+        url: https://github.com/refi64/zypak
+        tag: v2025.09
+        commit: 693a71c5ffa80ec9c9ce2ae03b1ccc493c698e53
+
+  - name: elephant-ladder
+    buildsystem: simple
+    build-commands:
+      - install -d /app/lib/elephant-ladder
+      - install -m755 elephant-ladder /app/lib/elephant-ladder/
+      - strip --strip-debug -o /app/lib/elephant-ladder/libcef.so libcef.so
+      - install -m644 libEGL.so libGLESv2.so libvk_swiftshader.so libvulkan.so.1
+        vk_swiftshader_icd.json chrome_100_percent.pak chrome_200_percent.pak resources.pak
+        icudtl.dat v8_context_snapshot.bin /app/lib/elephant-ladder/
+      - cp -r locales /app/lib/elephant-ladder/
+      - install -Dm755 elephant-ladder.sh /app/bin/elephant-ladder
+      # The desktop entry's %U field makes Flatpak export this app with --file-forwarding, so
+      # a book opened from outside arrives as a document-portal path the sandbox can read and
+      # the application needs no filesystem permission of its own.
+      - install -Dm644 com.redvelo.ElephantLadder.desktop -t /app/share/applications
+      - install -Dm644 icon.png /app/share/icons/hicolor/512x512/apps/com.redvelo.ElephantLadder.png
+    sources:
+      - type: file
+        path: ../../src-tauri/target/release/elephant-ladder
+      - type: file
+        path: ../../src-tauri/target/release/libcef.so
+      - type: file
+        path: ../../src-tauri/target/release/libEGL.so
+      - type: file
+        path: ../../src-tauri/target/release/libGLESv2.so
+      - type: file
+        path: ../../src-tauri/target/release/libvk_swiftshader.so
+      - type: file
+        path: ../../src-tauri/target/release/libvulkan.so.1
+      - type: file
+        path: ../../src-tauri/target/release/vk_swiftshader_icd.json
+      - type: file
+        path: ../../src-tauri/target/release/chrome_100_percent.pak
+      - type: file
+        path: ../../src-tauri/target/release/chrome_200_percent.pak
+      - type: file
+        path: ../../src-tauri/target/release/resources.pak
+      - type: file
+        path: ../../src-tauri/target/release/icudtl.dat
+      - type: file
+        path: ../../src-tauri/target/release/v8_context_snapshot.bin
+      - type: dir
+        path: ../../src-tauri/target/release/locales
+        dest: locales
+      - type: file
+        path: ../linux/com.redvelo.ElephantLadder.desktop
+      - type: file
+        path: ../../src-tauri/icons/icon.png
+      - type: script
+        dest-filename: elephant-ladder.sh
+        commands:
+          # zypak's default spawn strategy loses its supervisor descriptor under CEF.
+          - export ZYPAK_ZYGOTE_STRATEGY_SPAWN=0
+          - exec zypak-wrapper /app/lib/elephant-ladder/elephant-ladder "$@"

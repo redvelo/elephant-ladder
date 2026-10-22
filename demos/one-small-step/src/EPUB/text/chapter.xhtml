@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Chapter 12: One Small Step</title>
+  <link rel="stylesheet" type="text/css" href="../style/book.css"/>
+  <script src="../script/activity.js"></script>
+</head>
+<body epub:type="bodymatter chapter">
+<section>
+<h1>Chapter 12: One Small Step</h1>
+<p class="lede">On the night of 20 July 1969, more people watched the same event than at any earlier moment in history. The pictures were grainy, the voices crackled, and the thing they showed had never been seen before: two human beings standing on another world. This chapter asks how that happened, why it happened when it did, and what it meant to the people watching from the ground.</p>
+
+<figure>
+  <div class="player">
+    <video id="launch-video" controls="controls" preload="auto" playsinline="playsinline" poster="../media/apollo-11-launch-poster.jpg">
+      <source src="../media/apollo-11-launch.webm" type="video/webm"/>
+      <p>Your reading system does not play this video.</p>
+    </video>
+    <input class="state" type="checkbox" id="video-started" tabindex="-1"/>
+    <button type="button" class="play-overlay" id="video-play"><span class="visually-hidden">Play the launch film</span></button>
+  </div>
+  <figcaption>Launch of Apollo 11 from Kennedy Space Center, Florida, 16 July 1969. The voice is Jack King, NASA's launch commentator, counting down the final seconds. Source: NASA, public domain.</figcaption>
+</figure>
+
+<h2 id="why">1. Why the Moon?</h2>
+<p>The Moon landing was born of rivalry. In 1957 the Soviet Union launched Sputnik, the first artificial satellite, and in 1961 Yuri Gagarin became the first person to orbit the Earth. The United States, alarmed at being second, set itself a goal in 1961 that nobody yet knew how to reach: to land a person on the Moon and return them safely before the decade ended.</p>
+<p>The race that followed was a contest between two political systems, but it was also the largest peacetime engineering effort ever attempted, employing around four hundred thousand people in laboratories, factories and universities. While the rockets were being built, diplomats were at work too. The Outer Space Treaty of 1967, signed by both rivals, declared that no nation could claim the Moon as its territory. Whoever arrived first would arrive as a visitor.</p>
+
+<h2 id="how">2. How it was done</h2>
+<p>Apollo 11 left Earth on 16 July 1969 on a Saturn V rocket, still the most powerful machine ever to fly. Three astronauts were aboard: Neil Armstrong, Buzz Aldrin and Michael Collins. Four days later, Armstrong and Aldrin descended in the lunar module <i>Eagle</i> while Collins stayed in orbit above them.</p>
+<p>The descent nearly failed twice. The guidance computer, with less memory than a modern greeting card, raised alarms as it ran out of time to finish its calculations; the software, written by a team at the Massachusetts Institute of Technology led by Margaret Hamilton, had been designed to drop low-priority work and carry on, and it did. Then Armstrong saw that the automatic landing site was a field of boulders and flew the last part by hand, touching down with about twenty-five seconds of fuel to spare. "The Eagle has landed," he reported. It was 20:17 Universal Time.</p>
+
+<h2 id="watching">3. Who was watching</h2>
+<p>Six and a half hours later Armstrong climbed down the ladder. The television signal from the Moon was faint, and the clearest pictures reached the world not from the United States but from radio dishes in Australia, at Honeysuckle Creek and Parkes, which happened to have the Moon above them at that hour. An estimated six hundred million people watched: a fifth of everyone alive. In Paris, London, Tokyo and Buenos Aires it was the middle of the night, and people stayed up.</p>
+
+<figure>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Aldrin_Apollo_11_original.jpg/1280px-Aldrin_Apollo_11_original.jpg" alt="Buzz Aldrin standing on the Moon in a white spacesuit; the lunar module and the photographer are reflected in his gold visor."/>
+  <figcaption>Buzz Aldrin on the surface of the Moon, photographed by Neil Armstrong. Armstrong, the camera and the lunar module are reflected in the visor. This picture is loaded from the internet when the reader allows the book network access. Source: NASA, public domain.</figcaption>
+</figure>
+
+<p>The astronauts left a flag, and beside it a plaque that read: "We came in peace for all mankind." Two days earlier the Soviet probe Luna 15 had entered lunar orbit on a mission to return a soil sample by machine; it crashed into the Moon while Armstrong and Aldrin were on the surface. The race, for the moment, was over.</p>
+
+<h2 id="home">4. Coming home</h2>
+<p>Apollo 11 splashed down in the Pacific Ocean on 24 July. The crew spent three weeks in quarantine in case they had brought back anything living, which they had not, and then toured twenty-five countries in forty-five days. Five more crews landed on the Moon before the programme ended in 1972. No one has been back since.</p>
+
+<h2 id="count">Activity: count the words</h2>
+<div class="box" id="activity">
+  <p>Which words does this chapter use most? Press the button and the book counts every word of the chapter in the background, while you keep reading.</p>
+  <input class="state" type="checkbox" id="count-run" tabindex="-1"/>
+  <input class="state" type="checkbox" id="count-done" tabindex="-1"/>
+  <input class="state" type="checkbox" id="count-failed" tabindex="-1"/>
+  <div class="activity-state">
+    <p class="act-idle"><button type="button" class="toggle" id="count-button">Count the words</button></p>
+    <p class="act-working">Counting in the background...</p>
+    <p class="act-done">The most common words of this chapter, counted by a background worker.</p>
+    <p class="act-failed">This reading system did not let the book run a background worker.</p>
+  </div>
+  <canvas id="count-canvas" width="1280" height="840"></canvas>
+</div>
+</section>
+</body>
+</html>

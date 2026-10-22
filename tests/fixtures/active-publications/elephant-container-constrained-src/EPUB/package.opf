@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="pub-id">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:identifier id="pub-id">urn:uuid:973b0f04-fd5c-4fc3-bf19-fab00ce08cad</dc:identifier>
+    <dc:title>Elephant Container-Constrained Probe</dc:title>
+    <dc:language>en</dc:language>
+    <meta property="dcterms:modified">2026-09-09T00:00:00Z</meta>
+  </metadata>
+  <manifest>
+    <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav" />
+    <item id="content" href="content.xhtml" media-type="application/xhtml+xml" />
+    <item id="child" href="child.xhtml" media-type="application/xhtml+xml" />
+    <item id="child-script" href="child.js" media-type="text/javascript" />
+  </manifest>
+  <spine>
+    <itemref idref="content" />
+  </spine>
+</package>

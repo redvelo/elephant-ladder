@@ -1,0 +1,618 @@
+.home-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+  grid-template-rows: minmax(0, 1fr) auto;
+  height: 100%;
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+.home-page[data-has-recents="true"] {
+  grid-template-rows: minmax(0, 1fr) auto min(27%, 260px);
+}
+
+.home-current-book {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  min-height: 0;
+  height: 100%;
+  max-height: 600px;
+  align-self: start;
+}
+
+.home-reading-activity {
+  padding: 20px 24px;
+}
+
+.home-reading-activity dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  text-align: center;
+  align-items: start;
+}
+
+.home-reading-activity dl > div {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 4px;
+}
+
+.home-reading-activity dl > div + div::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: -8px;
+  border-inline-start: 1px solid var(--border);
+}
+
+.home-reading-activity dt {
+  font-size: max(14px, 0.95rem);
+}
+
+.home-reading-activity dd {
+  margin: 0;
+  font-size: max(22px, 1.65rem);
+  font-variant-numeric: tabular-nums;
+}
+
+.home-hero {
+  min-height: 0;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-items: center;
+  justify-items: center;
+  gap: 16px;
+  padding: 24px 24px 28px;
+}
+
+.hero-cover-button {
+  display: block;
+  min-height: 0;
+  min-width: 0;
+  height: 100%;
+  max-height: 320px;
+  aspect-ratio: 2 / 3;
+  max-width: 65%;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  min-height: 0;
+  gap: 12px;
+  min-width: 0;
+  max-width: 100%;
+  text-align: center;
+  font-size: max(16px, 1.2rem);
+  line-height: 1.35;
+}
+
+.hero-copy h1 {
+  --hero-title-lines: 3;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  margin: 0;
+  font-size: clamp(1.5rem, 5.5cqw, 2rem);
+  font-weight: 650;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+/* The copy column packs its children to its start, which leaves each line no wider than
+   its own text and so nothing for a declared direction to align within. These two carry
+   publication metadata, whose direction the publication states, so they span the column
+   and let that direction place the text. A left-to-right line is unaffected: it still
+   starts at the same edge. */
+.hero-copy h1,
+.hero-author {
+  align-self: stretch;
+}
+
+.hero-author {
+  margin: 0;
+  font-size: max(18px, 1.375rem);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.hero-author:empty {
+  display: none;
+}
+
+.hero-title-button {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--hero-title-lines, 3);
+  overflow: hidden;
+  text-align: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+.hero-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--hero-description-lines, 4);
+  overflow: hidden;
+  flex: none;
+  margin: 0;
+  font-size: inherit;
+  line-height: 1.4;
+}
+
+.hero-reading-context {
+  display: flex;
+  flex-direction: column;
+  gap: 4px 16px;
+  width: 100%;
+  font-size: inherit;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-reading-context > :first-child {
+  font-weight: 600;
+}
+
+.hero-copy > :not(.hero-actions) {
+  flex: none;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  width: 100%;
+  min-height: 0;
+  flex: 1 1 0;
+}
+
+.hero-actions > * {
+  flex: none;
+}
+
+.home-recents {
+  min-height: 0;
+  padding: 12px 24px 16px;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.reflection-composer-actions,
+.reflection-entry-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.home-reflection {
+  display: flex;
+  flex-direction: row;
+  gap: 12px 24px;
+  text-align: start;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.home-reflection-row {
+  padding: 8px 24px 12px;
+  font-size: max(16px, 1.2rem);
+  min-width: 0;
+}
+
+.home-reflection-excerpt {
+  min-width: 0;
+  max-width: 60ch;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.reflection-context {
+  font-size: 0.75rem;
+}
+
+.home-reflection-caption {
+  display: inline-flex;
+  gap: 6px;
+  flex-shrink: 0;
+  font-size: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.reflection-composer {
+  display: grid;
+  gap: 12px;
+}
+
+.reflection-composer textarea {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  padding: 12px;
+  border: 2px solid var(--border);
+  background: inherit;
+  color: inherit;
+  font: inherit;
+}
+
+.reflection-composer-actions span {
+  font-size: 0.75rem;
+}
+
+.reflection-history article {
+  border-top: 1px solid var(--border);
+  padding-block: 16px;
+}
+
+.reflection-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.reflection-entry-actions {
+  justify-content: flex-start;
+}
+
+.recent-books {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  min-height: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.recent-books li {
+  min-width: 0;
+  min-height: 0;
+}
+
+.recent-books li:nth-child(n + 4) {
+  display: none;
+}
+
+.recent-books .book-cover {
+  flex: 1;
+  width: auto;
+  max-width: 100%;
+  align-self: center;
+}
+
+.empty-library {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  text-align: center;
+}
+
+.empty-library h1 {
+  max-width: 18ch;
+  margin: 0;
+  font-size: clamp(1.5rem, 5cqw, 2.5rem);
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+}
+
+.empty-library p {
+  margin: 0;
+}
+
+.empty-library small {
+  max-width: 44ch;
+  font-size: 0.75rem;
+}
+
+.empty-library-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.empty-book-mark {
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 112px;
+  border: 2px solid var(--border);
+  box-shadow:
+    inset 6px 0 0 var(--background),
+    inset 8px 0 0 var(--border);
+  font-size: 1.5rem;
+  letter-spacing: -0.1em;
+  margin-bottom: 12px;
+}
+
+/* Home shapes. These three queries are mutually exclusive: every screen matches
+   exactly one, and refinements nest inside the shape they belong to. */
+
+/* Short and wide: a phone held sideways. */
+@container app-page (height < 30rem) {
+  .home-recents {
+    display: none;
+  }
+
+  .home-page,
+  .home-page[data-has-recents="true"] {
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) auto auto;
+    column-gap: 24px;
+    padding: 12px 20px;
+    align-items: center;
+  }
+  .home-current-book,
+  .home-hero {
+    display: contents;
+  }
+  .hero-cover-button {
+    grid-area: 1 / 1 / -1 / 2;
+    height: 100%;
+    max-height: none;
+    max-width: none;
+    align-self: center;
+  }
+  .hero-copy {
+    grid-area: 1 / 2;
+    align-self: stretch;
+    align-items: stretch;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(0, 1fr);
+    column-gap: 24px;
+    row-gap: 4px;
+    min-height: 0;
+    overflow: hidden;
+    text-align: start;
+  }
+  .hero-copy h1 {
+    grid-area: 1 / 1 / 2 / 3;
+    font-size: clamp(1.25rem, 3.2cqw, 1.9rem);
+    --hero-title-lines: 2;
+  }
+  .hero-author {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .hero-reading-context {
+    grid-area: 3 / 1 / 4 / 2;
+    align-self: start;
+    width: auto;
+  }
+  .hero-actions {
+    grid-area: 2 / 2 / 4 / 3;
+    align-items: flex-start;
+    min-height: 0;
+  }
+  .home-reflection-row {
+    grid-area: 2 / 2;
+    padding: 0 0 8px;
+    font-size: max(14px, 1rem);
+  }
+  .home-reflection {
+    justify-content: flex-start;
+    margin-inline: 0;
+  }
+  .home-reading-activity {
+    grid-area: 3 / 2;
+    padding: 0;
+  }
+  .home-reading-activity dd {
+    font-size: max(18px, 1.3rem);
+  }
+  .home-reading-activity dt {
+    font-size: max(12px, 0.8rem);
+  }
+}
+
+/* Narrow and tall: a phone upright. */
+@container app-page (height >= 30rem) and (width < 540px) {
+  @container app-page (width < 500px) {
+    .home-hero {
+      padding: 20px;
+    }
+    .home-recents {
+      padding-inline: 20px;
+    }
+    .recent-books {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .recent-books li:nth-child(n + 4) {
+      display: none;
+    }
+  }
+
+  @container app-page (height < 36rem) {
+    .home-hero {
+      gap: 12px;
+    }
+    .hero-cover-button {
+      max-height: 220px;
+    }
+    .hero-copy h1 {
+      --hero-title-lines: 2;
+    }
+    .hero-copy {
+      gap: 8px;
+    }
+  }
+
+  @container app-page (height < 42rem) {
+    .hero-copy h1 {
+      --hero-title-lines: 3;
+      font-size: clamp(1.5rem, 4cqw, 2.5rem);
+    }
+    .home-page[data-has-recents="true"] {
+      grid-template-rows: minmax(0, 1fr) auto;
+    }
+    .home-recents {
+      display: none;
+    }
+  }
+
+  @container app-page (height >= 42rem) {
+    .home-reflection-row {
+      padding-bottom: 24px;
+    }
+  }
+
+  @container app-page (height < 56rem) {
+    .home-page[data-has-recents="true"] {
+      grid-template-rows: minmax(0, 1fr) auto;
+    }
+    .home-recents {
+      display: none;
+    }
+    .hero-description {
+      display: none;
+    }
+    .home-reflection-row {
+      padding: 2px 24px 8px;
+      font-size: max(14px, 1rem);
+    }
+    .home-reflection-excerpt {
+      -webkit-line-clamp: 1;
+    }
+    .home-reflection {
+      width: 100%;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .home-reflection-caption-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .home-current-book {
+      max-height: none;
+    }
+    .hero-cover-button {
+      max-height: none;
+    }
+  }
+}
+
+/* Roomy: the Go 6, tablets and desktops. */
+@container app-page (height >= 30rem) and (width >= 540px) {
+  .home-hero {
+    /* The cover column is a real column: the cover fills it at its own proportions, so the
+       copy starts where the cover ends rather than past a track sized for a taller one. */
+    --hero-cover: min(48cqw, 58cqh);
+
+    grid-template-columns: var(--hero-cover) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    column-gap: 24px;
+    row-gap: 20px;
+    padding: 24px 24px 16px;
+    align-items: start;
+  }
+  .hero-cover-button {
+    grid-area: 1 / 1;
+    align-self: start;
+    justify-self: stretch;
+    block-size: auto;
+    inline-size: 100%;
+    max-block-size: 100%;
+    max-inline-size: none;
+    aspect-ratio: 2 / 3;
+  }
+  .hero-copy {
+    grid-area: 1 / 2;
+    width: 100%;
+    text-align: start;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .hero-copy h1 {
+    font-size: clamp(2rem, 5.6cqw, 3rem);
+    --hero-title-lines: 3;
+    text-wrap: pretty;
+  }
+  .hero-actions {
+    align-items: flex-start;
+  }
+
+  @media (min-width: 1136px) {
+    .home-page[data-has-recents="true"] {
+      grid-template-rows: minmax(0, 1fr) auto min(27%, 280px);
+    }
+    .home-hero {
+      --hero-cover: min(36cqw, 56cqh, 380px);
+
+      column-gap: 48px;
+      padding: 24px 32px 16px;
+    }
+    .hero-copy h1 {
+      font-size: clamp(2.5rem, 4cqw, 3.5rem);
+    }
+
+    .hero-copy {
+      max-height: 100%;
+    }
+    .hero-actions {
+      min-height: 0;
+    }
+    .hero-description {
+      min-height: 0;
+      flex-shrink: 1;
+    }
+    .recent-books {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 32px;
+    }
+    .recent-books li:nth-child(n) {
+      display: block;
+    }
+    .home-recents {
+      padding: 20px 32px;
+    }
+  }
+
+  @container app-page (height < 42rem) {
+    .hero-copy h1 {
+      --hero-title-lines: 3;
+      font-size: clamp(1.5rem, 4cqw, 2.5rem);
+    }
+    .home-page[data-has-recents="true"] {
+      grid-template-rows: minmax(0, 1fr) auto;
+    }
+    .home-recents {
+      display: none;
+    }
+  }
+
+  @container app-page (height >= 42rem) {
+    .home-reflection-row {
+      padding-bottom: 24px;
+    }
+  }
+}

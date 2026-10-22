@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>Container-constrained scripting probe</title>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const frame = document.getElementById("hostile-child");
+        const initial = frame.getBoundingClientRect();
+        let relayed = false;
+        window.addEventListener("message", (event) => {
+          const value = event.data;
+          const keys = value !== null &amp;&amp; typeof value === "object" ? Object.keys(value).sort().join(",") : "";
+          if (relayed || event.source !== frame.contentWindow || keys !== "childScript,credentialsBlocked,epubReadingSystem,frameElementBlocked,nativeRouteBlocked,parentDomBlocked,readerDomBlocked,type" || value.type !== "elephant-container-child-result-v1") return;
+          relayed = true;
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            const finalRect = frame.getBoundingClientRect();
+            const report = {
+              type: "elephant-container-constrained-result-v1",
+              source: "EPUB/content.xhtml",
+              childScript: value.childScript,
+              epubReadingSystem: value.epubReadingSystem,
+              parentDomBlocked: value.parentDomBlocked &amp;&amp; !document.documentElement.hasAttribute("data-hostile-child"),
+              frameSizeBlocked: value.frameElementBlocked &amp;&amp; initial.width === finalRect.width &amp;&amp; initial.height === finalRect.height,
+              readerDomBlocked: value.readerDomBlocked,
+              credentialsBlocked: value.credentialsBlocked &amp;&amp; event.origin === "null",
+              nativeRouteBlocked: value.nativeRouteBlocked
+            };
+            parent.postMessage(report, "*");
+          }));
+        });
+      }, { once: true });
+    </script>
+  </head>
+  <body>
+    <h1>Container-constrained scripting probe</h1>
+    <iframe id="hostile-child" src="child.xhtml" width="320" height="180" title="Hostile child"></iframe>
+  </body>
+</html>

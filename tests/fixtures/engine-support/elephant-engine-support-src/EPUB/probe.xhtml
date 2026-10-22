@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Engine support</title>
+    <link rel="stylesheet" href="probe.css"/>
+    <script src="js/probe.js"></script>
+  </head>
+  <body>
+    <h1>Engine support</h1>
+    <p>
+      This publication asks the reading system's engine what it supports and shows the
+      answers. Read them here, or collect them with
+      <code>pnpm probe:engine-support</code>. Every answer is the engine's own, not a
+      judgement about the reading system around it.
+    </p>
+    <p>Resource probes: <span id="status" data-state="pending">pending</span></p>
+
+    <h2>Reading system</h2>
+    <dl id="system"></dl>
+    <p class="summary" id="system-summary">script did not run</p>
+
+    <h2>Prefixed CSS the engine aliases itself</h2>
+    <dl id="css-prefixed"></dl>
+    <p class="summary" id="css-prefixed-summary">script did not run</p>
+
+    <h2>CSS the prefixed properties stand for</h2>
+    <dl id="css-unprefixed"></dl>
+    <p class="summary" id="css-unprefixed-summary">script did not run</p>
+
+    <h2>Image formats claimed and delivered</h2>
+    <dl id="images"></dl>
+    <p class="summary" id="images-summary">script did not run</p>
+
+    <h2>Audio codecs claimed and loaded</h2>
+    <dl id="audio"></dl>
+    <p class="summary" id="audio-summary">script did not run</p>
+  </body>
+</html>

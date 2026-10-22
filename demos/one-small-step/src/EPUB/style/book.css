@@ -1,0 +1,69 @@
+body { font-family: Georgia, "Times New Roman", serif; line-height: 1.5; }
+h1 { font-size: 1.8em; margin: 0.6em 0 0.2em; } h2 { font-size: 1.3em; margin: 1.2em 0 0.3em; }
+p.lede { font-size: 1.1em; font-style: italic; }
+figure { margin: 1.2em 0; }
+
+/* A reading system lays a publication out in columns, where the browser's own
+   small media controls are an unreliable target. The film therefore carries one
+   large play control of its own. It is positioned over the picture, so showing
+   and hiding it changes no geometry. */
+.player { position: relative; }
+.play-overlay { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 5rem; height: 5rem; padding: 0; border: 2px solid #ffffff; border-radius: 50%; background: rgba(0, 0, 0, 0.55); cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.play-overlay::before { content: ""; width: 0; height: 0; margin-left: 0.4rem; border-left: 1.6rem solid #ffffff; border-top: 1rem solid transparent; border-bottom: 1rem solid transparent; }
+.player:has(#video-started:checked) .play-overlay { visibility: hidden; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; } figure img, figure video { width: 100%; height: auto; display: block; }
+figure video { background: #000; }
+figcaption { font-size: 0.85em; color: #555; margin-top: 0.4em; }
+.box { border: 1px solid #999; padding: 0.6em 0.9em; margin: 1em 0; break-inside: avoid; }
+.quiz fieldset { border: 1px solid #999; margin: 1em 0; padding: 0.6em 0.9em; break-inside: avoid; }
+.quiz legend { font-weight: bold; padding: 0 0.3em; }
+.quiz label.option { display: block; padding: 0.3em 0.4em; margin: 0.15em 0; border-radius: 4px; }
+
+/* Marking is pure CSS over the checked state, so answering mutates no DOM and the
+   page is never re-laid-out. Explanations are always laid out and only made
+   visible, so the geometry of the page never changes either. */
+.quiz label.option[data-correct="true"]:has(input:checked) { background: #d8f0d8; }
+.quiz label.option[data-correct="false"]:has(input:checked) { background: #f6d6d6; }
+.quiz fieldset:has(input:checked) label.option[data-correct="true"] { outline: 2px solid #2a7a2a; }
+.quiz .explanation { font-size: 0.9em; margin: 0.4em 0 0; visibility: hidden; }
+.quiz fieldset:has(input:checked) .explanation { visibility: visible; }
+
+/* The score and the saved best are the value of a read-only field. A field's
+   value is form state, not document content, so writing it costs no layout
+   either. CSS counters cannot do this: Chromium does not recompute a counter
+   when the `:has()` that increments it starts matching. */
+.quiz .score, .saved { font: inherit; font-weight: bold; width: 100%; border: 0; padding: 0; margin: 0; background: transparent; color: inherit; }
+.saved { font-weight: normal; font-size: 0.9em; color: #555; }
+.quiz .full-marks { visibility: hidden; }
+.quiz:has(fieldset[data-question="q1"] label.option[data-correct="true"] input:checked):has(fieldset[data-question="q2"] label.option[data-correct="true"] input:checked):has(fieldset[data-question="q3"] label.option[data-correct="true"] input:checked):has(fieldset[data-question="q4"] label.option[data-correct="true"] input:checked):has(fieldset[data-question="q5"] label.option[data-correct="true"] input:checked) .full-marks { visibility: visible; }
+.quiz button, .quiz input[type="reset"], form button { font: inherit; padding: 0.4em 0.9em; }
+form.trip label { display: block; margin: 0.5em 0; } form.trip input[type=text], form.trip select { font: inherit; padding: 0.3em; width: 100%; max-width: 24em; }
+.error { color: #a00000; } .ok { color: #1f6f1f; }
+
+/* Every message is written into the page once and revealed by state, so a
+   validation failure or a confirmation costs no layout. The messages share one
+   grid cell, so only the tallest ever reserves space. */
+.messages { display: grid; margin: 0.6em 0 0; }
+.messages > * { grid-area: 1 / 1; visibility: hidden; margin: 0; }
+.state { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+#trip:has(#trip-state-name:checked) .msg-name { visibility: visible; }
+#trip:has(#trip-state-group:checked) .msg-group { visibility: visible; }
+#trip:has(#trip-state-done:checked) .msg-done { visibility: visible; }
+#trip:has(#trip-state-blocked:checked) .msg-blocked { visibility: visible; }
+
+/* The activity turns itself on with a checkbox a label presses. The button and
+   every status line share one grid cell and are only ever made invisible, so the
+   document never changes height and the reading system never re-measures it. */
+.toggle { font: inherit; padding: 0.4em 0.9em; border: 1px solid #767676; border-radius: 4px; background: #efefef; cursor: pointer; }
+#activity .activity-state { display: grid; }
+#activity .activity-state > * { grid-area: 1 / 1; margin: 0; visibility: hidden; }
+#activity .act-idle { visibility: visible; }
+#activity:has(#count-run:checked) .act-idle { visibility: hidden; }
+#activity:has(#count-run:checked) .act-working { visibility: visible; }
+#activity:has(#count-done:checked) .act-working,
+#activity:has(#count-failed:checked) .act-working { visibility: hidden; }
+#activity:has(#count-done:checked) .act-done { visibility: visible; }
+#activity:has(#count-failed:checked) .act-failed { visibility: visible; }
+#activity canvas { display: block; width: 100%; height: auto; margin-top: 0.6em; visibility: hidden; }
+#activity:has(#count-done:checked) canvas { visibility: visible; }
+.status { font-size: 0.9em; color: #555; }

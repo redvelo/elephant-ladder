@@ -1,0 +1,8 @@
+/*
+ * Tailwind's default palette is removed before Navigator's theme defines the semantic one, so a
+ * utility can only name a token that follows the interface color policy. `bg-red-500` does not
+ * exist here, and a slip fails the build rather than appearing as a light patch in dark mode.
+ */
+@theme {
+  --color-*: initial;
+}

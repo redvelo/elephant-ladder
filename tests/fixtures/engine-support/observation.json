@@ -1,0 +1,12 @@
+{
+  "queries": [
+    { "id": "status", "selector": "#status", "text": true, "attributes": ["data-state"] },
+    { "id": "system", "selector": "#system-summary", "text": true },
+    { "id": "css-prefixed", "selector": "#css-prefixed-summary", "text": true },
+    { "id": "css-unprefixed", "selector": "#css-unprefixed-summary", "text": true },
+    { "id": "images", "selector": "#images-summary", "text": true },
+    { "id": "audio", "selector": "#audio-summary", "text": true }
+  ],
+  "resources": true,
+  "fonts": false
+}

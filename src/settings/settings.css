@@ -1,0 +1,186 @@
+.text-control {
+  min-height: 44px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.settings-page {
+  --reader-page-inset: 24px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: hidden;
+  padding: 28px 0 0;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.settings-page h1 {
+  padding-inline: 24px;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  margin: 0 0 28px;
+}
+
+/* The page paginates, so a group travels whole: a heading must not end a page alone. */
+.settings-section {
+  padding-block: 20px;
+  border-top: 1px solid var(--border);
+  break-inside: avoid;
+}
+
+.settings-section h2 {
+  font-size: 0.75rem;
+  margin: 0 0 12px;
+}
+
+.settings-section p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  min-height: 64px;
+  padding-block: 12px;
+  font-size: 0.875rem;
+  text-align: start;
+  break-inside: avoid;
+}
+
+.settings-row strong {
+  display: block;
+  font-weight: 550;
+}
+
+.settings-row small {
+  display: block;
+  font-size: 0.75rem;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.settings-row > :last-child {
+  flex-shrink: 0;
+}
+
+/* An action with no value to show beside the label spans the row instead, like every other
+   action button on a touch surface. */
+.settings-row-action {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+
+/* A switch in the application's own settings, drawn like everything else here: an edge, a
+   fill, and no motion a low-refresh display would smear. */
+.settings-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 52px;
+  height: 30px;
+  flex: none;
+  padding: 0;
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  background: var(--background);
+  cursor: pointer;
+}
+
+.settings-switch[data-checked] {
+  background: var(--foreground);
+}
+
+.settings-switch-thumb {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-inline-start: 4px;
+  border-radius: 999px;
+  background: var(--foreground);
+}
+
+.settings-switch[data-checked] .settings-switch-thumb {
+  margin-inline-start: 26px;
+  background: var(--background);
+}
+
+.settings-switch:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.settings-measuring {
+  margin: 0;
+  padding-block: 12px;
+  color: var(--muted-foreground);
+  font-size: 0.8125rem;
+}
+
+.settings-link {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding-inline: 0;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.settings-error {
+  display: grid;
+  gap: 12px;
+  font-size: 0.875rem;
+}
+
+.reading-defaults {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.settings-defaults-description {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--reader-chrome-muted);
+}
+
+/* The reading page supplies its own inset, so the panel keeps only its own rhythm. */
+.settings-reading-panel .epub-navigator-reader__settings {
+  max-inline-size: none;
+  overflow: visible;
+}
+
+.settings-reading-panel .epub-navigator-reader__settings-section {
+  padding-inline: 0;
+}
+
+.settings-permission-fields {
+  display: grid;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.app-navigation button,
+.book-open,
+.hero-cover-button,
+.hero-title-button,
+.home-reflection,
+.text-control {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
