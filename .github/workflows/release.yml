@@ -1,8 +1,9 @@
 name: Release
 
-# Builds the beta artifacts: a Linux x86_64 Flatpak bundle and a release-signed
-# Android APK. A `v*` tag builds both and publishes a GitHub pre-release;
-# workflow_dispatch is a dry run that only uploads the artifacts.
+# Builds the beta artifacts: a Linux x86_64 Flatpak bundle, a release-signed
+# Android APK, and an unsigned Windows x64 NSIS installer. A `v*` tag builds
+# all of them and publishes a GitHub pre-release; workflow_dispatch is a dry
+# run that only uploads the artifacts.
 #
 # The navigator sibling checkout is pinned by NAVIGATOR_REF, so a release tag
 # reproduces the exact navigator it shipped with. The Flatpak job must run on a
@@ -209,9 +210,86 @@ jobs:
           path: elephant-ladder/*.apk
           if-no-files-found: error
 
+  # The NSIS bundler in the pinned CLI embeds the CEF redistributable itself,
+  # so unlike the Flatpak nothing is repackaged by hand. The installer is
+  # unsigned: SmartScreen will warn until a code-signing certificate exists.
+  windows-nsis:
+    needs: preflight
+    runs-on: windows-2025
+    defaults:
+      run:
+        working-directory: elephant-ladder
+        shell: bash
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          path: elephant-ladder
+      - uses: actions/checkout@v5
+        with:
+          repository: redvelo/epub-navigator
+          ref: ${{ needs.preflight.outputs.navigator-ref }}
+          path: navigator
+      - uses: actions/checkout@v5
+        with:
+          repository: redvelo/elephant-ladder-dictionary
+          ref: ${{ needs.preflight.outputs.dictionary-ref }}
+          path: dictionary
+      - uses: pnpm/action-setup@v6
+        with:
+          package_json_file: elephant-ladder/package.json
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: elephant-ladder/.node-version
+          cache: pnpm
+          cache-dependency-path: |
+            elephant-ladder/pnpm-lock.yaml
+            navigator/pnpm-lock.yaml
+      - run: rustup toolchain install
+      - run: rustup toolchain install
+        working-directory: navigator
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: wasm-pack@0.15.0
+      # cef-dll-sys drives CMake with the Ninja generator and rav1d assembles
+      # its x86 SIMD with NASM; the runner image ships CMake but not these two,
+      # and the NASM package does not put itself on PATH.
+      - name: Install Ninja and NASM
+        run: |
+          choco install -y ninja nasm
+          echo 'C:\Program Files\NASM' >> "$GITHUB_PATH"
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: elephant-ladder/src-tauri
+      - uses: actions/cache@v4
+        with:
+          path: elephant-ladder/src-tauri/target/tauri-cli-3.0.0-alpha.4
+          key: tauri-cli-3.0.0-alpha.4-windows
+      # Same CEF download cache as the Linux job, at its Windows location.
+      - uses: actions/cache@v4
+        with:
+          path: ~/AppData/Local/tauri-cef
+          key: cef-windows-${{ hashFiles('elephant-ladder/src-tauri/Cargo.lock') }}
+          restore-keys: cef-windows-
+      - run: pnpm install --frozen-lockfile
+        working-directory: navigator
+      - run: pnpm install --frozen-lockfile
+      - name: Build the NSIS installer
+        run: node scripts/tauri-pinned.mjs build --bundles nsis
+      - name: Name the installer artifact
+        run: |
+          version=$(node -p "require('./src-tauri/tauri.conf.json').version")
+          setup=$(find src-tauri/target/release/bundle/nsis -name '*-setup.exe')
+          test -n "$setup"
+          mv "$setup" "elephant-ladder-${version}-x64-setup.exe"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: windows
+          path: elephant-ladder/*.exe
+          if-no-files-found: error
+
   release:
     if: startsWith(github.ref, 'refs/tags/')
-    needs: [linux-flatpak, android-apk]
+    needs: [linux-flatpak, android-apk, windows-nsis]
     runs-on: ubuntu-24.04
     permissions:
       contents: write
@@ -228,4 +306,4 @@ jobs:
             --prerelease \
             --title "$GITHUB_REF_NAME (beta)" \
             --generate-notes \
-            *.flatpak *.apk
+            *.flatpak *.apk *.exe
