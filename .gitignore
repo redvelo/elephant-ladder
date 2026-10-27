@@ -46,6 +46,8 @@ lerna-debug.log*
 .flatpak-builder/
 flatpak-build/
 flatpak-repo/
+site/
+repo-key.gpg
 *.flatpak
 
 # Editor directories and files
