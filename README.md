@@ -18,6 +18,11 @@ reads the publication, [EPUB Navigator](https://github.com/redvelo/epub-navigato
 presents it, and the native host in this repository stores books, serves them, and
 decides what they may do.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="art/home-dark.webp">
+  <img src="art/home-light.webp" alt="The home page: the book being read, a daily reading streak, and recently read books">
+</picture>
+
 ## What next generation means
 
 - **Books run, safely.** A book's own scripts, video, audio, and forms work when you
@@ -47,8 +52,24 @@ decides what they may do.
 - **At home on e-ink.** Page buttons, a page-turn interaction profile, and the
   device's own front-light dialog on BOOX hardware.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="art/reading-dark.webp">
+  <img src="art/reading-light.webp" alt="Reading Alice's Adventures in Wonderland: a Tenniel illustration facing a page of prose, with real page numbers in the footer">
+</picture>
+
+<img src="art/dictionary-lookup-light.webp" alt="Looking up “circumambulate” in Moby-Dick: the entry plays its pronunciation and quotes the very sentence it was selected from">
+
+<img src="art/moby-mo-narration.webp" alt="Media overlay narration moving through the opening of Moby-Dick, phrase by phrase">
+
+<img src="art/manga-scroll-dark.webp" alt="An EPUB 3.4 roll publication scrolling continuously" width="480">
+
 And the expected things, done properly: a library with import, reading positions,
 bookmarks, highlights, and notes that survive restarts, and search inside a book.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="art/library-dark.webp">
+  <img src="art/library-light.webp" alt="The library: imported books in many languages, shown by their covers">
+</picture>
 
 ## Conformance
 
@@ -102,7 +123,7 @@ src/          the application frontend: library, import, settings, dictionaries
 src-tauri/    the Tauri shell and the native host crates
 tests/        unit, native-browser, and fixture tests, with the test publications
 demos/        demonstration publications
-art/          wordmarks
+art/          wordmarks and screenshots
 ```
 
 ## License
