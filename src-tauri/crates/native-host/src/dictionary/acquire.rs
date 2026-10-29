@@ -333,9 +333,17 @@ fn is_installed(installed: &[storage::DictionaryInstallation], pack: &CatalogPac
 }
 
 /// A staging directory name of one pack revision, from identity the catalog validated.
+///
+/// Only a prefix of the revision: the asset file names below already carry it in full,
+/// and repeating it pushed staging paths past the Windows `MAX_PATH` limit.
 fn pack_directory(pack: &CatalogPack) -> String {
     let release = pack.release();
-    format!("{}-{}", release.pack_id.as_str(), release.pack_revision)
+    let revision = release.pack_revision.to_string();
+    format!(
+        "{}-{}",
+        release.pack_id.as_str(),
+        crate::storage::dictionary_revision_directory(&revision)
+    )
 }
 
 /// The packs one language installs: its corpus, then the pronunciations it comes with.

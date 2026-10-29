@@ -294,6 +294,11 @@ pub fn run() {
             let app_data = app.path().app_data_dir().map_err(|error| {
                 format!("could not resolve application data directory: {error}")
             })?;
+            // Bulk, re-downloadable data stays out of the Windows roaming profile; on
+            // Linux and Android this is the same directory as the application data.
+            let app_local_data = app.path().app_local_data_dir().map_err(|error| {
+                format!("could not resolve local application data directory: {error}")
+            })?;
             let webview_data_directory = webview_data_directory(&app_data);
             #[cfg(feature = "fixture-runner")]
             let terminal_artifact = app_data.join("fixture-run-finished.json");
@@ -307,7 +312,9 @@ pub fn run() {
             let extensions = Ok(elephant_ladder_native_host::HostExtensions::default());
             #[cfg(feature = "fixture-runner")]
             let extensions = elephant_ladder_conformance::contribute(runner_fixture, &app_data);
-            let host = extensions.and_then(|extensions| PreparedHost::bind(&app_data, extensions));
+            let host = extensions.and_then(|extensions| {
+                PreparedHost::bind_with_bulk_data(&app_data, &app_local_data, extensions)
+            });
             let host = host.map_err(|error| {
                 // Preparation fails before any window exists, so nothing can be shown
                 // to the reader and the process aborts. This line is the whole

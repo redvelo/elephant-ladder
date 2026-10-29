@@ -221,6 +221,7 @@ mod decode_budget_tests {
     }
 
     #[test]
+    #[cfg(any(target_os = "linux", target_os = "android"))]
     fn this_machine_reports_its_memory() {
         let total = total_memory_bytes().expect("Linux reports MemTotal");
         assert!(total > 256 * MIB, "{total} bytes");

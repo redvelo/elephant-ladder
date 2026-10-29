@@ -101,6 +101,7 @@ pub(crate) use dictionary::{
     DictionaryAudioChoice, DictionaryInstallation, DictionaryOperationPhase, DictionaryPackType,
     DictionaryViewRecord, DictionaryViewType, NewDictionaryInstallation, NewDictionaryView,
     installed_directory as dictionary_installed_directory,
+    revision_directory as dictionary_revision_directory,
     staging_directory as dictionary_staging_directory,
 };
 
@@ -357,11 +358,29 @@ fn rescue_pre_release_archives(
 
 impl Storage {
     pub fn open(app_data: &Path) -> Result<Self, String> {
-        Self::open_with_archive_quota(app_data, None)
+        Self::open_inner(app_data, app_data, None)
+    }
+
+    /// Opens storage with bulk, re-downloadable data under its own root.
+    ///
+    /// Dictionaries are multi-gigabyte and machine-local; on Windows the application data
+    /// directory is the roaming profile, which synchronizing domains copy around, so the
+    /// host keeps them under the local data directory instead. On Linux and Android both
+    /// directories resolve to the same path.
+    pub fn open_with_bulk_data(app_data: &Path, bulk_data: &Path) -> Result<Self, String> {
+        Self::open_inner(app_data, bulk_data, None)
     }
 
     fn open_with_archive_quota(
         app_data: &Path,
+        archive_quota_bytes: Option<u64>,
+    ) -> Result<Self, String> {
+        Self::open_inner(app_data, app_data, archive_quota_bytes)
+    }
+
+    fn open_inner(
+        app_data: &Path,
+        bulk_data: &Path,
         archive_quota_bytes: Option<u64>,
     ) -> Result<Self, String> {
         let archives = app_data.join("archives");
@@ -414,7 +433,26 @@ impl Storage {
         reconcile_archive_storage(&mut connection, &blobs, &covers, &staging, &trash)?;
         reconcile_media_sidecar_storage(&mut connection, &media_sidecars)?;
         reconcile_media_timeline_storage(&mut connection, &media_timelines)?;
-        let dictionaries = app_data.join("dictionaries");
+        let dictionaries = bulk_data.join("dictionaries");
+        // The bulk root is not the application data directory on Windows and may not
+        // exist yet; the legacy move below renames into it.
+        fs::create_dir_all(bulk_data)
+            .map_err(|error| format!("could not create {}: {error}", bulk_data.display()))?;
+        // Dictionaries predate the bulk-data root and lived under the application data
+        // directory. Both roots are on the same volume, so one rename moves everything;
+        // leaving the old tree behind would strand gigabytes the registry still names.
+        let legacy_dictionaries = app_data.join("dictionaries");
+        if legacy_dictionaries != dictionaries
+            && legacy_dictionaries.is_dir()
+            && !dictionaries.exists()
+        {
+            fs::rename(&legacy_dictionaries, &dictionaries).map_err(|error| {
+                format!(
+                    "could not move dictionary storage to {}: {error}",
+                    dictionaries.display()
+                )
+            })?;
+        }
         dictionary::reconcile_dictionary_storage(&connection, &dictionaries)?;
 
         let mut storage = Self {

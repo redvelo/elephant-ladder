@@ -1132,7 +1132,11 @@ async fn an_interrupted_install_resumes_from_its_partial_files() {
             &operation_id,
         )
         .unwrap()
-        .join(format!("{}-{}", release.pack_id, release.pack_revision));
+        .join(format!(
+            "{}-{}",
+            release.pack_id,
+            crate::storage::dictionary_revision_directory(&release.pack_revision.to_string())
+        ));
         let name = format!(
             "{}-{}-pack-manifest-v1.json",
             release.pack_id, release.pack_revision

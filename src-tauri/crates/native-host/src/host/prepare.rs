@@ -52,11 +52,29 @@ impl PreparedHost {
     /// Prepares a host. A product build contributes `HostExtensions::default()`,
     /// which is what makes every extension path unreachable.
     pub fn bind(app_data: impl AsRef<FsPath>, extensions: HostExtensions) -> Result<Self, String> {
-        Self::bind_common(app_data.as_ref(), extensions)
+        let app_data = app_data.as_ref();
+        Self::bind_common(app_data, app_data, extensions)
     }
 
-    fn bind_common(app_data: &FsPath, extensions: HostExtensions) -> Result<Self, String> {
-        let mut storage = storage::Storage::open(app_data)?;
+    /// Prepares a host whose bulk, re-downloadable data lives under its own root.
+    ///
+    /// On Windows the application data directory is the roaming profile; dictionaries
+    /// are multi-gigabyte and machine-local, so the product passes the local data
+    /// directory here. On Linux and Android both directories are the same path.
+    pub fn bind_with_bulk_data(
+        app_data: impl AsRef<FsPath>,
+        bulk_data: impl AsRef<FsPath>,
+        extensions: HostExtensions,
+    ) -> Result<Self, String> {
+        Self::bind_common(app_data.as_ref(), bulk_data.as_ref(), extensions)
+    }
+
+    fn bind_common(
+        app_data: &FsPath,
+        bulk_data: &FsPath,
+        extensions: HostExtensions,
+    ) -> Result<Self, String> {
+        let mut storage = storage::Storage::open_with_bulk_data(app_data, bulk_data)?;
         let search_index = search_index::SearchIndexStore::open(app_data)?;
         search_index.retain(&storage.live_snapshot_ids()?)?;
         let dictionary = open_dictionaries(&mut storage);

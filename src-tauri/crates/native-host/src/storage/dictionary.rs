@@ -188,6 +188,18 @@ pub(crate) fn staging_directory(
     Ok(dictionaries.join("staging").join(operation_id))
 }
 
+/// How much of a validated 64-hex revision names its directory.
+///
+/// The full revision already appears twice in every asset file name, and repeating it in
+/// the directory put installed paths past the Windows `MAX_PATH` limit; a prefix keeps
+/// the directory distinct while the registry retains the full revision.
+const REVISION_DIRECTORY_HEX: usize = 16;
+
+/// The directory name of one validated pack revision.
+pub(crate) fn revision_directory(pack_revision: &str) -> &str {
+    &pack_revision[..REVISION_DIRECTORY_HEX.min(pack_revision.len())]
+}
+
 /// The directory of one installed pack revision, derived only from validated identity.
 pub(crate) fn installed_directory(
     dictionaries: &Path,
@@ -201,7 +213,7 @@ pub(crate) fn installed_directory(
     Ok(dictionaries
         .join("installed")
         .join(pack_id)
-        .join(pack_revision))
+        .join(revision_directory(pack_revision)))
 }
 
 fn is_revision(value: &str) -> bool {
@@ -542,6 +554,38 @@ pub(super) fn reconcile_dictionary_storage(
         fs::create_dir_all(directory)
             .map_err(|error| format!("could not create {}: {error}", directory.display()))?;
     }
+    // Earlier releases named an installed revision's directory by the full 64-hex
+    // revision; it is a prefix now. One rename per registered pack moves an existing
+    // installation to the name the derived paths use. A failed rename aborts the open,
+    // because the sweeps below would otherwise read the old directory as unregistered
+    // and delete it.
+    let registered = {
+        let mut statement = connection
+            .prepare("SELECT pack_id, pack_revision FROM dictionary_installations")
+            .map_err(|error| format!("could not prepare dictionary migration: {error}"))?;
+        let rows = statement
+            .query_map([], |row| {
+                Ok((row.get::<_, String>(0)?, row.get::<_, String>(1)?))
+            })
+            .map_err(|error| format!("could not query dictionary migration: {error}"))?;
+        rows.collect::<Result<Vec<_>, _>>()
+            .map_err(|error| format!("could not read dictionary migration: {error}"))?
+    };
+    for (pack_id, pack_revision) in registered {
+        let Ok(current) = installed_directory(dictionaries, &pack_id, &pack_revision) else {
+            continue;
+        };
+        let legacy = installed.join(&pack_id).join(&pack_revision);
+        if legacy != current && legacy.is_dir() && !current.exists() {
+            fs::rename(&legacy, &current).map_err(|error| {
+                format!(
+                    "could not rename the dictionary directory {}: {error}",
+                    legacy.display()
+                )
+            })?;
+        }
+    }
+
     // An operation that was running when the process ended keeps its staging directory, so a
     // later install resumes from its verified partial files instead of downloading gigabytes
     // again. Every other staging directory is abandoned work.
@@ -619,11 +663,12 @@ pub(super) fn reconcile_dictionary_storage(
                 .file_name()
                 .and_then(|name| name.to_str())
                 .unwrap_or_default();
+            // Directories carry the revision prefix, so registration is matched on it.
             let registered: bool = connection
                 .query_row(
                     "SELECT EXISTS (SELECT 1 FROM dictionary_installations \
-                     WHERE pack_id = ?1 AND pack_revision = ?2)",
-                    params![pack_id, pack_revision],
+                     WHERE pack_id = ?1 AND substr(pack_revision, 1, ?3) = ?2)",
+                    params![pack_id, pack_revision, REVISION_DIRECTORY_HEX as i64],
                     |row| row.get(0),
                 )
                 .map_err(|error| format!("could not check dictionary directory: {error}"))?;
@@ -679,6 +724,86 @@ mod tests {
             manifest_sha256: revision,
             installed_bytes: 10,
         }
+    }
+
+    #[test]
+    fn startup_renames_full_revision_directories_to_their_prefix_names() {
+        let app_data = tempfile::tempdir().unwrap();
+        let revision = "4".repeat(64);
+        let legacy = {
+            let mut storage = Storage::open(app_data.path()).unwrap();
+            let current = installed_directory(
+                storage.dictionaries_directory(),
+                "wiktionary-fr-fr",
+                &revision,
+            )
+            .unwrap();
+            fs::create_dir_all(&current).unwrap();
+            fs::write(current.join("marker"), b"bytes").unwrap();
+            storage
+                .register_dictionary_installation(&installation("wiktionary-fr-fr", &revision), &[])
+                .unwrap();
+            // An installation made by an earlier release sits under its full revision.
+            let legacy = storage
+                .dictionaries_directory()
+                .join("installed/wiktionary-fr-fr")
+                .join(&revision);
+            fs::rename(&current, &legacy).unwrap();
+            legacy
+        };
+
+        let storage = Storage::open(app_data.path()).unwrap();
+        let current = installed_directory(
+            storage.dictionaries_directory(),
+            "wiktionary-fr-fr",
+            &revision,
+        )
+        .unwrap();
+        assert_eq!(
+            current.file_name().unwrap().to_str().unwrap(),
+            "4".repeat(16)
+        );
+        assert!(!legacy.exists());
+        assert!(current.join("marker").is_file());
+        assert_eq!(storage.dictionary_installations().unwrap().len(), 1);
+    }
+
+    #[test]
+    fn opening_with_a_bulk_root_moves_dictionary_storage_there() {
+        let app_data = tempfile::tempdir().unwrap();
+        let bulk = tempfile::tempdir().unwrap();
+        let revision = "5".repeat(64);
+        {
+            let mut storage = Storage::open(app_data.path()).unwrap();
+            fs::create_dir_all(
+                installed_directory(
+                    storage.dictionaries_directory(),
+                    "wiktionary-fr-fr",
+                    &revision,
+                )
+                .unwrap(),
+            )
+            .unwrap();
+            storage
+                .register_dictionary_installation(&installation("wiktionary-fr-fr", &revision), &[])
+                .unwrap();
+        }
+
+        // The bulk root itself does not exist yet, as on a first Windows run.
+        let bulk_root = bulk.path().join("local-data");
+        let storage = Storage::open_with_bulk_data(app_data.path(), &bulk_root).unwrap();
+        assert_eq!(storage.dictionaries_directory(), bulk_root.join("dictionaries"));
+        assert!(
+            installed_directory(
+                storage.dictionaries_directory(),
+                "wiktionary-fr-fr",
+                &revision
+            )
+            .unwrap()
+            .is_dir()
+        );
+        assert!(!app_data.path().join("dictionaries").exists());
+        assert_eq!(storage.dictionary_installations().unwrap().len(), 1);
     }
 
     #[test]
