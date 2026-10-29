@@ -1,6 +1,6 @@
 [package]
 name = "elephant-ladder"
-version = "0.0.1"
+version = "0.0.2"
 description = "A native EPUB reader for Linux and Android"
 authors.workspace = true
 repository.workspace = true
@@ -9,7 +9,12 @@ license.workspace = true
 
 [workspace]
 members = ["crates/cdp", "crates/conformance", "crates/native-host"]
-default-members = [".", "crates/cdp", "crates/conformance", "crates/native-host"]
+default-members = [
+  ".",
+  "crates/cdp",
+  "crates/conformance",
+  "crates/native-host",
+]
 
 [workspace.package]
 license = "Apache-2.0 OR MIT"
@@ -53,7 +58,10 @@ tauri-runtime-cef = "3.0.0-alpha.5"
 
 # The portal is how a sandboxed Linux build shows a native file dialog.
 [target.'cfg(target_os = "linux")'.dependencies]
-rfd = { version = "0.15", default-features = false, features = ["xdg-portal", "tokio"] }
+rfd = { version = "0.15", default-features = false, features = [
+  "xdg-portal",
+  "tokio",
+] }
 
 [target.'cfg(target_os = "android")'.dependencies]
 jni = { version = "0.21.1", optional = true }

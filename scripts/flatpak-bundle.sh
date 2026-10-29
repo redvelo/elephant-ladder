@@ -11,6 +11,23 @@ cd "$(dirname "$0")/.."
 
 APP_ID=com.redvelo.ElephantLadder
 VERSION=$(node -p "require('./src-tauri/tauri.conf.json').version")
+
+# The CEF runtime files beside the binary are staged by the cef-dll-sys build script,
+# which a warm cargo cache skips, and the rust cache prunes loose files from the target
+# directory. Restage them from the CEF distribution cache when they are absent.
+RELEASE=src-tauri/target/release
+if [ ! -f "$RELEASE/libcef.so" ]; then
+    CEF_VERSION=$(sed -n '/^name = "cef"$/{n;s/^version = "[^+]*+\(.*\)"$/\1/p}' src-tauri/Cargo.lock)
+    DIST="$HOME/.cache/tauri-cef/$CEF_VERSION/cef_linux_x86_64"
+    test -f "$DIST/libcef.so" || { echo "CEF distribution not found at $DIST" >&2; exit 1; }
+    cp -f "$DIST"/libcef.so "$DIST"/libEGL.so "$DIST"/libGLESv2.so \
+        "$DIST"/libvk_swiftshader.so "$DIST"/libvulkan.so.1 \
+        "$DIST"/vk_swiftshader_icd.json "$DIST"/chrome_100_percent.pak \
+        "$DIST"/chrome_200_percent.pak "$DIST"/resources.pak \
+        "$DIST"/icudtl.dat "$DIST"/v8_context_snapshot.bin "$RELEASE/"
+    rm -rf "$RELEASE/locales"
+    cp -r "$DIST/locales" "$RELEASE/locales"
+fi
 BUNDLE="elephant-ladder-${VERSION}-x86_64.flatpak"
 REPO_URL=https://redvelo.github.io/elephant-ladder/repo
 

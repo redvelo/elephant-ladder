@@ -91,9 +91,10 @@ pnpm tauri dev                 # rebuilds Navigator, starts Vite, launches the a
 pnpm tauri build               # the packaged Linux build
 ```
 
-Linux packages bundle CEF and need the `chrome-sandbox` helper installed root-owned
-with mode 4755; the Debian and RPM packages do this. AppImage is not supported because
-it cannot.
+The packaged Linux build is the Flatpak: build with
+`node scripts/tauri-pinned.mjs build --no-bundle`, then `scripts/flatpak-bundle.sh`
+produces a single-file bundle. Releases publish a signed Flatpak repo, so an installed
+bundle tracks later releases through `flatpak update`.
 
 For Android, with a JDK from 17 to 26 and an authorized device attached:
 
