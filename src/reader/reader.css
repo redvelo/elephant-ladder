@@ -156,6 +156,7 @@
 
 /* The action and how far it has got are one control: the label leads, the count follows it. */
 .dictionary-background-button {
+  width: 100%;
   flex-direction: column;
   gap: 2px;
   height: auto;

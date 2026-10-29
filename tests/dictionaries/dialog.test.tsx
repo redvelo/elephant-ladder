@@ -177,10 +177,11 @@ test("a phase with no byte count still names itself on the button", () => {
   );
 });
 
-test("a finished install drops the button and states the outcome beside the way out", () => {
+test("a finished install swaps the button for one that states the outcome and closes", () => {
   renderDialog({ ...downloading, phase: "completed" });
   expect(screen.queryByRole("button", { name: /Continue in background/u })).toBeNull();
-  expect(screen.getByRole("status").textContent).toBe("Installed");
+  const button = screen.getByRole("button", { name: /Done/u });
+  expect(button.textContent).toContain("Installed");
 });
 
 test("a failure is raised as an alert rather than a phase", () => {

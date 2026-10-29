@@ -82,9 +82,10 @@ export function DictionariesDialog({
             {operation.failure ?? "The dictionary could not be installed."}
           </p>
         ) : (
-          <p className="app-dialog-actions-status" role="status">
-            {operationProgress(operation)}
-          </p>
+          <Button variant="outline" className="dictionary-background-button" onClick={onClose}>
+            <span>Done</span>
+            <small aria-live="polite">{operationProgress(operation)}</small>
+          </Button>
         )
       }
     >

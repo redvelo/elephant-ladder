@@ -125,6 +125,7 @@
 .app-dialog-actions-status {
   flex: 1 1 100%;
   margin: 0;
+  text-align: center;
   font-size: 0.85rem;
   font-weight: 700;
 }
