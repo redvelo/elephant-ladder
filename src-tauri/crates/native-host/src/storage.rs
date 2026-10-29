@@ -371,13 +371,6 @@ impl Storage {
         Self::open_inner(app_data, bulk_data, None)
     }
 
-    fn open_with_archive_quota(
-        app_data: &Path,
-        archive_quota_bytes: Option<u64>,
-    ) -> Result<Self, String> {
-        Self::open_inner(app_data, app_data, archive_quota_bytes)
-    }
-
     fn open_inner(
         app_data: &Path,
         bulk_data: &Path,
@@ -475,7 +468,7 @@ impl Storage {
 
     #[cfg(test)]
     fn open_for_test(app_data: &Path, archive_quota_bytes: u64) -> Result<Self, String> {
-        Self::open_with_archive_quota(app_data, Some(archive_quota_bytes))
+        Self::open_inner(app_data, app_data, Some(archive_quota_bytes))
     }
 
     pub(crate) fn installation_origin_config(

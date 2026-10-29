@@ -20,7 +20,7 @@ fn website_data_purge_report_never_promotes_an_attempt_to_verified_purge() {
 
 #[test]
 fn product_revisions_have_explicit_identities() {
-    assert_eq!(crate::PRODUCTION_READING_REVISION, "reading-v21");
+    assert_eq!(crate::PRODUCTION_READING_REVISION, "reading-v22");
     assert_eq!(crate::SEARCH_REVISION, "search-v4");
     assert_eq!(crate::NATIVE_MEASUREMENT_REVISION, "7");
     assert_ne!(crate::PRODUCTION_READING_REVISION, crate::SEARCH_REVISION);
@@ -31,6 +31,55 @@ fn product_revisions_have_explicit_identities() {
     assert_eq!(limits.max_total_fingerprint_bytes, Some(0));
     assert_eq!(limits.max_smil_nodes, Some(100_000));
     assert_eq!(limits.max_smil_nesting, Some(256));
+}
+
+#[test]
+fn declared_but_absent_resources_do_not_block_policy_relevance() {
+    // Alice with a manifest item whose bytes are not in the archive: the analysis reports the
+    // resource as missing, and missing bytes cannot execute or reach the network.
+    let mut source = zip::ZipArchive::new(Cursor::new(ALICE_BYTES.to_vec())).unwrap();
+    let mut output = Cursor::new(Vec::new());
+    {
+        let mut zip = ZipWriter::new(&mut output);
+        for index in 0..source.len() {
+            let mut entry = source.by_index(index).unwrap();
+            let name = entry.name().to_owned();
+            let mut bytes = Vec::new();
+            entry.read_to_end(&mut bytes).unwrap();
+            if name == "epub/content.opf" {
+                let manifest = String::from_utf8(bytes)
+                    .unwrap()
+                    .replace(
+                        "</manifest>",
+                        r#"<item id="font.ghost" href="fonts/ghost.ttf" media-type="application/x-font-truetype"/></manifest>"#,
+                    );
+                bytes = manifest.into_bytes();
+            }
+            let options = if name == "mimetype" {
+                SimpleFileOptions::default().compression_method(CompressionMethod::Stored)
+            } else {
+                SimpleFileOptions::default()
+            };
+            zip.start_file(name, options).unwrap();
+            zip.write_all(&bytes).unwrap();
+        }
+        zip.finish().unwrap();
+    }
+    let epub = EpubZip::from_reader(Cursor::new(output.into_inner()))
+        .unwrap()
+        .default_rendition()
+        .unwrap();
+    let analysis = epub.analyze_with_limits(crate::search::search_analysis_limits());
+    assert!(!analysis.coverage().content().is_complete());
+    let relevance = crate::policy::publication_policy_relevance(&analysis);
+    assert_eq!(
+        relevance.active_content,
+        crate::storage::PolicyRelevance::NotDetected
+    );
+    assert_eq!(
+        relevance.remote_resources,
+        crate::storage::PolicyRelevance::NotDetected
+    );
 }
 
 #[test]

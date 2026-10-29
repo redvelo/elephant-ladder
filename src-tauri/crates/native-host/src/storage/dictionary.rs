@@ -792,7 +792,10 @@ mod tests {
         // The bulk root itself does not exist yet, as on a first Windows run.
         let bulk_root = bulk.path().join("local-data");
         let storage = Storage::open_with_bulk_data(app_data.path(), &bulk_root).unwrap();
-        assert_eq!(storage.dictionaries_directory(), bulk_root.join("dictionaries"));
+        assert_eq!(
+            storage.dictionaries_directory(),
+            bulk_root.join("dictionaries")
+        );
         assert!(
             installed_directory(
                 storage.dictionaries_directory(),

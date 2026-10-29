@@ -17,8 +17,9 @@ use axum::{
     response::IntoResponse, routing::get,
 };
 use epub_stack::{
-    PublicationAnalysis, analysis::coverage::Completeness, analysis::reference::AuthoredReference,
-    analysis::reference::HrefRole, analysis::reference::HrefTarget, content::ContentFacts,
+    PublicationAnalysis, analysis::AnalysisIssue, analysis::coverage::Completeness,
+    analysis::reference::AuthoredReference, analysis::reference::HrefRole,
+    analysis::reference::HrefTarget, content::ContentFacts,
     package::manifest::KnownManifestProperty, resource::ResourceAddress,
 };
 use serde::{Deserialize, Serialize};
@@ -298,9 +299,10 @@ pub(crate) fn publication_policy_relevance(
                 .and_then(ContentFacts::executable_content_detected)
                 == Some(true)
     });
+    let content_settled = content_analysis_settled(analysis);
     let active_content = if active_content_detected {
         storage::PolicyRelevance::Detected
-    } else if analysis.coverage().content().is_complete() {
+    } else if content_settled {
         storage::PolicyRelevance::NotDetected
     } else {
         storage::PolicyRelevance::Unknown
@@ -322,15 +324,15 @@ pub(crate) fn publication_policy_relevance(
                     && remote_network_role(reference.role())
         )
     });
-    let relationships_complete = !analysis.coverage().relationships().is_empty()
+    let relationships_settled = !analysis.coverage().relationships().is_empty()
         && analysis
             .coverage()
             .relationships()
             .iter()
-            .all(|coverage| matches!(coverage.completeness, Completeness::Complete));
+            .all(|coverage| analysis_settled(coverage.completeness));
     let remote_resources = if remote_manifest_evidence || remote_reference_evidence {
         storage::PolicyRelevance::Detected
-    } else if analysis.coverage().content().is_complete() && relationships_complete {
+    } else if content_settled && relationships_settled {
         storage::PolicyRelevance::NotDetected
     } else {
         storage::PolicyRelevance::Unknown
@@ -340,6 +342,22 @@ pub(crate) fn publication_policy_relevance(
         active_content,
         remote_resources,
     }
+}
+
+/// Whether content analysis reached everything it could ever reach. A resource whose bytes are
+/// absent from the archive is settled rather than open: bytes that do not exist cannot execute
+/// and cannot reach the network, so only bytes left unread — malformed, unreadable, or past a
+/// limit — keep a verdict open.
+fn content_analysis_settled(analysis: &PublicationAnalysis) -> bool {
+    analysis
+        .coverage()
+        .content()
+        .incomplete()
+        .all(|entry| analysis_settled(entry.completeness))
+}
+
+fn analysis_settled(completeness: Completeness) -> bool {
+    completeness.is_complete() || completeness.issue() == Some(AnalysisIssue::Missing)
 }
 
 fn remote_network_role(role: HrefRole) -> bool {

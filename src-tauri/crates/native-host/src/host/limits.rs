@@ -8,11 +8,12 @@
 use std::{sync::atomic::AtomicU64, time::Duration};
 
 pub(crate) const READER_HOST: &str = "reader.elephant-ladder.localhost";
-// Occurrence presentation gained `alignXCenter`, so stored facts no longer match what the
-// current stack derives from the same EPUB. Any change to the derived facts, response rules
-// or media overlay products needs this bumped: an opened publication whose snapshot was
-// derived at another revision is re-derived from its stored EPUB rather than refused.
-pub(crate) const PRODUCTION_READING_REVISION: &str = "reading-v21";
+// Policy relevance stopped counting declared-but-absent resources against a verdict, so
+// stored snapshots carry stale `unknown` determinations. Any change to the derived facts,
+// response rules or media overlay products needs this bumped: an opened publication whose
+// snapshot was derived at another revision is re-derived from its stored EPUB rather than
+// refused.
+pub(crate) const PRODUCTION_READING_REVISION: &str = "reading-v22";
 pub const IMAGE_DOCUMENT_QUERY: &str = "epub-navigator-image-document=1";
 pub(crate) const SEARCH_REVISION: &str = "search-v4";
 // How the host stages a measurement frame: its instrumentation, policy and viewport. This is
